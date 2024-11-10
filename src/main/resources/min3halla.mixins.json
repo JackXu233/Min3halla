@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "cn.jacksigxu.min3halla.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "Minehalla.refmap.json",
+  "refmap": "min3halla.refmap.json",
   "mixins": [
   ],
   "client": [
