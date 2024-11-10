@@ -3,6 +3,7 @@ package cn.jacksigxu.min3halla;
 import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.init.MHTabs;
 import com.mojang.logging.LogUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -23,6 +24,10 @@ public class MHMod {
         MHTabs.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public static ResourceLocation loc(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 
 }
