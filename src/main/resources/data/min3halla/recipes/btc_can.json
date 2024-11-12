@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "n": {
+      "item": "minecraft:iron_nugget"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "n n",
+    "i i",
+    "iii"
+  ],
+  "result": {
+    "item": "min3halla:btc_can"
+  }
+}
