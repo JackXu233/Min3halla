@@ -18,6 +18,6 @@ public class Karmotrine extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.min3halla.karmotrine").withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipComponents.add(Component.translatable("des.min3halla.karmotrine").withStyle(ChatFormatting.AQUA));
     }
 }
