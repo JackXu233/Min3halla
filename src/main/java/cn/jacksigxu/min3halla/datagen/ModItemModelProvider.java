@@ -29,6 +29,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.BTC_CAN);
 
         simpleItem(MHItems.SUGAR_RUSH);
+        simpleItem(MHItems.ZEN_STAR);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
