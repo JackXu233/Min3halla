@@ -1,3 +1,14 @@
 {
-  "itemGroup.min3halla_tab": "MIN-3 Hall-A"
+  "itemGroup.min3halla_tab": "MIN-3 Hall-A",
+  "item.min3halla.shaker_pot": "Shaker Pot",
+  "item.min3halla.adelhyde": "Adel Syrup",
+  "des.min3halla.adelhyde": "Adelhyde",
+  "item.min3halla.bronson_extract": "Ender Extract",
+  "des.min3halla.bronson_extract": "Bronson Extract",
+  "item.min3halla.powdered_delta": "Delta Powder",
+  "des.min3halla.powdered_delta": "Powdered Delta",
+  "item.min3halla.flanergide": "下界疣香精",
+  "des.min3halla.flanergide": "Flanergide",
+  "item.min3halla.karmotrine": "高纯卡莫汀",
+  "des.min3halla.karmotrine": "Karmotrine"
 }

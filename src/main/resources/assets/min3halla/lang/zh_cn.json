@@ -1,3 +1,14 @@
 {
-  "itemGroup.min3halla_tab": "MIN-3 Hall-A"
+  "itemGroup.min3halla_tab": "MIN-3 Hall-A",
+  "item.min3halla.shaker_pot": "雪克壶",
+  "item.min3halla.adelhyde": "阿德尔糖浆",
+  "des.min3halla.adelhyde": "甜味剂",
+  "item.min3halla.bronson_extract": "末影提取物",
+  "des.min3halla.bronson_extract": "苦精",
+  "item.min3halla.powdered_delta": "德尔塔粉末",
+  "des.min3halla.powdered_delta": "酸味剂",
+  "item.min3halla.flanergide": "下界疣香精",
+  "des.min3halla.flanergide": "香辛料",
+  "item.min3halla.karmotrine": "高纯卡莫汀",
+  "des.min3halla.karmotrine": "酒精"
 }
