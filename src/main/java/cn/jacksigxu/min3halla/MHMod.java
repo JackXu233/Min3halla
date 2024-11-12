@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla;
 
+import cn.jacksigxu.min3halla.init.MHBlocks;
 import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.init.MHRecipes;
 import cn.jacksigxu.min3halla.init.MHTabs;
@@ -23,6 +24,7 @@ public class MHMod {
 
         MHItems.register(modEventBus);
         MHTabs.register(modEventBus);
+        MHBlocks.BLOCKS.register(modEventBus);
         MHRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);

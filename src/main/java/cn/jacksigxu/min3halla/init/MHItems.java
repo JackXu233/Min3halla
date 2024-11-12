@@ -4,6 +4,7 @@ import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.item.DrinkItem;
 import cn.jacksigxu.min3halla.item.ShakerPot;
 import cn.jacksigxu.min3halla.item.ingredient.*;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,7 +16,10 @@ public class MHItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MHMod.MOD_ID);
 
-    public static final RegistryObject<Item> SHAKER_POT = ITEMS.register("shake_pot", ShakerPot::new);
+    public static final RegistryObject<Item> DRINK_MIXER = ITEMS.register("drink_mixer",
+            () -> new BlockItem(MHBlocks.DRINK_MIXER.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> SHAKER_POT = ITEMS.register("shaker_pot", ShakerPot::new);
 
     public static final RegistryObject<Item> ADELHYDE = ITEMS.register("adelhyde", Adelhyde::new);
     public static final RegistryObject<Item> BRONSON_EXTRACT = ITEMS.register("bronson_extract", BronsonExtract::new);

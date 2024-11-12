@@ -1,8 +1,10 @@
 package cn.jacksigxu.min3halla.datagen;
 
 import cn.jacksigxu.min3halla.MHMod;
+import cn.jacksigxu.min3halla.init.MHBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -17,6 +19,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(MHBlocks.DRINK_MIXER.get());
 
     }
 
