@@ -25,6 +25,7 @@ public class MHItems {
     public static final RegistryObject<Item> BTC_CAN = ITEMS.register("btc_can", () -> new Item(new Item.Properties()));
 
     // Drinks
+    public static final RegistryObject<Item> SUGAR_RUSH = ITEMS.register("sugar_rush", () -> new DrinkItem(MHFoodProperties.SUGAR_RUSH));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new DrinkItem(MHFoodProperties.ZEN_STAR));
 
     public static void register(IEventBus bus) {
