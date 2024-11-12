@@ -22,6 +22,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(MHItems.ADELHYDE);
+        simpleItem(MHItems.BRONSON_EXTRACT);
+        simpleItem(MHItems.POWDERED_DELTA);
+        simpleItem(MHItems.FLANERGIDE);
+        simpleItem(MHItems.KARMOTRINE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
