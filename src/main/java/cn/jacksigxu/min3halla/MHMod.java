@@ -23,6 +23,7 @@ public class MHMod {
         MHTabs.register(modEventBus);
         MHBlocks.BLOCKS.register(modEventBus);
         MHBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
+        MHMenuTypes.MENU_TYPES.register(modEventBus);
         MHRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);

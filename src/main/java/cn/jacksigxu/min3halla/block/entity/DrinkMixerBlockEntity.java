@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.block.entity;
 
+import cn.jacksigxu.min3halla.gui.menu.DrinkMixerMenu;
 import cn.jacksigxu.min3halla.init.MHBlockEntityTypes;
 import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.recipe.MixingRecipe;
@@ -361,7 +362,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new DrinkMixerMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override
