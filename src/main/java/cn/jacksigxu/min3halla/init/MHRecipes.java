@@ -1,6 +1,7 @@
 package cn.jacksigxu.min3halla.init;
 
 import cn.jacksigxu.min3halla.MHMod;
+import cn.jacksigxu.min3halla.recipe.FillingRecipe;
 import cn.jacksigxu.min3halla.recipe.MixingRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,5 +14,7 @@ public class MHRecipes {
 
     public static final RegistryObject<RecipeSerializer<MixingRecipe>> MIXING_SERIALIZER =
             RECIPE_SERIALIZERS.register("mixing", () -> MixingRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<FillingRecipe>> FILLING_SERIALIZER =
+            RECIPE_SERIALIZERS.register("filling", () -> FillingRecipe.Serializer.INSTANCE);
 
 }

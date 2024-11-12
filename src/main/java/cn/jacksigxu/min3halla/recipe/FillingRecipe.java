@@ -15,30 +15,25 @@ import org.jetbrains.annotations.Nullable;
 
 public class FillingRecipe implements Recipe<SimpleContainer> {
 
-    private final Ingredient input;
-    private final Ingredient input2;
+    private final NonNullList<Ingredient> inputs;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public FillingRecipe(Ingredient input, Ingredient input2, ItemStack output, ResourceLocation id) {
-        this.input = input;
-        this.input2 = input2;
+    public FillingRecipe(NonNullList<Ingredient> inputs, ItemStack output, ResourceLocation id) {
+        this.inputs = inputs;
         this.output = output;
         this.id = id;
     }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        if(pLevel.isClientSide()) return false;
-        return input.test(pContainer.getItem(0)) && input2.test(pContainer.getItem(1));
+        if (pLevel.isClientSide()) return false;
+        return inputs.get(0).test(pContainer.getItem(0)) && inputs.get(1).test(pContainer.getItem(1));
     }
 
     @Override
     public NonNullList<Ingredient> getIngredients() {
-        NonNullList<Ingredient> ingredients = NonNullList.withSize(2, Ingredient.EMPTY);
-        ingredients.set(0, input);
-        ingredients.set(1, input2);
-        return ingredients;
+        return inputs;
     }
 
     @Override
@@ -52,7 +47,7 @@ public class FillingRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
+    public ItemStack getResultItem(@Nullable RegistryAccess pRegistryAccess) {
         return output.copy();
     }
 
@@ -71,7 +66,7 @@ public class FillingRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<FillingRecipe>{
+    public static class Type implements RecipeType<FillingRecipe> {
         public static final Type INSTANCE = new Type();
         public static final String ID = "filling";
     }
@@ -82,25 +77,32 @@ public class FillingRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public FillingRecipe fromJson(ResourceLocation recipeLoc, JsonObject recipeJson) {
-            Ingredient input = Ingredient.fromJson(GsonHelper.getAsJsonObject(recipeJson, "input"));
-            Ingredient input2 = Ingredient.fromJson(GsonHelper.getAsJsonObject(recipeJson, "input2"));
+            NonNullList<Ingredient> inputs = NonNullList.create();
+            var ingredients = GsonHelper.getAsJsonArray(recipeJson, "ingredients");
+            for (int i = 0; i < ingredients.size(); i++) {
+                inputs.add(Ingredient.fromJson(ingredients.get(i).getAsJsonObject()));
+            }
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(recipeJson, "output"));
-            return new FillingRecipe(input, input2, output, recipeLoc);
+            return new FillingRecipe(inputs, output, recipeLoc);
         }
 
         @Override
         public @Nullable FillingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
-            Ingredient input = Ingredient.fromNetwork(pBuffer);
-            Ingredient input2 = Ingredient.fromNetwork(pBuffer);
+            int size = pBuffer.readVarInt();
+            NonNullList<Ingredient> inputs = NonNullList.withSize(size, Ingredient.EMPTY);
+            for (int i = 0; i < size; i++) {
+                inputs.set(i, Ingredient.fromNetwork(pBuffer));
+            }
             ItemStack output = pBuffer.readItem();
-            if(output.isEmpty()) return null;
-            return new FillingRecipe(input, input2, output, pRecipeId);
+            return new FillingRecipe(inputs, output, pRecipeId);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, FillingRecipe pRecipe) {
-            pRecipe.input.toNetwork(pBuffer);
-            pRecipe.input2.toNetwork(pBuffer);
+            pBuffer.writeVarInt(pRecipe.inputs.size());
+            for (Ingredient ingredient : pRecipe.inputs) {
+                ingredient.toNetwork(pBuffer);
+            }
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
         }
     }
