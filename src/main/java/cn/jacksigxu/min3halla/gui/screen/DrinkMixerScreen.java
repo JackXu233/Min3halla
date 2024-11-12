@@ -17,8 +17,8 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
 
     public DrinkMixerScreen(DrinkMixerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
-        imageWidth = 256;
-        imageHeight = 192;
+        imageWidth = 244;
+        imageHeight = 203;
     }
 
     @Override
@@ -34,6 +34,11 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         this.renderBackground(pGuiGraphics);
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY) {
+
     }
 
     @Override

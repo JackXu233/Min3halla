@@ -24,8 +24,8 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
     private final ContainerData containerData;
     protected final Level level;
 
-    public static final int X_OFFSET = 50;
-    public static final int Y_OFFSET = 30;
+    public static final int X_OFFSET = 34;
+    public static final int Y_OFFSET = 37;
 
     public DrinkMixerMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(10), new SimpleContainerData(DrinkMixerBlockEntity.MAX_DATA_COUNT));
@@ -41,16 +41,16 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.SHAKER_POT.get(), 0, 100, 70));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.ADELHYDE.get(), 1, 60, 25));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.BRONSON_EXTRACT.get(), 2, 100, 25));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.POWDERED_DELTA.get(), 3, 140, 25));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.FLANERGIDE.get(), 4, 60, 70));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.KARMOTRINE.get(), 5, 140, 70));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, Items.ICE, 6, 20, 25));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, Items.REDSTONE, 7, 20, 70));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, Tags.Items.DYES, 8, 180, 25));
-        this.addSlot(new DrinkMixerMenu.InputSlot(container, 9, 180, 70));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.SHAKER_POT.get(), 0, 114, 59));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.ADELHYDE.get(), 1, 39, 21));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.BRONSON_EXTRACT.get(), 2, 99, 21));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.POWDERED_DELTA.get(), 3, 159, 21));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.FLANERGIDE.get(), 4, 39, 59));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.KARMOTRINE.get(), 5, 159, 59));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, Items.ICE, 6, 11, 22));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, Items.REDSTONE, 7, 11, 60));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, Tags.Items.DYES, 8, 217, 22));
+        this.addSlot(new DrinkMixerMenu.InputSlot(container, 9, 217, 60));
 
         this.addDataSlots(containerData);
 
