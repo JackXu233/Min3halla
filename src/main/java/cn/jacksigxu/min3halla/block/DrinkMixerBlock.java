@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.block;
 
+import cn.jacksigxu.min3halla.block.entity.DrinkMixerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -22,7 +23,7 @@ public class DrinkMixerBlock extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return null;
+        return new DrinkMixerBlockEntity(pPos, pState);
     }
 
     @Override

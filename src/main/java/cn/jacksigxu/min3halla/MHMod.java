@@ -1,9 +1,6 @@
 package cn.jacksigxu.min3halla;
 
-import cn.jacksigxu.min3halla.init.MHBlocks;
-import cn.jacksigxu.min3halla.init.MHItems;
-import cn.jacksigxu.min3halla.init.MHRecipes;
-import cn.jacksigxu.min3halla.init.MHTabs;
+import cn.jacksigxu.min3halla.init.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +22,7 @@ public class MHMod {
         MHItems.register(modEventBus);
         MHTabs.register(modEventBus);
         MHBlocks.BLOCKS.register(modEventBus);
+        MHBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
         MHRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
