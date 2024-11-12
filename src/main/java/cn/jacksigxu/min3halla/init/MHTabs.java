@@ -6,7 +6,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,7 +19,7 @@ public class MHTabs {
 
     public static CreativeModeTab MH_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.min3halla_tab"))
-            .icon(() -> new ItemStack(Items.BAMBOO))
+            .icon(() -> new ItemStack(MHItems.ADELHYDE.get()))
             .displayItems((pParameters, pOutput) -> MHItems.ITEMS.getEntries().forEach((itemRegistryObject) -> {
                 if (!HIDDEN.contains(itemRegistryObject)) {
                     pOutput.accept(itemRegistryObject.get());

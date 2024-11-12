@@ -1,6 +1,7 @@
 package cn.jacksigxu.min3halla.datagen;
 
 import cn.jacksigxu.min3halla.MHMod;
+import cn.jacksigxu.min3halla.init.MHItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -20,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        simpleItem(MHItems.ADELHYDE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
