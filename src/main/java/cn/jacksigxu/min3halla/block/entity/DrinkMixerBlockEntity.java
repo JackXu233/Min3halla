@@ -16,7 +16,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -385,8 +384,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         ItemStack stack = this.items.get(SLOT_SHAKER_POT);
         if (stack.isEmpty() || !stack.is(MHItems.SHAKER_POT.get())) return;
 
-        // TODO 修改为正确的失败产物
-        ItemStack result = new ItemStack(Items.BONE_MEAL);
+        ItemStack result = new ItemStack(MHItems.ERROR_DRINK.get());
         stack.getOrCreateTag().put("Result", result.serializeNBT());
     }
 

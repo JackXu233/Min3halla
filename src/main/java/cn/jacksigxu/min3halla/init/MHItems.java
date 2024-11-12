@@ -2,6 +2,7 @@ package cn.jacksigxu.min3halla.init;
 
 import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.item.DrinkItem;
+import cn.jacksigxu.min3halla.item.ErrorDrink;
 import cn.jacksigxu.min3halla.item.ShakerPot;
 import cn.jacksigxu.min3halla.item.ingredient.*;
 import net.minecraft.world.item.BlockItem;
@@ -31,6 +32,8 @@ public class MHItems {
     // Drinks
     public static final RegistryObject<Item> SUGAR_RUSH = ITEMS.register("sugar_rush", () -> new DrinkItem(MHFoodProperties.SUGAR_RUSH));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new DrinkItem(MHFoodProperties.ZEN_STAR));
+
+    public static final RegistryObject<Item> ERROR_DRINK = ITEMS.register("error_drink", ErrorDrink::new);
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
