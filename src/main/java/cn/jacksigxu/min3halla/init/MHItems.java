@@ -21,6 +21,7 @@ public class MHItems {
     public static final RegistryObject<Item> POWDERED_DELTA = ITEMS.register("powdered_delta", PowderedDelta::new);
     public static final RegistryObject<Item> FLANERGIDE = ITEMS.register("flanergide", Flanergide::new);
     public static final RegistryObject<Item> KARMOTRINE = ITEMS.register("karmotrine", Karmotrine::new);
+    public static final RegistryObject<Item> BTC_CAN = ITEMS.register("btc_can", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

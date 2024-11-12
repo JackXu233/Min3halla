@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.POWDERED_DELTA);
         simpleItem(MHItems.FLANERGIDE);
         simpleItem(MHItems.KARMOTRINE);
+        simpleItem(MHItems.BTC_CAN);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
