@@ -1,6 +1,7 @@
 package cn.jacksigxu.min3halla.block.entity;
 
 import cn.jacksigxu.min3halla.init.MHBlockEntityTypes;
+import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.recipe.MixingRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,7 +13,9 @@ import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -28,7 +31,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     protected static final int SLOT_SHAKER_POT = 0;
     protected static final int SLOT_ADELHYDE = 1;
     protected static final int SLOT_BRONSON_EXTRACT = 2;
-    protected static final int POWDERED_DELTA = 3;
+    protected static final int SLOT_POWDERED_DELTA = 3;
     protected static final int SLOT_FLANERGIDE = 4;
     protected static final int SLOT_KARMOTRINE = 5;
     protected static final int SLOT_ICE = 6;
@@ -40,9 +43,74 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     private static final int[] SLOTS_FOR_SIDES = new int[]{6, 7, 8, 9};
     private static final int[] SLOTS_FOR_DOWN = new int[]{0};
 
+    public static final int MAX_DATA_COUNT = 9;
+
     protected NonNullList<ItemStack> items = NonNullList.withSize(10, ItemStack.EMPTY);
 
+    private int adeCount = 0;
+    private int bexCount = 0;
+    private int pwdCount = 0;
+    private int flaCount = 0;
+    private int karCount = 0;
+    private boolean useIce = false;
+    private boolean useAged = false;
+    private boolean useDye = false;
+    private boolean useExtra = false;
+
     private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
+
+    protected final ContainerData dataAccess = new ContainerData() {
+        public int get(int pIndex) {
+            return switch (pIndex) {
+                case 0 -> DrinkMixerBlockEntity.this.adeCount;
+                case 1 -> DrinkMixerBlockEntity.this.bexCount;
+                case 2 -> DrinkMixerBlockEntity.this.pwdCount;
+                case 3 -> DrinkMixerBlockEntity.this.flaCount;
+                case 4 -> DrinkMixerBlockEntity.this.karCount;
+                case 5 -> DrinkMixerBlockEntity.this.useIce ? 1 : 0;
+                case 6 -> DrinkMixerBlockEntity.this.useAged ? 1 : 0;
+                case 7 -> DrinkMixerBlockEntity.this.useDye ? 1 : 0;
+                case 8 -> DrinkMixerBlockEntity.this.useExtra ? 1 : 0;
+                default -> 0;
+            };
+        }
+
+        public void set(int pIndex, int pValue) {
+            switch (pIndex) {
+                case 0:
+                    DrinkMixerBlockEntity.this.adeCount = pValue;
+                    break;
+                case 1:
+                    DrinkMixerBlockEntity.this.bexCount = pValue;
+                    break;
+                case 2:
+                    DrinkMixerBlockEntity.this.pwdCount = pValue;
+                    break;
+                case 3:
+                    DrinkMixerBlockEntity.this.flaCount = pValue;
+                    break;
+                case 4:
+                    DrinkMixerBlockEntity.this.karCount = pValue;
+                    break;
+                case 5:
+                    DrinkMixerBlockEntity.this.useIce = pValue == 1;
+                    break;
+                case 6:
+                    DrinkMixerBlockEntity.this.useAged = pValue == 1;
+                    break;
+                case 7:
+                    DrinkMixerBlockEntity.this.useDye = pValue == 1;
+                    break;
+                case 8:
+                    DrinkMixerBlockEntity.this.useExtra = pValue == 1;
+                    break;
+            }
+        }
+
+        public int getCount() {
+            return MAX_DATA_COUNT;
+        }
+    };
 
     public DrinkMixerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(MHBlockEntityTypes.DRINK_MIXER_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -53,12 +121,34 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         super.load(pTag);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
+
+        this.adeCount = pTag.getInt("Ade");
+        this.bexCount = pTag.getInt("Bex");
+        this.pwdCount = pTag.getInt("Pwd");
+        this.flaCount = pTag.getInt("Fla");
+        this.karCount = pTag.getInt("Kar");
+
+        this.useIce = pTag.getBoolean("Ice");
+        this.useAged = pTag.getBoolean("Aged");
+        this.useDye = pTag.getBoolean("Dye");
+        this.useExtra = pTag.getBoolean("Extra");
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
         ContainerHelper.saveAllItems(pTag, this.items);
+
+        pTag.putInt("Ade", this.adeCount);
+        pTag.putInt("Bex", this.bexCount);
+        pTag.putInt("Pwd", this.pwdCount);
+        pTag.putInt("Fla", this.flaCount);
+        pTag.putInt("Kar", this.karCount);
+
+        pTag.putBoolean("Ice", this.useIce);
+        pTag.putBoolean("Aged", this.useAged);
+        pTag.putBoolean("Dye", this.useDye);
+        pTag.putBoolean("Extra", this.useExtra);
     }
 
     @Override
@@ -137,31 +227,130 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         this.items.clear();
     }
 
+    public void craftItem() {
+        if (this.level == null) return;
+
+        Optional<MixingRecipe> currentRecipe = getCurrentRecipe();
+        if (currentRecipe.isEmpty()) {
+            if (canShakerPotInsertItem()) {
+                consumeIngredients();
+                makeFailOutput();
+                resetData();
+            }
+            return;
+        }
+        MixingRecipe recipe = currentRecipe.get();
+
+        ItemStack result = recipe.getResultItem(null);
+        ItemStack stack = this.items.get(SLOT_SHAKER_POT);
+
+        consumeIngredients();
+        if (result == null) {
+            makeFailOutput();
+        } else if (canShakerPotInsertItem()) {
+            stack.getOrCreateTag().put("Result", result.serializeNBT());
+        } else {
+            makeFailOutput();
+        }
+
+        resetData();
+    }
+
+    private void consumeIngredients() {
+        if (!this.items.get(SLOT_ADELHYDE).isEmpty()) {
+            this.items.get(SLOT_ADELHYDE).shrink(this.adeCount);
+        }
+        if (!this.items.get(SLOT_BRONSON_EXTRACT).isEmpty()) {
+            this.items.get(SLOT_BRONSON_EXTRACT).shrink(this.bexCount);
+        }
+        if (!this.items.get(SLOT_POWDERED_DELTA).isEmpty()) {
+            this.items.get(SLOT_POWDERED_DELTA).shrink(this.pwdCount);
+        }
+        if (!this.items.get(SLOT_FLANERGIDE).isEmpty()) {
+            this.items.get(SLOT_FLANERGIDE).shrink(this.flaCount);
+        }
+        if (!this.items.get(SLOT_KARMOTRINE).isEmpty()) {
+            this.items.get(SLOT_KARMOTRINE).shrink(this.karCount);
+        }
+        if (this.useIce) {
+            if (!this.items.get(SLOT_ICE).isEmpty()) {
+                this.items.get(SLOT_ICE).shrink(1);
+            }
+        }
+        if (this.useAged) {
+            if (!this.items.get(SLOT_AGED).isEmpty()) {
+                this.items.get(SLOT_AGED).shrink(1);
+            }
+        }
+        if (this.useDye) {
+            if (!this.items.get(SLOT_DYE).isEmpty()) {
+                this.items.get(SLOT_DYE).shrink(1);
+            }
+        }
+        if (this.useExtra) {
+            if (!this.items.get(SLOT_EXTRA).isEmpty()) {
+                this.items.get(SLOT_EXTRA).shrink(1);
+            }
+        }
+
+        this.setChanged();
+    }
+
+    private void makeFailOutput() {
+        ItemStack stack = this.items.get(SLOT_SHAKER_POT);
+        if (stack.isEmpty() || !stack.is(MHItems.SHAKER_POT.get())) return;
+
+        // TODO 修改为正确的失败产物
+        ItemStack result = new ItemStack(Items.BONE_MEAL);
+        stack.getOrCreateTag().put("Result", result.serializeNBT());
+    }
+
+    private void resetData() {
+        this.adeCount = 0;
+        this.bexCount = 0;
+        this.pwdCount = 0;
+        this.flaCount = 0;
+        this.karCount = 0;
+        this.useIce = false;
+        this.useAged = false;
+        this.useDye = false;
+        this.useExtra = false;
+        this.setChanged();
+    }
+
     private Optional<MixingRecipe> getCurrentRecipe() {
         if (this.level == null) {
             return Optional.empty();
         }
 
         SimpleContainer inventory = new SimpleContainer(9);
+        inventory.setItem(0, new ItemStack(MHItems.ADELHYDE.get(), this.adeCount));
+        inventory.setItem(1, new ItemStack(MHItems.BRONSON_EXTRACT.get(), this.bexCount));
+        inventory.setItem(2, new ItemStack(MHItems.POWDERED_DELTA.get(), this.pwdCount));
+        inventory.setItem(3, new ItemStack(MHItems.FLANERGIDE.get(), this.flaCount));
+        inventory.setItem(4, new ItemStack(MHItems.KARMOTRINE.get(), this.karCount));
+        if (this.useIce) {
+            inventory.setItem(5, this.items.get(5));
+        }
+        if (this.useAged) {
+            inventory.setItem(6, this.items.get(6));
+        }
+        if (this.useDye) {
+            inventory.setItem(7, this.items.get(7));
+        }
+        if (this.useExtra) {
+            inventory.setItem(8, this.items.get(8));
+        }
 
         return this.level.getRecipeManager().getRecipeFor(MixingRecipe.Type.INSTANCE, inventory, level);
     }
 
-    private boolean hasRecipe() {
-        Optional<MixingRecipe> recipe = getCurrentRecipe();
+    private boolean canShakerPotInsertItem() {
+        ItemStack stack = this.items.get(SLOT_SHAKER_POT);
+        if (stack.isEmpty()) return false;
+        if (!stack.is(MHItems.SHAKER_POT.get())) return false;
 
-        if (recipe.isEmpty()) {
-            return false;
-        }
-
-        if (getLevel() == null) {
-            return false;
-        }
-
-        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
-
-        // TODO 完成判定
-        return true;
+        return stack.getTag() == null || !stack.getTag().contains("Result");
     }
 
     @Override
@@ -182,9 +371,20 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
     @Override
     public CompoundTag getUpdateTag() {
-        CompoundTag compoundtag = new CompoundTag();
-        ContainerHelper.saveAllItems(compoundtag, this.items, true);
-        return compoundtag;
+        CompoundTag pTag = new CompoundTag();
+        ContainerHelper.saveAllItems(pTag, this.items, true);
+
+        pTag.putInt("Ade", this.adeCount);
+        pTag.putInt("Bex", this.bexCount);
+        pTag.putInt("Pwd", this.pwdCount);
+        pTag.putInt("Fla", this.flaCount);
+        pTag.putInt("Kar", this.karCount);
+
+        pTag.putBoolean("Ice", this.useIce);
+        pTag.putBoolean("Aged", this.useAged);
+        pTag.putBoolean("Dye", this.useDye);
+        pTag.putBoolean("Extra", this.useExtra);
+        return pTag;
     }
 
     @Override

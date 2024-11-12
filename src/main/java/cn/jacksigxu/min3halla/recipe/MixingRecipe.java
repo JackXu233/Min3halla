@@ -18,16 +18,16 @@ import org.jetbrains.annotations.Nullable;
 
 public class MixingRecipe implements Recipe<SimpleContainer> {
 
-    private final int ade;
-    private final int bex;
-    private final int pwd;
-    private final int fla;
-    private final int kar;
-    private final boolean ice;
-    private final boolean age;
-    private final Ingredient dye;
-    private final Ingredient extra;
-    private final boolean blend;
+    public final int ade;
+    public final int bex;
+    public final int pwd;
+    public final int fla;
+    public final int kar;
+    public final boolean ice;
+    public final boolean age;
+    public final Ingredient dye;
+    public final Ingredient extra;
+    public final boolean blend;
     private final ItemStack output;
     private final ResourceLocation id;
 

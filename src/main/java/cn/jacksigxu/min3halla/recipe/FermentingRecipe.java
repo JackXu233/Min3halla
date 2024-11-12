@@ -10,6 +10,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class FermentingRecipe implements Recipe<SimpleContainer> {
 
@@ -25,7 +26,7 @@ public class FermentingRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        if(pLevel.isClientSide()) return false;
+        if (pLevel.isClientSide()) return false;
         return input.test(pContainer.getItem(0));
     }
 
@@ -40,7 +41,7 @@ public class FermentingRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
+    public ItemStack getResultItem(@Nullable RegistryAccess pRegistryAccess) {
         return output.copy();
     }
 
