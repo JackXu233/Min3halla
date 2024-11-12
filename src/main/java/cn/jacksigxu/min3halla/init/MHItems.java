@@ -1,6 +1,7 @@
 package cn.jacksigxu.min3halla.init;
 
 import cn.jacksigxu.min3halla.MHMod;
+import cn.jacksigxu.min3halla.item.DrinkItem;
 import cn.jacksigxu.min3halla.item.ShakerPot;
 import cn.jacksigxu.min3halla.item.ingredient.*;
 import net.minecraft.world.item.Item;
@@ -22,6 +23,9 @@ public class MHItems {
     public static final RegistryObject<Item> FLANERGIDE = ITEMS.register("flanergide", Flanergide::new);
     public static final RegistryObject<Item> KARMOTRINE = ITEMS.register("karmotrine", Karmotrine::new);
     public static final RegistryObject<Item> BTC_CAN = ITEMS.register("btc_can", () -> new Item(new Item.Properties()));
+
+    // Drinks
+    public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new DrinkItem(MHFoodProperties.ZEN_STAR));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

@@ -11,7 +11,6 @@ import net.minecraft.world.level.Level;
 
 public class ShakerPot extends Item {
 
-
     public ShakerPot(){
         super(new Properties().stacksTo(1));
     }
@@ -25,8 +24,7 @@ public class ShakerPot extends Item {
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        //TODO 在配方中写摇晃时间
-        return 200;
+        return 72000;
     }
 
     @Override
