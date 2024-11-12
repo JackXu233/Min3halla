@@ -67,12 +67,86 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-        return null;
+        ItemStack itemstack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(pIndex);
+        if (slot.hasItem()) {
+            ItemStack itemstack1 = slot.getItem();
+            itemstack = itemstack1.copy();
+            if (pIndex == 0) {
+                if (!this.moveItemStackTo(itemstack1, 10, 46, true)) {
+                    return ItemStack.EMPTY;
+                }
+
+                slot.onQuickCraft(itemstack1, itemstack);
+            } else if (pIndex <= 9) {
+                if (!this.moveItemStackTo(itemstack1, 10, 46, true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (pIndex <= 36) {
+                if (itemstack1.is(MHItems.SHAKER_POT.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 0, 1, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(MHItems.ADELHYDE.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 1, 2, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(MHItems.BRONSON_EXTRACT.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 2, 3, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(MHItems.POWDERED_DELTA.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 3, 4, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(MHItems.FLANERGIDE.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 4, 5, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(MHItems.KARMOTRINE.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 5, 6, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(Items.ICE)) {
+                    if (!this.moveItemStackTo(itemstack1, 6, 7, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(Items.REDSTONE)) {
+                    if (!this.moveItemStackTo(itemstack1, 7, 8, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (itemstack1.is(Tags.Items.DYES)) {
+                    if (!this.moveItemStackTo(itemstack1, 8, 9, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else {
+                    if (!this.moveItemStackTo(itemstack1, 9, 10, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+            } else if (!this.moveItemStackTo(itemstack1, 10, 46, false)) {
+                return ItemStack.EMPTY;
+            }
+
+            if (itemstack1.isEmpty()) {
+                slot.setByPlayer(ItemStack.EMPTY);
+            } else {
+                slot.setChanged();
+            }
+
+            if (itemstack1.getCount() == itemstack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+
+            slot.onTake(pPlayer, itemstack1);
+        }
+
+        return itemstack;
     }
 
     @Override
     public boolean stillValid(Player pPlayer) {
-        return false;
+        return this.container.stillValid(pPlayer);
     }
 
     static class InputSlot extends Slot {

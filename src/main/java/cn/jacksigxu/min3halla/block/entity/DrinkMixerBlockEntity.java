@@ -17,6 +17,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -115,6 +116,89 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
     public DrinkMixerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(MHBlockEntityTypes.DRINK_MIXER_BLOCK_ENTITY.get(), pPos, pBlockState);
+    }
+
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, DrinkMixerBlockEntity blockEntity) {
+        // 雪克壶槽位为空时，重置全部数据
+        ItemStack shaker = blockEntity.items.get(SLOT_SHAKER_POT);
+        if (shaker.isEmpty() || !shaker.is(MHItems.SHAKER_POT.get())) {
+            boolean changed = false;
+            if (blockEntity.adeCount != 0) {
+                blockEntity.adeCount = 0;
+                changed = true;
+            }
+            if (blockEntity.bexCount != 0) {
+                blockEntity.bexCount = 0;
+                changed = true;
+            }
+            if (blockEntity.pwdCount != 0) {
+                blockEntity.pwdCount = 0;
+                changed = true;
+            }
+            if (blockEntity.flaCount != 0) {
+                blockEntity.flaCount = 0;
+                changed = true;
+            }
+            if (blockEntity.karCount != 0) {
+                blockEntity.karCount = 0;
+                changed = true;
+            }
+            if (blockEntity.useIce) {
+                blockEntity.useIce = false;
+                changed = true;
+            }
+            if (blockEntity.useAged) {
+                blockEntity.useAged = false;
+                changed = true;
+            }
+            if (blockEntity.useDye) {
+                blockEntity.useDye = false;
+                changed = true;
+            }
+            if (blockEntity.useExtra) {
+                blockEntity.useExtra = false;
+                changed = true;
+            }
+            if (changed) {
+                blockEntity.setChanged();
+            }
+        }
+        if (blockEntity.items.get(SLOT_ADELHYDE).isEmpty() && blockEntity.adeCount != 0) {
+            blockEntity.adeCount = 0;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_BRONSON_EXTRACT).isEmpty() && blockEntity.bexCount != 0) {
+            blockEntity.bexCount = 0;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_POWDERED_DELTA).isEmpty() && blockEntity.pwdCount != 0) {
+            blockEntity.pwdCount = 0;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_FLANERGIDE).isEmpty() && blockEntity.flaCount != 0) {
+            blockEntity.flaCount = 0;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_KARMOTRINE).isEmpty() && blockEntity.karCount != 0) {
+            blockEntity.karCount = 0;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_ICE).isEmpty() && blockEntity.useIce) {
+            blockEntity.useIce = false;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_AGED).isEmpty() && blockEntity.useAged) {
+            blockEntity.useAged = false;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_DYE).isEmpty() && blockEntity.useDye) {
+            blockEntity.useDye = false;
+            blockEntity.setChanged();
+        }
+        if (blockEntity.items.get(SLOT_EXTRA).isEmpty() && blockEntity.useExtra) {
+            blockEntity.useExtra = false;
+            blockEntity.setChanged();
+        }
     }
 
     @Override
