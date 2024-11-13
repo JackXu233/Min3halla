@@ -17,6 +17,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,8 +42,8 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     protected static final int SLOT_DYE = 8;
     protected static final int SLOT_EXTRA = 9;
 
-    private static final int[] SLOTS_FOR_UP = new int[]{0, 1, 2, 3, 4, 5};
-    private static final int[] SLOTS_FOR_SIDES = new int[]{6, 7, 8, 9};
+    private static final int[] SLOTS_FOR_UP = new int[]{0};
+    private static final int[] SLOTS_FOR_SIDES = new int[]{1, 2, 3, 4, 5, 6, 7};
     private static final int[] SLOTS_FOR_DOWN = new int[]{0};
 
     public static final int MAX_DATA_COUNT = 10;
@@ -263,12 +264,28 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
     @Override
     public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return pDirection != Direction.DOWN;
+        if (pDirection == Direction.UP) {
+            return pIndex == SLOT_SHAKER_POT && pItemStack.is(MHItems.SHAKER_POT.get());
+        } else if (pDirection == Direction.DOWN) {
+            return false;
+        } else {
+            return switch (pIndex) {
+                case SLOT_ADELHYDE -> pItemStack.is(MHItems.ADELHYDE.get());
+                case SLOT_BRONSON_EXTRACT -> pItemStack.is(MHItems.BRONSON_EXTRACT.get());
+                case SLOT_POWDERED_DELTA -> pItemStack.is(MHItems.POWDERED_DELTA.get());
+                case SLOT_FLANERGIDE -> pItemStack.is(MHItems.FLANERGIDE.get());
+                case SLOT_KARMOTRINE -> pItemStack.is(MHItems.KARMOTRINE.get());
+                case SLOT_ICE -> pItemStack.is(Items.ICE);
+                case SLOT_AGED -> pItemStack.is(Items.REDSTONE);
+                default -> false;
+            };
+        }
     }
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return pDirection == Direction.DOWN && pIndex == SLOT_SHAKER_POT;
+        return pDirection == Direction.DOWN && pIndex == SLOT_SHAKER_POT && pStack.is(MHItems.SHAKER_POT.get())
+                && pStack.getTag() != null && pStack.getTag().contains("Result");
     }
 
     @Override
