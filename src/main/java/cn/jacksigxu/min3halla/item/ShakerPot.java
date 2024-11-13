@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.item;
 
+import cn.jacksigxu.min3halla.client.tooltip.ImageTooltip;
 import cn.jacksigxu.min3halla.init.MHItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -8,14 +9,16 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ShakerPot extends Item {
 
@@ -52,19 +55,6 @@ public class ShakerPot extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (pStack.getTag() != null && pStack.getTag().contains("Result")) {
-            CompoundTag tag = pStack.getTag().getCompound("Result");
-            ItemStack res = ItemStack.of(tag);
-            pTooltipComponents.add(res.getHoverName());
-
-            if (pStack.getTag().contains("Finished") && pStack.getTag().getBoolean("Finished")) {
-                pTooltipComponents.add(Component.literal("Finished!").withStyle(ChatFormatting.GREEN));
-            }
-        }
-    }
-
-    @Override
     public int getUseDuration(ItemStack pStack) {
         return 72000;
     }
@@ -92,5 +82,31 @@ public class ShakerPot extends Item {
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.BRUSH;
+    }
+
+    @Override
+    public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
+        if (pStack.getTag() != null && pStack.getTag().contains("Result")) {
+            CompoundTag tag = pStack.getTag().getCompound("Result");
+            ItemStack res = ItemStack.of(tag);
+            List<Component> tooltips = new ArrayList<>();
+            tooltips.add(res.getHoverName());
+            if (pStack.getTag().contains("Blend")) {
+                if (pStack.getTag().contains("Finished") && pStack.getTag().getBoolean("Finished")) {
+                    tooltips.add(Component.translatable("des.min3halla.shaker_pot.finished").withStyle(ChatFormatting.GREEN));
+                } else {
+                    boolean blend = pStack.getTag().getBoolean("Blend");
+                    if (blend) {
+                        tooltips.add(Component.translatable("des.min3halla.shaker_pot.blend").withStyle(ChatFormatting.GOLD));
+                    } else {
+                        tooltips.add(Component.translatable("des.min3halla.shaker_pot.mix").withStyle(ChatFormatting.YELLOW));
+                    }
+                }
+            }
+
+            return Optional.of(new ImageTooltip(20, 20, res, tooltips));
+        }
+
+        return Optional.empty();
     }
 }

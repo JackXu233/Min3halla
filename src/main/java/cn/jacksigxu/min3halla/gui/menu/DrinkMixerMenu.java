@@ -156,7 +156,9 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
                 return;
             }
 
-            blockEntity.craftItem();
+            if (canCraftItem()) {
+                blockEntity.craftItem();
+            }
         });
     }
 
