@@ -4,6 +4,7 @@ import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.gui.menu.DrinkMixerMenu;
 import cn.jacksigxu.min3halla.network.MHNetwork;
 import cn.jacksigxu.min3halla.network.message.IngredientAdjustMessage;
+import cn.jacksigxu.min3halla.network.message.IngredientSelectMessage;
 import cn.jacksigxu.min3halla.network.message.MixMessage;
 import cn.jacksigxu.min3halla.network.message.ResetMessage;
 import net.minecraft.client.gui.GuiGraphics;
@@ -48,7 +49,6 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         // 底部方块
         int sum = adeCount + bexCount + pwdCount + flaCount + karCount;
         renderBlocksBelow(pGuiGraphics, i + 100, j + 89, sum);
-
     }
 
     private void renderIngredients(GuiGraphics pGuiGraphics, int x, int y, int u, int v, int count) {
@@ -136,6 +136,14 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         this.addRenderableWidget(karButtonInc);
         this.addRenderableWidget(karButtonDec);
 
+        IngredientSelectButton iceButton = new IngredientSelectButton(i + 10, j + 10, Component.literal("Ice"), 5);
+        this.addRenderableWidget(iceButton);
+        IngredientSelectButton ageButton = new IngredientSelectButton(i + 10, j + 48, Component.literal("Age"), 6);
+        this.addRenderableWidget(ageButton);
+        IngredientSelectButton dyeButton = new IngredientSelectButton(i + 216, j + 10, Component.literal("Dye"), 7);
+        this.addRenderableWidget(dyeButton);
+        IngredientSelectButton extraButton = new IngredientSelectButton(i + 216, j + 48, Component.literal("Extra"), 8);
+        this.addRenderableWidget(extraButton);
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -220,5 +228,34 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         }
     }
 
+    @OnlyIn(Dist.CLIENT)
+    class IngredientSelectButton extends AbstractButton {
 
+        private final int index;
+
+        public IngredientSelectButton(int pX, int pY, Component pMessage, int index) {
+            super(pX, pY, 18, 10, pMessage);
+            this.index = index;
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            if (DrinkMixerScreen.this.menu.getIngredientSelected(this.index)) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), 25, 221, 18, 10);
+            }
+            if (this.isHovered()) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), 25, 210, 18, 10);
+            }
+        }
+
+        @Override
+        public void onPress() {
+            MHNetwork.CHANNEL.sendToServer(new IngredientSelectMessage(this.index));
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
+    }
 }

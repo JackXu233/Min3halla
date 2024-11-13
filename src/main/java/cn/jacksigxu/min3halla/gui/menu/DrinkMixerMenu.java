@@ -193,6 +193,17 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
         return this.containerData.get(index);
     }
 
+    public boolean getIngredientSelected(int index) {
+        if (index < 4 || index > 8) return false;
+        return this.containerData.get(index) == 1;
+    }
+
+    public void setIngredientSelected(int index) {
+        if (index < 4 || index > 8) return;
+        if (this.containerData.get(9) == 0) return;
+        this.containerData.set(index, this.containerData.get(index) == 0 ? 1 : 0);
+    }
+
     static class InputSlot extends Slot {
 
         private Item mayPlaceItem = null;
