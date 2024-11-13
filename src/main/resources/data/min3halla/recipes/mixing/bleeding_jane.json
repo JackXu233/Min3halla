@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 1,
+  "pwd": 3,
+  "fla": 3,
+  "blend": true,
+  "output": {
+    "item": "min3halla:bleeding_jane"
+  }
+}

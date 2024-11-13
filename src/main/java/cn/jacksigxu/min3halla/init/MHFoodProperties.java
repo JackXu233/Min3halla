@@ -6,6 +6,13 @@ import net.minecraft.world.food.FoodProperties;
 
 public class MHFoodProperties {
 
+    public static final FoodProperties BAD_TOUCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties BEER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties BLEEDING_JANE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties BLOOM_LIGHT = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties BLUE_FAIRY = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties BRANDTINI = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+
     public static final FoodProperties SUGAR_RUSH = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat().build();
 
     public static final FoodProperties ZEN_STAR = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();

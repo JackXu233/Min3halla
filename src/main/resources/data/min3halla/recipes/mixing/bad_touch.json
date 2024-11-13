@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 2,
+  "pwd": 2,
+  "fla": 2,
+  "kar": 4,
+  "ice": true,
+  "output": {
+    "item": "min3halla:bad_touch"
+  }
+}

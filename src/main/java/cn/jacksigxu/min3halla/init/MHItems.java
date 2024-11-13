@@ -31,6 +31,13 @@ public class MHItems {
     public static final RegistryObject<Item> BTC_CAN = ITEMS.register("btc_can", () -> new Item(new Item.Properties()));
 
     // Drinks
+    public static final RegistryObject<Item> BAD_TOUCH = ITEMS.register("bad_touch", () -> new DrinkItem(MHFoodProperties.BAD_TOUCH));
+    public static final RegistryObject<Item> BEER = ITEMS.register("beer", () -> new DrinkItem(MHFoodProperties.BEER));
+    public static final RegistryObject<Item> BLEEDING_JANE = ITEMS.register("bleeding_jane", () -> new DrinkItem(MHFoodProperties.BLEEDING_JANE));
+    public static final RegistryObject<Item> BLOOM_LIGHT = ITEMS.register("bloom_light", () -> new DrinkItem(MHFoodProperties.BLOOM_LIGHT));
+    public static final RegistryObject<Item> BLUE_FAIRY = ITEMS.register("blue_fairy", () -> new DrinkItem(MHFoodProperties.BLUE_FAIRY));
+    public static final RegistryObject<Item> BRANDTINI = ITEMS.register("brandtini", () -> new DrinkItem(MHFoodProperties.BRANDTINI));
+
     public static final RegistryObject<Item> SUGAR_RUSH = ITEMS.register("sugar_rush", () -> new DrinkItem(MHFoodProperties.SUGAR_RUSH));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new DrinkItem(MHFoodProperties.ZEN_STAR));
 
