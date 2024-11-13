@@ -39,13 +39,17 @@ public class ShakerPot extends Item {
                     glass.shrink(1);
                 }
                 var result = stack.getTag().getCompound("Result");
-                if (!pPlayer.addItem(ItemStack.of(result))) {
-                    pPlayer.drop(ItemStack.of(result), false);
+                ItemStack resStack = ItemStack.of(result);
+                resStack.getOrCreateTag().putInt("Alcohol", stack.getOrCreateTag().getInt("Alcohol"));
+
+                if (!pPlayer.addItem(resStack)) {
+                    pPlayer.drop(resStack, false);
                 }
 
                 stack.removeTagKey("Result");
                 stack.removeTagKey("Finished");
                 stack.removeTagKey("Blend");
+                stack.removeTagKey("Alcohol");
                 return InteractionResultHolder.success(stack);
             }
 
@@ -75,6 +79,7 @@ public class ShakerPot extends Item {
         } else {
             if (duration >= 200) {
                 ItemStack result = new ItemStack(MHItems.ERROR_DRINK.get());
+                stack.getTag().putInt("Alcohol", 20);
                 stack.getTag().put("Result", result.serializeNBT());
             }
             stack.getTag().putBoolean("Finished", true);

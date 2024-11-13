@@ -5,6 +5,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -27,10 +29,31 @@ public class DrinkItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des." + pStack.getDescriptionId().split("item.")[1])
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
+            pTooltipComponents.add(Component.literal(""));
+            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+        }
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+        int alcohol = pStack.getOrCreateTag().getInt("Alcohol");
+        if (alcohol > 5) {
+            if (pLevel.random.nextDouble() < (alcohol - 5) * 0.06) {
+                pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, alcohol * 20, 0));
+            }
+        }
+        if (alcohol > 10) {
+            if (pLevel.random.nextDouble() < (alcohol - 10) * 0.075) {
+                pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, alcohol * 20, 0));
+            }
+        }
+        if (alcohol > 15) {
+            if (pLevel.random.nextDouble() < (alcohol - 15) * 0.2) {
+                pLivingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, alcohol * 20, 0));
+            }
+        }
+
         ItemStack itemstack = super.finishUsingItem(pStack, pLevel, pLivingEntity);
         ItemStack result = new ItemStack(MHItems.WINE_GLASS.get());
 
