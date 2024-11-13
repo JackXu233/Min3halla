@@ -164,12 +164,19 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
 
     public boolean canCraftItem() {
         return this.containerData.get(0) != 0 || this.containerData.get(1) != 0 || this.containerData.get(2) != 0
-                || this.containerData.get(3) != 0 || this.containerData.get(4) != 0;
+                || this.containerData.get(3) != 0 || this.containerData.get(4) != 0 || this.containerData.get(8) != 0;
     }
 
     public void resetData() {
         for (int i = 0; i < 9; i++) {
             this.containerData.set(i, 0);
+        }
+        ItemStack itemstack = this.container.getItem(0);
+        if (itemstack.is(MHItems.SHAKER_POT.get())) {
+            itemstack.removeTagKey("Result");
+            itemstack.removeTagKey("Finished");
+            itemstack.removeTagKey("Blend");
+            itemstack.removeTagKey("Alcohol");
         }
     }
 

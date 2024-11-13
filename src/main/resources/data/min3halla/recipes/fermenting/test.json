@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:fermenting",
+  "input": {
+    "item": "minecraft:dirt"
+  },
+  "output": {
+    "item": "minecraft:apple",
+    "count": 2
+  }
+}

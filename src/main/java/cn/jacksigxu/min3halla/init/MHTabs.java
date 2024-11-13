@@ -14,7 +14,7 @@ public class MHTabs {
 
     public static CreativeModeTab MH_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.min3halla_tab"))
-            .icon(() -> new ItemStack(MHItems.ADELHYDE.get()))
+            .icon(() -> new ItemStack(MHItems.SUGAR_RUSH.get()))
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(MHItems.DRINK_MIXER.get());
                 pOutput.accept(MHItems.FERMENT_BARREL.get());
