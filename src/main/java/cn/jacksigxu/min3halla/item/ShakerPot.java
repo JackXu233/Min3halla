@@ -1,5 +1,7 @@
 package cn.jacksigxu.min3halla.item;
 
+import cn.jacksigxu.min3halla.init.MHItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -24,6 +26,27 @@ public class ShakerPot extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
+        if (stack.getTag() == null || !stack.getTag().contains("Result")) {
+            return InteractionResultHolder.fail(stack);
+        }
+        if (stack.getTag().contains("Finished") && stack.getTag().getBoolean("Finished")) {
+            ItemStack glass = pPlayer.getItemInHand(pUsedHand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
+            if (glass.is(MHItems.WINE_GLASS.get())) {
+                if (!pPlayer.getAbilities().instabuild) {
+                    glass.shrink(1);
+                }
+                var result = stack.getTag().getCompound("Result");
+                pPlayer.addItem(ItemStack.of(result));
+
+                stack.removeTagKey("Result");
+                stack.removeTagKey("Finished");
+                stack.removeTagKey("Blend");
+                return InteractionResultHolder.success(stack);
+            }
+
+            return InteractionResultHolder.fail(stack);
+        }
+
         pPlayer.startUsingItem(pUsedHand);
         return InteractionResultHolder.consume(stack);
     }
@@ -34,6 +57,10 @@ public class ShakerPot extends Item {
             CompoundTag tag = pStack.getTag().getCompound("Result");
             ItemStack res = ItemStack.of(tag);
             pTooltipComponents.add(res.getHoverName());
+
+            if (pStack.getTag().contains("Finished") && pStack.getTag().getBoolean("Finished")) {
+                pTooltipComponents.add(Component.literal("Finished!").withStyle(ChatFormatting.GREEN));
+            }
         }
     }
 
@@ -43,13 +70,23 @@ public class ShakerPot extends Item {
     }
 
     @Override
-    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
-    }
+    public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
+        int duration = getUseDuration(stack) - count;
+        if (duration < 100) return;
 
-    @Override
-    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        if (stack.getTag() == null || !stack.getTag().contains("Blend") || !stack.getTag().contains("Result")) return;
+        boolean blend = stack.getTag().getBoolean("Blend");
+        if (blend) {
+            if (duration >= 200) {
+                stack.getTag().putBoolean("Finished", true);
+            }
+        } else {
+            if (duration >= 200) {
+                ItemStack result = new ItemStack(MHItems.ERROR_DRINK.get());
+                stack.getTag().put("Result", result.serializeNBT());
+            }
+            stack.getTag().putBoolean("Finished", true);
+        }
     }
 
     @Override

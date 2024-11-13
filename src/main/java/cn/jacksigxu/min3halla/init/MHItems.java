@@ -21,6 +21,7 @@ public class MHItems {
             () -> new BlockItem(MHBlocks.DRINK_MIXER.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> SHAKER_POT = ITEMS.register("shaker_pot", ShakerPot::new);
+    public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass", () -> new Item(new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> ADELHYDE = ITEMS.register("adelhyde", Adelhyde::new);
     public static final RegistryObject<Item> BRONSON_EXTRACT = ITEMS.register("bronson_extract", BronsonExtract::new);
