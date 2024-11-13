@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "min3halla:item/shaker_pot_empty"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "min3halla:type": 1
+      },
+      "model": "min3halla:item/shaker_pot_shaking"
+    },
+    {
+      "predicate": {
+        "min3halla:type": 2
+      },
+      "model": "min3halla:item/shaker_pot_finished"
+    }
+  ]
+}
