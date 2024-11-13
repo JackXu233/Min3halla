@@ -12,6 +12,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -96,35 +97,60 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
             if (adeCount < 0) {
                 adeCount = 1;
             }
-            builder.addSlot(RecipeIngredientRole.INPUT, 7, 15).addItemStack(new ItemStack(MHItems.ADELHYDE.get(), adeCount));
+            builder.addSlot(RecipeIngredientRole.INPUT, 7, 15).addItemStack(new ItemStack(MHItems.ADELHYDE.get(), adeCount))
+                    .addTooltipCallback((tooltipContext, tooltip) -> {
+                        if (recipe.ade == -1) {
+                            tooltip.add(Component.translatable("des.min3halla.recipe.optional").withStyle(ChatFormatting.GOLD));
+                        }
+                    });
         }
         int bexCount = recipe.bex;
         if (bexCount != 0) {
             if (bexCount < 0) {
                 bexCount = 1;
             }
-            builder.addSlot(RecipeIngredientRole.INPUT, 67, 15).addItemStack(new ItemStack(MHItems.BRONSON_EXTRACT.get(), bexCount));
+            builder.addSlot(RecipeIngredientRole.INPUT, 67, 15).addItemStack(new ItemStack(MHItems.BRONSON_EXTRACT.get(), bexCount))
+                    .addTooltipCallback((tooltipContext, tooltip) -> {
+                        if (recipe.bex == -1) {
+                            tooltip.add(Component.translatable("des.min3halla.recipe.optional").withStyle(ChatFormatting.GOLD));
+                        }
+                    });
         }
         int pwdCount = recipe.pwd;
         if (pwdCount != 0) {
             if (pwdCount < 0) {
                 pwdCount = 1;
             }
-            builder.addSlot(RecipeIngredientRole.INPUT, 127, 15).addItemStack(new ItemStack(MHItems.POWDERED_DELTA.get(), pwdCount));
+            builder.addSlot(RecipeIngredientRole.INPUT, 127, 15).addItemStack(new ItemStack(MHItems.POWDERED_DELTA.get(), pwdCount))
+                    .addTooltipCallback((tooltipContext, tooltip) -> {
+                        if (recipe.pwd == -1) {
+                            tooltip.add(Component.translatable("des.min3halla.recipe.optional").withStyle(ChatFormatting.GOLD));
+                        }
+                    });
         }
         int flaCount = recipe.fla;
         if (flaCount != 0) {
             if (flaCount < 0) {
                 flaCount = 1;
             }
-            builder.addSlot(RecipeIngredientRole.INPUT, 7, 53).addItemStack(new ItemStack(MHItems.FLANERGIDE.get(), flaCount));
+            builder.addSlot(RecipeIngredientRole.INPUT, 7, 53).addItemStack(new ItemStack(MHItems.FLANERGIDE.get(), flaCount))
+                    .addTooltipCallback((tooltipContext, tooltip) -> {
+                        if (recipe.fla == -1) {
+                            tooltip.add(Component.translatable("des.min3halla.recipe.optional").withStyle(ChatFormatting.GOLD));
+                        }
+                    });
         }
         int karCount = recipe.kar;
         if (karCount != 0) {
             if (karCount < 0) {
                 karCount = 1;
             }
-            builder.addSlot(RecipeIngredientRole.INPUT, 127, 53).addItemStack(new ItemStack(MHItems.KARMOTRINE.get(), karCount));
+            builder.addSlot(RecipeIngredientRole.INPUT, 127, 53).addItemStack(new ItemStack(MHItems.KARMOTRINE.get(), karCount))
+                    .addTooltipCallback((tooltipContext, tooltip) -> {
+                        if (recipe.kar == -1) {
+                            tooltip.add(Component.translatable("des.min3halla.recipe.optional").withStyle(ChatFormatting.GOLD));
+                        }
+                    });
         }
 
         if (recipe.ice) {
