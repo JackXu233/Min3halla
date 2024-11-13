@@ -2,6 +2,7 @@ package cn.jacksigxu.min3halla.init;
 
 import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.block.entity.DrinkMixerBlockEntity;
+import cn.jacksigxu.min3halla.block.entity.FermentBarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,5 +15,8 @@ public class MHBlockEntityTypes {
     public static final RegistryObject<BlockEntityType<DrinkMixerBlockEntity>> DRINK_MIXER_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("drink_mixer_block_entity",
                     () -> BlockEntityType.Builder.of(DrinkMixerBlockEntity::new, MHBlocks.DRINK_MIXER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<FermentBarrelBlockEntity>> FERMENT_BARREL_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("ferment_barrel_block_entity",
+                    () -> BlockEntityType.Builder.of(FermentBarrelBlockEntity::new, MHBlocks.FERMENT_BARREL.get()).build(null));
 
 }
