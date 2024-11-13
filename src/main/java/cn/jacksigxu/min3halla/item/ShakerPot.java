@@ -40,7 +40,10 @@ public class ShakerPot extends Item {
                 }
                 var result = stack.getTag().getCompound("Result");
                 ItemStack resStack = ItemStack.of(result);
-                resStack.getOrCreateTag().putInt("Alcohol", stack.getOrCreateTag().getInt("Alcohol"));
+                int alcohol = stack.getOrCreateTag().getInt("Alcohol");
+                if (alcohol > 0) {
+                    resStack.getOrCreateTag().putInt("Alcohol", stack.getOrCreateTag().getInt("Alcohol"));
+                }
 
                 if (!pPlayer.addItem(resStack)) {
                     pPlayer.drop(resStack, false);
