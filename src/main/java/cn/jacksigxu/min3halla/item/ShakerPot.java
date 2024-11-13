@@ -39,7 +39,9 @@ public class ShakerPot extends Item {
                     glass.shrink(1);
                 }
                 var result = stack.getTag().getCompound("Result");
-                pPlayer.addItem(ItemStack.of(result));
+                if (!pPlayer.addItem(ItemStack.of(result))) {
+                    pPlayer.drop(ItemStack.of(result), false);
+                }
 
                 stack.removeTagKey("Result");
                 stack.removeTagKey("Finished");
