@@ -222,7 +222,7 @@ public class FermentBarrelBlockEntity extends BlockEntity implements WorldlyCont
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new FermentBarrelMenu(pContainerId, pPlayerInventory,this, this.dataAccess);
+        return new FermentBarrelMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override
