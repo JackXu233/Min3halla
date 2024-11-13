@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "BMB",
+    "#C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:black_concrete"
+    },
+    "S": {
+      "item": "minecraft:sculk_sensor"
+    },
+    "B": {
+      "item": "minecraft:brewing_stand"
+    },
+    "M": {
+      "item": "minecraft:barrel"
+    },
+    "C": {
+      "item": "minecraft:sculk_catalyst"
+    }
+  },
+  "result": {
+    "item": "min3halla:drink_mixer",
+    "count": 1
+  }
+}
