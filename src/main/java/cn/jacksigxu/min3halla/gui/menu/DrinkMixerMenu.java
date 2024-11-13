@@ -181,7 +181,8 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
         if (this.containerData.get(9) == 0) return;
 
         if (increase) {
-            this.containerData.set(index, Math.min(20, this.containerData.get(index) + 1));
+            int count = this.container.getItem(index + 1).getCount();
+            this.containerData.set(index, Math.min(20, Math.min(count, this.containerData.get(index) + 1)));
         } else {
             this.containerData.set(index, Math.max(0, this.containerData.get(index) - 1));
         }

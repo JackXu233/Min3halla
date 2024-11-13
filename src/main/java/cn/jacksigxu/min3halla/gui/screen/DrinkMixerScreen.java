@@ -45,6 +45,10 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         int karCount = DrinkMixerScreen.this.menu.getIngredientCount(4);
         renderIngredients(pGuiGraphics, i + 178, j + 57, 20, 204, karCount);
 
+        // 底部方块
+        int sum = adeCount + bexCount + pwdCount + flaCount + karCount;
+        renderBlocksBelow(pGuiGraphics, i + 100, j + 89, sum);
+
     }
 
     private void renderIngredients(GuiGraphics pGuiGraphics, int x, int y, int u, int v, int count) {
@@ -62,6 +66,24 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
 
         for (int k = 0; k < Math.min(5, count - 15); k++) {
             pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, v + 9, 4, 9);
+        }
+    }
+
+    private void renderBlocksBelow(GuiGraphics pGuiGraphics, int x, int y, int count) {
+        for (int k = 0; k < Math.min(5, count); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 9, y, 0, 222, 8, 5);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 5); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 9, y + 6, 0, 222, 8, 5);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 10); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 9, y, 9, 222, 8, 5);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 15); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 9, y + 6, 9, 222, 8, 5);
         }
     }
 
