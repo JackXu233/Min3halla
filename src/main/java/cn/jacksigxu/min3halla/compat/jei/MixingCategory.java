@@ -16,6 +16,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -40,9 +41,11 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
     @Override
     @ParametersAreNonnullByDefault
     public void draw(MixingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        int adeCount = recipe.ade;
-        renderIngredients(guiGraphics, 8, 43, 0, 0, adeCount);
-
+        renderIngredients(guiGraphics, 26, 13, 0, 101, recipe.ade);
+        renderIngredients(guiGraphics, 86, 13, 5, 101, recipe.bex);
+        renderIngredients(guiGraphics, 146, 13, 10, 101, recipe.pwd);
+        renderIngredients(guiGraphics, 26, 51, 15, 101, recipe.fla);
+        renderIngredients(guiGraphics, 146, 51, 20, 101, recipe.kar);
     }
 
     private void renderIngredients(GuiGraphics pGuiGraphics, int x, int y, int u, int v, int count) {
@@ -88,12 +91,56 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
     @Override
     @ParametersAreNonnullByDefault
     public void setRecipe(IRecipeLayoutBuilder builder, MixingRecipe recipe, IFocusGroup group) {
-        if (recipe.ade != 0) {
-            builder.addSlot(RecipeIngredientRole.INPUT, 102, 19).addItemStack(new ItemStack(MHItems.ADELHYDE.get()));
+        int adeCount = recipe.ade;
+        if (adeCount != 0) {
+            if (adeCount < 0) {
+                adeCount = 1;
+            }
+            builder.addSlot(RecipeIngredientRole.INPUT, 7, 15).addItemStack(new ItemStack(MHItems.ADELHYDE.get(), adeCount));
+        }
+        int bexCount = recipe.bex;
+        if (bexCount != 0) {
+            if (bexCount < 0) {
+                bexCount = 1;
+            }
+            builder.addSlot(RecipeIngredientRole.INPUT, 67, 15).addItemStack(new ItemStack(MHItems.BRONSON_EXTRACT.get(), bexCount));
+        }
+        int pwdCount = recipe.pwd;
+        if (pwdCount != 0) {
+            if (pwdCount < 0) {
+                pwdCount = 1;
+            }
+            builder.addSlot(RecipeIngredientRole.INPUT, 127, 15).addItemStack(new ItemStack(MHItems.POWDERED_DELTA.get(), pwdCount));
+        }
+        int flaCount = recipe.fla;
+        if (flaCount != 0) {
+            if (flaCount < 0) {
+                flaCount = 1;
+            }
+            builder.addSlot(RecipeIngredientRole.INPUT, 7, 53).addItemStack(new ItemStack(MHItems.FLANERGIDE.get(), flaCount));
+        }
+        int karCount = recipe.kar;
+        if (karCount != 0) {
+            if (karCount < 0) {
+                karCount = 1;
+            }
+            builder.addSlot(RecipeIngredientRole.INPUT, 127, 53).addItemStack(new ItemStack(MHItems.KARMOTRINE.get(), karCount));
         }
 
+        if (recipe.ice) {
+            builder.addSlot(RecipeIngredientRole.INPUT, 5, 81).addItemStack(new ItemStack(Items.ICE));
+        }
+        if (recipe.age) {
+            builder.addSlot(RecipeIngredientRole.INPUT, 41, 81).addItemStack(new ItemStack(Items.REDSTONE));
+        }
+        if (!recipe.dye.isEmpty()) {
+            builder.addSlot(RecipeIngredientRole.INPUT, 123, 81).addIngredients(recipe.dye);
+        }
+        if (!recipe.extra.isEmpty()) {
+            builder.addSlot(RecipeIngredientRole.INPUT, 161, 81).addIngredients(recipe.extra);
+        }
 
-//        builder.addSlot(RecipeIngredientRole.INPUT, 43, 19).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 102, 19).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.INPUT, 82, 79).addItemStack(new ItemStack(MHItems.SHAKER_POT.get()));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 82, 53).addItemStack(recipe.getResultItem(null));
     }
 }
