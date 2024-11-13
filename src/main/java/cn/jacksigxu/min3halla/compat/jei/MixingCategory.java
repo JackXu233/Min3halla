@@ -42,30 +42,33 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
     @Override
     @ParametersAreNonnullByDefault
     public void draw(MixingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        renderIngredients(guiGraphics, 26, 13, 0, 101, recipe.ade);
-        renderIngredients(guiGraphics, 86, 13, 5, 101, recipe.bex);
-        renderIngredients(guiGraphics, 146, 13, 10, 101, recipe.pwd);
-        renderIngredients(guiGraphics, 26, 51, 15, 101, recipe.fla);
-        renderIngredients(guiGraphics, 146, 51, 20, 101, recipe.kar);
+        renderIngredients(guiGraphics, 26, 13, 0, 119, recipe.ade);
+        renderIngredients(guiGraphics, 86, 13, 5, 126, recipe.bex);
+        renderIngredients(guiGraphics, 146, 13, 10, 133, recipe.pwd);
+        renderIngredients(guiGraphics, 26, 51, 15, 140, recipe.fla);
+        renderIngredients(guiGraphics, 146, 51, 20, 147, recipe.kar);
     }
 
     private void renderIngredients(GuiGraphics pGuiGraphics, int x, int y, int u, int v, int count) {
-        if (count == -1) return;
+        if (count == -1) {
+            pGuiGraphics.blit(TEXTURE, x + 5, y + 7, 0, v, 14, 7);
+            return;
+        }
 
         for (int k = 0; k < Math.min(5, count); k++) {
-            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, v, 4, 9);
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, 101, 4, 9);
         }
 
         for (int k = 0; k < Math.min(5, count - 5); k++) {
-            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, v, 4, 9);
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, 101, 4, 9);
         }
 
         for (int k = 0; k < Math.min(5, count - 10); k++) {
-            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, v + 9, 4, 9);
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, 110, 4, 9);
         }
 
         for (int k = 0; k < Math.min(5, count - 15); k++) {
-            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, v + 9, 4, 9);
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, 110, 4, 9);
         }
     }
 
