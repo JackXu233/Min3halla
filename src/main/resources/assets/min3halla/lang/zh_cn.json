@@ -37,5 +37,6 @@
   "item.min3halla.zen_star": "Zen Star",
   "des.min3halla.zen_star": "“你可能会认为如此均衡的配方能够令这杯酒变得美味......那你就大错特错了。”",
   "item.min3halla.error_drink": "3rr0r",
-  "des.min3halla.error_drink": "Warning: Error Drink"
+  "des.min3halla.error_drink": "Warning: Error Drink",
+  "block.min3halla.ferment_barrel": "发酵桶"
 }

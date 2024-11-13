@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "min3halla:ferment_barrel"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "min3halla:blocks/ferment_barrel"
+}

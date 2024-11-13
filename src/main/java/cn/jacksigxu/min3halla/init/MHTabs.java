@@ -17,6 +17,8 @@ public class MHTabs {
             .icon(() -> new ItemStack(MHItems.ADELHYDE.get()))
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(MHItems.DRINK_MIXER.get());
+                pOutput.accept(MHItems.FERMENT_BARREL.get());
+
                 pOutput.accept(MHItems.SHAKER_POT.get());
                 pOutput.accept(MHItems.WINE_GLASS.get());
                 pOutput.accept(MHItems.ADELHYDE.get());

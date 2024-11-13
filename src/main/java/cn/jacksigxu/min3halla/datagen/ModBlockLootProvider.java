@@ -17,6 +17,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(MHBlocks.DRINK_MIXER.get());
+        this.dropSelf(MHBlocks.FERMENT_BARREL.get());
     }
 
     @Override
