@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    " # ",
+    "GGG"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:glass_panes/colorless"
+    },
+    "G": {
+      "tag": "forge:glass/colorless"
+    }
+  },
+  "result": {
+    "item": "min3halla:wine_glass",
+    "count": 3
+  }
+}
