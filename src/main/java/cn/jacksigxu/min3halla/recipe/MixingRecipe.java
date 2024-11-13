@@ -144,8 +144,10 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
             int kar = GsonHelper.getAsInt(pSerializedRecipe, "kar", 0);
             boolean ice = GsonHelper.getAsBoolean(pSerializedRecipe, "ice", false);
             boolean age = GsonHelper.getAsBoolean(pSerializedRecipe, "age", false);
-            Ingredient dye = Ingredient.fromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "dye"));
-            Ingredient extra = Ingredient.fromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "extra"));
+            var dyeObject = GsonHelper.getAsJsonObject(pSerializedRecipe, "dye", null);
+            Ingredient dye = dyeObject == null ? Ingredient.EMPTY : Ingredient.fromJson(dyeObject);
+            var extraObject = GsonHelper.getAsJsonObject(pSerializedRecipe, "extra", null);
+            Ingredient extra = extraObject == null ? Ingredient.EMPTY : Ingredient.fromJson(extraObject);
             boolean blend = GsonHelper.getAsBoolean(pSerializedRecipe, "blend", false);
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 

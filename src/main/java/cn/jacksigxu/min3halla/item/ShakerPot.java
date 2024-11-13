@@ -1,17 +1,23 @@
 package cn.jacksigxu.min3halla.item;
 
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ShakerPot extends Item {
 
-    public ShakerPot(){
+    public ShakerPot() {
         super(new Properties().stacksTo(1));
     }
 
@@ -20,6 +26,15 @@ public class ShakerPot extends Item {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
         return InteractionResultHolder.consume(stack);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        if (pStack.getTag() != null && pStack.getTag().contains("Result")) {
+            CompoundTag tag = pStack.getTag().getCompound("Result");
+            ItemStack res = ItemStack.of(tag);
+            pTooltipComponents.add(res.getHoverName());
+        }
     }
 
     @Override
