@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -444,7 +445,10 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new DrinkMixerMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+        if (this.getLevel() != null) {
+            return new DrinkMixerMenu(pContainerId, pPlayerInventory, this, this.dataAccess, ContainerLevelAccess.create(this.getLevel(), this.getBlockPos()));
+        }
+        return null;
     }
 
     @Override

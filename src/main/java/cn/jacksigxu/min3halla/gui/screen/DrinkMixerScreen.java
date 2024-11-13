@@ -2,7 +2,11 @@ package cn.jacksigxu.min3halla.gui.screen;
 
 import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.gui.menu.DrinkMixerMenu;
+import cn.jacksigxu.min3halla.network.MHNetwork;
+import cn.jacksigxu.min3halla.network.message.MixMessage;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractButton;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -44,9 +48,38 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
     @Override
     protected void init() {
         super.init();
-        this.titleLabelX = 8;
-        this.titleLabelY = 2;
-        this.inventoryLabelX = 8;
-        this.inventoryLabelY = 110;
+
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+
+        MixButton mixButton = new MixButton(i + 157, j + 86, Component.literal("Mix"));
+        this.addRenderableWidget(mixButton);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    class MixButton extends AbstractButton {
+
+        public MixButton(int pX, int pY, Component pMessage) {
+            super(pX, pY, 50, 16, pMessage);
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            if (!DrinkMixerScreen.this.menu.canCraftItem()) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), this.isHovered() ? 146 : 44, 204, 50, 16);
+            } else if (this.isHovered()) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), 95, 204, 50, 16);
+            }
+        }
+
+        @Override
+        public void onPress() {
+            MHNetwork.CHANNEL.sendToServer(new MixMessage(0));
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
     }
 }

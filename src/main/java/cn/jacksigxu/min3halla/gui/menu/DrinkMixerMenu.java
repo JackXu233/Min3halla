@@ -8,30 +8,29 @@ import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.SimpleContainerData;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.Tags;
 
 public class DrinkMixerMenu extends AbstractContainerMenu {
 
     private final Container container;
     private final ContainerData containerData;
+    private final ContainerLevelAccess access;
     protected final Level level;
 
     public static final int X_OFFSET = 34;
     public static final int Y_OFFSET = 37;
 
     public DrinkMixerMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(10), new SimpleContainerData(DrinkMixerBlockEntity.MAX_DATA_COUNT));
+        this(id, inventory, new SimpleContainer(10), new SimpleContainerData(DrinkMixerBlockEntity.MAX_DATA_COUNT), ContainerLevelAccess.NULL);
     }
 
-    public DrinkMixerMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
+    public DrinkMixerMenu(int id, Inventory inventory, Container container, ContainerData containerData, ContainerLevelAccess access) {
         super(MHMenuTypes.DRINK_MIXER_MENU.get(), id);
 
         checkContainerSize(container, 10);
@@ -40,6 +39,7 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
         this.container = container;
         this.containerData = containerData;
         this.level = inventory.player.level();
+        this.access = access;
 
         this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.SHAKER_POT.get(), 0, 114, 59));
         this.addSlot(new DrinkMixerMenu.InputSlot(container, MHItems.ADELHYDE.get(), 1, 39, 21));
@@ -147,6 +147,22 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return this.container.stillValid(pPlayer);
+    }
+
+    public void doCraftItem() {
+        this.access.execute((level, pos) -> {
+            BlockEntity entity = level.getBlockEntity(pos);
+            if (!(entity instanceof DrinkMixerBlockEntity blockEntity)) {
+                return;
+            }
+
+            blockEntity.craftItem();
+        });
+    }
+
+    public boolean canCraftItem() {
+        return this.containerData.get(0) != 0 && this.containerData.get(1) != 0 && this.containerData.get(2) != 0
+                && this.containerData.get(3) != 0 && this.containerData.get(4) != 0;
     }
 
     static class InputSlot extends Slot {
