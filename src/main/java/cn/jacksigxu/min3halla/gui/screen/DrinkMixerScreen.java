@@ -3,7 +3,9 @@ package cn.jacksigxu.min3halla.gui.screen;
 import cn.jacksigxu.min3halla.MHMod;
 import cn.jacksigxu.min3halla.gui.menu.DrinkMixerMenu;
 import cn.jacksigxu.min3halla.network.MHNetwork;
+import cn.jacksigxu.min3halla.network.message.IngredientAdjustMessage;
 import cn.jacksigxu.min3halla.network.message.MixMessage;
+import cn.jacksigxu.min3halla.network.message.ResetMessage;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -54,6 +56,14 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
 
         MixButton mixButton = new MixButton(i + 157, j + 86, Component.literal("Mix"));
         this.addRenderableWidget(mixButton);
+        ResetButton resetButton = new ResetButton(i + 37, j + 86, Component.literal("Reset"));
+        this.addRenderableWidget(resetButton);
+
+        IngredientAdjustButton adeButtonInc = new IngredientAdjustButton(i + 83, j + 21, Component.literal("+"), true, 0);
+        IngredientAdjustButton adeButtonDec = new IngredientAdjustButton(i + 83, j + 32, Component.literal("+"), false, 0);
+        this.addRenderableWidget(adeButtonInc);
+        this.addRenderableWidget(adeButtonDec);
+
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -82,4 +92,66 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
 
         }
     }
+
+    @OnlyIn(Dist.CLIENT)
+    static class ResetButton extends AbstractButton {
+
+        public ResetButton(int pX, int pY, Component pMessage) {
+            super(pX, pY, 50, 16, pMessage);
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            if (this.isHovered()) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), 44, 221, 50, 16);
+            }
+        }
+
+        @Override
+        public void onPress() {
+            MHNetwork.CHANNEL.sendToServer(new ResetMessage(0));
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    static class IngredientAdjustButton extends AbstractButton {
+
+        private final boolean increase;
+        private final int index;
+
+        public IngredientAdjustButton(int pX, int pY, Component pMessage, boolean increase, int index) {
+            super(pX, pY, 5, 5, pMessage);
+            this.increase = increase;
+            this.index = index;
+        }
+
+        @Override
+        public boolean isActive() {
+            return super.isActive();
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            if (this.isHovered()) {
+                pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), this.increase ? 25 : 31, 204, 5, 5);
+            }
+        }
+
+        @Override
+        public void onPress() {
+            MHNetwork.CHANNEL.sendToServer(new IngredientAdjustMessage(this.index, this.increase));
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
+    }
+
+
 }

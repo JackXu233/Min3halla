@@ -334,6 +334,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
             makeFailOutput();
         } else if (canShakerPotInsertItem()) {
             stack.getOrCreateTag().put("Result", result.serializeNBT());
+            stack.getOrCreateTag().putBoolean("Blend", recipe.blend);
         } else {
             makeFailOutput();
         }
@@ -387,6 +388,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
         ItemStack result = new ItemStack(MHItems.ERROR_DRINK.get());
         stack.getOrCreateTag().put("Result", result.serializeNBT());
+        stack.getOrCreateTag().putBoolean("Blend", false);
     }
 
     private void resetData() {

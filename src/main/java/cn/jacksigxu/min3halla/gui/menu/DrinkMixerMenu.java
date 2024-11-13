@@ -165,6 +165,27 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
                 && this.containerData.get(3) != 0 && this.containerData.get(4) != 0;
     }
 
+    public void resetData() {
+        for (int i = 0; i < 9; i++) {
+            this.containerData.set(i, 0);
+        }
+    }
+
+    public int getIngredientsSum() {
+        return this.containerData.get(0) + this.containerData.get(1) + this.containerData.get(2) + this.containerData.get(3) + this.containerData.get(4);
+    }
+
+    public void adjustIngredient(int index, boolean increase) {
+        if (index > 4) return;
+        if (increase && getIngredientsSum() >= 20) return;
+
+        if (increase) {
+            this.containerData.set(index, Math.min(20, this.containerData.get(index) + 1));
+        } else {
+            this.containerData.set(index, Math.max(0, this.containerData.get(index) - 1));
+        }
+    }
+
     static class InputSlot extends Slot {
 
         private Item mayPlaceItem = null;
