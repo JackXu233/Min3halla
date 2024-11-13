@@ -43,7 +43,7 @@ public class MHItems {
     public static final RegistryObject<Item> SUGAR_RUSH = ITEMS.register("sugar_rush", () -> new DrinkItem(MHFoodProperties.SUGAR_RUSH));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new DrinkItem(MHFoodProperties.ZEN_STAR));
 
-    public static final RegistryObject<Item> RUM = ITEMS.register("rum", () -> new DrinkItem(MHFoodProperties.RUM));
+    public static final RegistryObject<Item> RUM = ITEMS.register("rum", () -> new DrinkItem(MHFoodProperties.RUM, true));
 
     public static final RegistryObject<Item> ERROR_DRINK = ITEMS.register("error_drink", ErrorDrink::new);
 

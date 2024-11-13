@@ -11,6 +11,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -406,8 +407,26 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
             }
         }
         if (this.useExtra) {
-            if (!this.items.get(SLOT_EXTRA).isEmpty()) {
-                this.items.get(SLOT_EXTRA).shrink(1);
+            ItemStack extra = this.items.get(SLOT_EXTRA);
+            if (!extra.isEmpty()) {
+                if (extra.hasCraftingRemainingItem()) {
+                    ItemStack remainItem = extra.getCraftingRemainingItem();
+                    if (!extra.is(remainItem.getItem())) {
+                        if (extra.getCount() == 1) {
+                            this.items.set(SLOT_EXTRA, remainItem);
+                        } else {
+                            extra.shrink(1);
+                            if (this.level != null) {
+                                ItemEntity itemEntity = new ItemEntity(this.level,
+                                        this.worldPosition.getX(), this.worldPosition.getY() + 0.5D, this.worldPosition.getZ(),
+                                        remainItem);
+                                this.level.addFreshEntity(itemEntity);
+                            }
+                        }
+                    }
+                } else {
+                    this.items.get(SLOT_EXTRA).shrink(1);
+                }
             }
         }
 
@@ -449,16 +468,16 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         inventory.setItem(3, new ItemStack(MHItems.FLANERGIDE.get(), this.flaCount));
         inventory.setItem(4, new ItemStack(MHItems.KARMOTRINE.get(), this.karCount));
         if (this.useIce) {
-            inventory.setItem(5, this.items.get(5));
+            inventory.setItem(5, this.items.get(6));
         }
         if (this.useAged) {
-            inventory.setItem(6, this.items.get(6));
+            inventory.setItem(6, this.items.get(7));
         }
         if (this.useDye) {
-            inventory.setItem(7, this.items.get(7));
+            inventory.setItem(7, this.items.get(8));
         }
         if (this.useExtra) {
-            inventory.setItem(8, this.items.get(8));
+            inventory.setItem(8, this.items.get(9));
         }
 
         return this.level.getRecipeManager().getRecipeFor(MixingRecipe.Type.INSTANCE, inventory, level);

@@ -21,8 +21,27 @@ import java.util.List;
 
 public class DrinkItem extends Item {
 
+    private boolean hasRemainingItem = false;
+
     public DrinkItem(FoodProperties foodProperties) {
         super(new Properties().food(foodProperties).stacksTo(16));
+    }
+
+    public DrinkItem(FoodProperties foodProperties, boolean hasRemainingItem) {
+        super(new Properties().food(foodProperties).stacksTo(16));
+        this.hasRemainingItem = hasRemainingItem;
+    }
+
+    @Override
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        ItemStack res = itemStack.copy();
+        res.setCount(1);
+        return hasRemainingItem ? res : super.getCraftingRemainingItem(itemStack);
+    }
+
+    @Override
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return this.hasRemainingItem;
     }
 
     @Override
