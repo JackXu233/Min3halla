@@ -45,7 +45,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     private static final int[] SLOTS_FOR_SIDES = new int[]{6, 7, 8, 9};
     private static final int[] SLOTS_FOR_DOWN = new int[]{0};
 
-    public static final int MAX_DATA_COUNT = 9;
+    public static final int MAX_DATA_COUNT = 10;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(10, ItemStack.EMPTY);
 
@@ -58,6 +58,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     private boolean useAged = false;
     private boolean useDye = false;
     private boolean useExtra = false;
+    private boolean canCraft = false;
 
     private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
 
@@ -73,6 +74,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
                 case 6 -> DrinkMixerBlockEntity.this.useAged ? 1 : 0;
                 case 7 -> DrinkMixerBlockEntity.this.useDye ? 1 : 0;
                 case 8 -> DrinkMixerBlockEntity.this.useExtra ? 1 : 0;
+                case 9 -> DrinkMixerBlockEntity.this.canCraft ? 1 : 0;
                 default -> 0;
             };
         }
@@ -105,6 +107,9 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
                     break;
                 case 8:
                     DrinkMixerBlockEntity.this.useExtra = pValue == 1;
+                    break;
+                case 9:
+                    DrinkMixerBlockEntity.this.canCraft = pValue == 1;
                     break;
             }
         }
@@ -159,7 +164,16 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
                 blockEntity.useExtra = false;
                 changed = true;
             }
+            if (blockEntity.canCraft) {
+                blockEntity.canCraft = false;
+                changed = true;
+            }
             if (changed) {
+                blockEntity.setChanged();
+            }
+        } else {
+            if (!blockEntity.canCraft) {
+                blockEntity.canCraft = true;
                 blockEntity.setChanged();
             }
         }

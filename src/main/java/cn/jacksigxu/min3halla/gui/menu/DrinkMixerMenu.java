@@ -161,8 +161,8 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
     }
 
     public boolean canCraftItem() {
-        return this.containerData.get(0) != 0 && this.containerData.get(1) != 0 && this.containerData.get(2) != 0
-                && this.containerData.get(3) != 0 && this.containerData.get(4) != 0;
+        return this.containerData.get(0) != 0 || this.containerData.get(1) != 0 || this.containerData.get(2) != 0
+                || this.containerData.get(3) != 0 || this.containerData.get(4) != 0;
     }
 
     public void resetData() {
@@ -178,12 +178,18 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
     public void adjustIngredient(int index, boolean increase) {
         if (index > 4) return;
         if (increase && getIngredientsSum() >= 20) return;
+        if (this.containerData.get(9) == 0) return;
 
         if (increase) {
             this.containerData.set(index, Math.min(20, this.containerData.get(index) + 1));
         } else {
             this.containerData.set(index, Math.max(0, this.containerData.get(index) - 1));
         }
+    }
+
+    public int getIngredientCount(int index) {
+        if (index > 4) return 0;
+        return this.containerData.get(index);
     }
 
     static class InputSlot extends Slot {

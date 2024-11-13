@@ -33,6 +33,36 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         int j = (this.height - this.imageHeight) / 2;
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
+        // 五种原料
+        int adeCount = DrinkMixerScreen.this.menu.getIngredientCount(0);
+        renderIngredients(pGuiGraphics, i + 58, j + 19, 0, 204, adeCount);
+        int bexCount = DrinkMixerScreen.this.menu.getIngredientCount(1);
+        renderIngredients(pGuiGraphics, i + 118, j + 19, 5, 204, bexCount);
+        int pwdCount = DrinkMixerScreen.this.menu.getIngredientCount(2);
+        renderIngredients(pGuiGraphics, i + 178, j + 19, 10, 204, pwdCount);
+        int flaCount = DrinkMixerScreen.this.menu.getIngredientCount(3);
+        renderIngredients(pGuiGraphics, i + 58, j + 57, 15, 204, flaCount);
+        int karCount = DrinkMixerScreen.this.menu.getIngredientCount(4);
+        renderIngredients(pGuiGraphics, i + 178, j + 57, 20, 204, karCount);
+
+    }
+
+    private void renderIngredients(GuiGraphics pGuiGraphics, int x, int y, int u, int v, int count) {
+        for (int k = 0; k < Math.min(5, count); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, v, 4, 9);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 5); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, v, 4, 9);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 10); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y, u, v + 9, 4, 9);
+        }
+
+        for (int k = 0; k < Math.min(5, count - 15); k++) {
+            pGuiGraphics.blit(TEXTURE, x + k * 5, y + 11, u, v + 9, 4, 9);
+        }
     }
 
     @Override
@@ -60,9 +90,29 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
         this.addRenderableWidget(resetButton);
 
         IngredientAdjustButton adeButtonInc = new IngredientAdjustButton(i + 83, j + 21, Component.literal("+"), true, 0);
-        IngredientAdjustButton adeButtonDec = new IngredientAdjustButton(i + 83, j + 32, Component.literal("+"), false, 0);
+        IngredientAdjustButton adeButtonDec = new IngredientAdjustButton(i + 83, j + 32, Component.literal("-"), false, 0);
         this.addRenderableWidget(adeButtonInc);
         this.addRenderableWidget(adeButtonDec);
+
+        IngredientAdjustButton bexButtonInc = new IngredientAdjustButton(i + 143, j + 21, Component.literal("+"), true, 1);
+        IngredientAdjustButton bexButtonDec = new IngredientAdjustButton(i + 143, j + 32, Component.literal("-"), false, 1);
+        this.addRenderableWidget(bexButtonInc);
+        this.addRenderableWidget(bexButtonDec);
+
+        IngredientAdjustButton pwdButtonInc = new IngredientAdjustButton(i + 203, j + 21, Component.literal("+"), true, 2);
+        IngredientAdjustButton pwdButtonDec = new IngredientAdjustButton(i + 203, j + 32, Component.literal("-"), false, 2);
+        this.addRenderableWidget(pwdButtonInc);
+        this.addRenderableWidget(pwdButtonDec);
+
+        IngredientAdjustButton flaButtonInc = new IngredientAdjustButton(i + 83, j + 59, Component.literal("+"), true, 3);
+        IngredientAdjustButton flaButtonDec = new IngredientAdjustButton(i + 83, j + 70, Component.literal("-"), false, 3);
+        this.addRenderableWidget(flaButtonInc);
+        this.addRenderableWidget(flaButtonDec);
+
+        IngredientAdjustButton karButtonInc = new IngredientAdjustButton(i + 203, j + 59, Component.literal("+"), true, 4);
+        IngredientAdjustButton karButtonDec = new IngredientAdjustButton(i + 203, j + 70, Component.literal("-"), false, 4);
+        this.addRenderableWidget(karButtonInc);
+        this.addRenderableWidget(karButtonDec);
 
     }
 
@@ -128,11 +178,6 @@ public class DrinkMixerScreen extends AbstractContainerScreen<DrinkMixerMenu> {
             super(pX, pY, 5, 5, pMessage);
             this.increase = increase;
             this.index = index;
-        }
-
-        @Override
-        public boolean isActive() {
-            return super.isActive();
         }
 
         @Override
