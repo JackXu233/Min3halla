@@ -38,6 +38,8 @@ public class MHTabs {
                 pOutput.accept(makeWineStack(MHItems.SUGAR_RUSH.get(), 0));
                 pOutput.accept(makeWineStack(MHItems.ZEN_STAR.get(), 4));
 
+                pOutput.accept(MHItems.RUM.get());
+
                 pOutput.accept(makeWineStack(MHItems.ERROR_DRINK.get(), 20));
             })
             .build();
