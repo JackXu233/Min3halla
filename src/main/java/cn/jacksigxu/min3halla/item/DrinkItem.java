@@ -5,6 +5,7 @@ import cn.jacksigxu.min3halla.init.MHTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DrinkItem extends Item {
@@ -100,44 +102,69 @@ public class DrinkItem extends Item {
             return;
         }
 
+        List<MutableComponent> temp = new ArrayList<>();
         // Flavor
-        var component = Component.literal("");
-
-        boolean hasFlavor = false;
+        MutableComponent flavor = null;
         if (stack.is(MHTags.Items.FLAVOR_SWEET)) {
-            component.append(Component.translatable("des.min3halla.flavor.sweet"));
-            hasFlavor = true;
+            flavor = Component.translatable("des.min3halla.flavor.sweet");
         } else if (stack.is(MHTags.Items.FLAVOR_SPICY)) {
-            component.append(Component.translatable("des.min3halla.flavor.spicy"));
-            hasFlavor = true;
+            flavor = Component.translatable("des.min3halla.flavor.spicy");
         } else if (stack.is(MHTags.Items.FLAVOR_SOUR)) {
-            component.append(Component.translatable("des.min3halla.flavor.sour"));
-            hasFlavor = true;
+            flavor = Component.translatable("des.min3halla.flavor.sour");
         } else if (stack.is(MHTags.Items.FLAVOR_BITTER)) {
-            component.append(Component.translatable("des.min3halla.flavor.bitter"));
-            hasFlavor = true;
+            flavor = Component.translatable("des.min3halla.flavor.bitter");
         } else if (stack.is(MHTags.Items.FLAVOR_BUBBLY)) {
-            component.append(Component.translatable("des.min3halla.flavor.bubbly"));
-            hasFlavor = true;
+            flavor = Component.translatable("des.min3halla.flavor.bubbly");
+        }
+        if (flavor != null) {
+            temp.add(flavor);
         }
 
-        if (hasFlavor) {
-            component.append(Component.literal(", "));
-        }
-
+        // Type
+        MutableComponent type = null;
         if (stack.is(MHTags.Items.TYPE_CLASSIC)) {
-            component.append(Component.translatable("des.min3halla.type.classic"));
+            type = Component.translatable("des.min3halla.type.classic");
         } else if (stack.is(MHTags.Items.TYPE_CLASSY)) {
-            component.append(Component.translatable("des.min3halla.type.classy"));
+            type = Component.translatable("des.min3halla.type.classy");
         } else if (stack.is(MHTags.Items.TYPE_GIRLY)) {
-            component.append(Component.translatable("des.min3halla.type.girly"));
+            type = Component.translatable("des.min3halla.type.girly");
         } else if (stack.is(MHTags.Items.TYPE_MANLY)) {
-            component.append(Component.translatable("des.min3halla.type.manly"));
+            type = Component.translatable("des.min3halla.type.manly");
         } else if (stack.is(MHTags.Items.TYPE_PROMO)) {
-            component.append(Component.translatable("des.min3halla.type.promo"));
+            type = Component.translatable("des.min3halla.type.promo");
+        }
+        if (type != null) {
+            temp.add(type);
         }
 
-        tooltips.add(component.withStyle(ChatFormatting.YELLOW));
+        // Secondary Type
+        MutableComponent secondaryType = null;
+        if (stack.is(MHTags.Items.SECONDARY_BLAND)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.bland");
+        } else if (stack.is(MHTags.Items.SECONDARY_BURNING)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.burning");
+        } else if (stack.is(MHTags.Items.SECONDARY_HAPPY)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.happy");
+        } else if (stack.is(MHTags.Items.SECONDARY_SOBERING)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.sobering");
+        } else if (stack.is(MHTags.Items.SECONDARY_SOFT)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.soft");
+        } else if (stack.is(MHTags.Items.SECONDARY_STRONG)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.strong");
+        } else if (stack.is(MHTags.Items.SECONDARY_VINTAGE)) {
+            secondaryType = Component.translatable("des.min3halla.secondary.vintage");
+        }
+        if (secondaryType != null) {
+            temp.add(secondaryType);
+        }
+
+        if (temp.isEmpty()) return;
+        MutableComponent result = temp.get(0);
+        for (int i = 1; i < temp.size(); i++) {
+            result.append(", ").append(temp.get(i));
+        }
+
+        tooltips.add(result.withStyle(ChatFormatting.YELLOW));
     }
 
     @Override

@@ -30,6 +30,14 @@ public class MHTags {
         public static final TagKey<Item> TYPE_MANLY = tag("type/manly");
         public static final TagKey<Item> TYPE_PROMO = tag("type/promo");
 
+        public static final TagKey<Item> SECONDARY_BLAND = tag("secondary/bland");
+        public static final TagKey<Item> SECONDARY_BURNING = tag("secondary/burning");
+        public static final TagKey<Item> SECONDARY_HAPPY = tag("secondary/happy");
+        public static final TagKey<Item> SECONDARY_SOBERING = tag("secondary/sobering");
+        public static final TagKey<Item> SECONDARY_SOFT = tag("secondary/soft");
+        public static final TagKey<Item> SECONDARY_STRONG = tag("secondary/strong");
+        public static final TagKey<Item> SECONDARY_VINTAGE = tag("secondary/vintage");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(MHMod.loc(name));
         }

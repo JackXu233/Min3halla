@@ -32,5 +32,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.TYPE_GIRLY).add(MHItems.BLUE_FAIRY.get(), MHItems.SUGAR_RUSH.get());
 //        this.tag(MHTags.Items.TYPE_MANLY).add();
         this.tag(MHTags.Items.TYPE_PROMO).add(MHItems.ZEN_STAR.get(), MHItems.BLOOM_LIGHT.get());
+
+        this.tag(MHTags.Items.SECONDARY_BLAND).add(MHItems.ZEN_STAR.get(), MHItems.BLOOM_LIGHT.get());
+//        this.tag(MHTags.Items.SECONDARY_BURNING).add();
+        this.tag(MHTags.Items.SECONDARY_HAPPY).add(MHItems.BRANDTINI.get(), MHItems.SUGAR_RUSH.get());
+        this.tag(MHTags.Items.SECONDARY_SOBERING).add(MHItems.BLEEDING_JANE.get());
+        this.tag(MHTags.Items.SECONDARY_SOFT).add(MHItems.BLUE_FAIRY.get());
+//        this.tag(MHTags.Items.SECONDARY_STRONG).add();
+        this.tag(MHTags.Items.SECONDARY_VINTAGE).add(MHItems.BAD_TOUCH.get(), MHItems.BEER.get());
     }
 }
