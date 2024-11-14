@@ -31,18 +31,26 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.FLAVOR_BUBBLY).add(MHItems.BEER.get(), MHItems.COBALT_VELVET.get(), MHItems.FRINGE_WEAVER.get(),
                 MHItems.FROTHY_WATER.get());
 
-        this.tag(MHTags.Items.TYPE_CLASSIC).add(MHItems.BEER.get(), MHItems.BLEEDING_JANE.get());
-        this.tag(MHTags.Items.TYPE_CLASSY).add(MHItems.BAD_TOUCH.get(), MHItems.BRANDTINI.get());
-        this.tag(MHTags.Items.TYPE_GIRLY).add(MHItems.BLUE_FAIRY.get(), MHItems.SUGAR_RUSH.get());
-//        this.tag(MHTags.Items.TYPE_MANLY).add();
-        this.tag(MHTags.Items.TYPE_PROMO).add(MHItems.ZEN_STAR.get(), MHItems.BLOOM_LIGHT.get());
+        this.tag(MHTags.Items.TYPE_CLASSIC).add(MHItems.BEER.get(), MHItems.FROTHY_WATER.get(), MHItems.BLEEDING_JANE.get());
+        this.tag(MHTags.Items.TYPE_CLASSY).add(MHItems.COBALT_VELVET.get(), MHItems.FRINGE_WEAVER.get(), MHItems.BAD_TOUCH.get(),
+                MHItems.FLAMING_MOAI.get(), MHItems.MERCURYBLAST.get(), MHItems.BRANDTINI.get());
+        this.tag(MHTags.Items.TYPE_GIRLY).add(MHItems.SUNSHINE_CLOUD.get(), MHItems.FLUFFY_DREAM.get(), MHItems.BLUE_FAIRY.get(),
+                MHItems.MOONBLAST.get(), MHItems.SPARKLE_STAR.get(), MHItems.SUGAR_RUSH.get());
+        this.tag(MHTags.Items.TYPE_MANLY).add(MHItems.GUT_PUNCH.get(), MHItems.PILE_DRIVER.get(), MHItems.SUPLEX.get(),
+                MHItems.CREVICE_SPIKE.get(), MHItems.MARSBLAST.get());
+        this.tag(MHTags.Items.TYPE_PROMO).add(MHItems.GRIZZLY_TEMPLE.get(), MHItems.PIANO_MAN.get(), MHItems.ZEN_STAR.get(),
+                MHItems.BLOOM_LIGHT.get(), MHItems.PIANO_WOMAN.get());
 
-        this.tag(MHTags.Items.SECONDARY_BLAND).add(MHItems.ZEN_STAR.get(), MHItems.BLOOM_LIGHT.get());
-//        this.tag(MHTags.Items.SECONDARY_BURNING).add();
-        this.tag(MHTags.Items.SECONDARY_HAPPY).add(MHItems.BRANDTINI.get(), MHItems.SUGAR_RUSH.get());
-        this.tag(MHTags.Items.SECONDARY_SOBERING).add(MHItems.BLEEDING_JANE.get());
-        this.tag(MHTags.Items.SECONDARY_SOFT).add(MHItems.BLUE_FAIRY.get());
-//        this.tag(MHTags.Items.SECONDARY_STRONG).add();
+        this.tag(MHTags.Items.SECONDARY_BLAND).add(MHItems.FROTHY_WATER.get(), MHItems.GRIZZLY_TEMPLE.get(), MHItems.ZEN_STAR.get(),
+                MHItems.BLOOM_LIGHT.get());
+        this.tag(MHTags.Items.SECONDARY_BURNING).add(MHItems.COBALT_VELVET.get(), MHItems.MERCURYBLAST.get(), MHItems.PILE_DRIVER.get(),
+                MHItems.SUPLEX.get());
+        this.tag(MHTags.Items.SECONDARY_HAPPY).add(MHItems.BRANDTINI.get(), MHItems.MOONBLAST.get(), MHItems.SPARKLE_STAR.get(),
+                MHItems.SUGAR_RUSH.get(), MHItems.PIANO_WOMAN.get());
+        this.tag(MHTags.Items.SECONDARY_SOBERING).add(MHItems.BLEEDING_JANE.get(), MHItems.CREVICE_SPIKE.get());
+        this.tag(MHTags.Items.SECONDARY_SOFT).add(MHItems.SUNSHINE_CLOUD.get(), MHItems.FLUFFY_DREAM.get(), MHItems.BLUE_FAIRY.get());
+        this.tag(MHTags.Items.SECONDARY_STRONG).add(MHItems.FRINGE_WEAVER.get(), MHItems.GUT_PUNCH.get(), MHItems.MARSBLAST.get(),
+                MHItems.PIANO_MAN.get());
         this.tag(MHTags.Items.SECONDARY_VINTAGE).add(MHItems.BAD_TOUCH.get(), MHItems.BEER.get());
     }
 }

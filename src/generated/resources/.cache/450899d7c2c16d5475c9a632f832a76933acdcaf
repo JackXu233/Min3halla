@@ -1,15 +1,18 @@
-// 1.20.1	2024-11-15T01:25:45.3016203	Tags for minecraft:item mod id min3halla
+// 1.20.1	2024-11-15T01:34:04.3655363	Tags for minecraft:item mod id min3halla
 594ede34900a136eb7fff902795a5b38332ef702 data/min3halla/tags/items/flavor/bitter.json
 33e16277e767da4a7814bd476add6d31c79ae0fb data/min3halla/tags/items/flavor/bubbly.json
 89c8a8366322eaacbbd480dd96f7a03bab00721e data/min3halla/tags/items/flavor/sour.json
 1193fb2aaacaeeb5f80871bd3b3561eb44ebf9b3 data/min3halla/tags/items/flavor/spicy.json
 ddd4d2039d32f791ae7ab21cfc1ca9e04e731db9 data/min3halla/tags/items/flavor/sweet.json
-b31a73728b61a574a1fd449ea3d47fddf6d1229c data/min3halla/tags/items/secondary/bland.json
-91bd8b3a1990456942e909480f0165d5ffb16bca data/min3halla/tags/items/secondary/happy.json
-873e367d3d49aac4e5f0e7961cfc21413e6d6904 data/min3halla/tags/items/secondary/sobering.json
-63e3da46c1c83589c12c50877986b494afa53fe1 data/min3halla/tags/items/secondary/soft.json
+2567cf16deb3c3dcef78a22a634215f67bb387fb data/min3halla/tags/items/secondary/bland.json
+824bd84bc53be92f0043faaf2f40a44ef0e6cd24 data/min3halla/tags/items/secondary/burning.json
+7075d320965190d6a9a837b0bcc3f28432e55260 data/min3halla/tags/items/secondary/happy.json
+b86a243b963799e193d6c6e61804f41e43ab927e data/min3halla/tags/items/secondary/sobering.json
+1f7f332f6835bc5353591f6270a63b2eed8672d0 data/min3halla/tags/items/secondary/soft.json
+087bee99fcc5e9666cf27087aec51ed4a23ed613 data/min3halla/tags/items/secondary/strong.json
 90346cb3c3a8d32a0316d7faf53eb632de7b952d data/min3halla/tags/items/secondary/vintage.json
-8b0bf21e79c0a42c8ca5443296cadf775196f718 data/min3halla/tags/items/type/classic.json
-d5d85a0efa86ac193c196d2f800d9553554cd805 data/min3halla/tags/items/type/classy.json
-6adc15277f4965a9a1e963f6a16d5a12f198963a data/min3halla/tags/items/type/girly.json
-b31a73728b61a574a1fd449ea3d47fddf6d1229c data/min3halla/tags/items/type/promo.json
+80056519d5e55d7a5708dbc876f16dc8663a0b9a data/min3halla/tags/items/type/classic.json
+aeab2fe2496a20369d57cde3dcc30db32d833edb data/min3halla/tags/items/type/classy.json
+4471b9e8fea3ef978157e209c49ae98da11f732e data/min3halla/tags/items/type/girly.json
+9c091d00a21c5b6ec1a46bad10c7a1ce9cb75f69 data/min3halla/tags/items/type/manly.json
+8d6840e93a1a7eaf84a30d3c3739b6e6ef80b4bb data/min3halla/tags/items/type/promo.json
