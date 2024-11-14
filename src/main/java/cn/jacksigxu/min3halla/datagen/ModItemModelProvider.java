@@ -30,7 +30,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.WINE_GLASS);
 
         simpleItem(MHItems.BAD_TOUCH);
-
+//        simpleItem(MHItems.BEER);
+        simpleItem(MHItems.BLEEDING_JANE);
+        simpleItem(MHItems.BLOOM_LIGHT);
+        simpleItem(MHItems.BLUE_FAIRY);
+        simpleItem(MHItems.BRANDTINI);
+//        simpleItem(MHItems.COBALT_VELVET);
         simpleItem(MHItems.CREVICE_SPIKE);
 
         simpleItem(MHItems.SUGAR_RUSH);
