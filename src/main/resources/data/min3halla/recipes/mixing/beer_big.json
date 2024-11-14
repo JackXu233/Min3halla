@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 2,
+  "bex": 4,
+  "pwd": 2,
+  "fla": 4,
+  "kar": 8,
+  "output": {
+    "item": "min3halla:beer"
+  },
+  "big": true
+}

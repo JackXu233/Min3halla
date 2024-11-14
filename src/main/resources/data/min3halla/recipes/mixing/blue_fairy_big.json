@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 8,
+  "fla": 2,
+  "kar": -1,
+  "age": true,
+  "output": {
+    "item": "min3halla:blue_fairy"
+  },
+  "big": true
+}
