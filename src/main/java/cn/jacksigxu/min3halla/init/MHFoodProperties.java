@@ -12,9 +12,24 @@ public class MHFoodProperties {
     public static final FoodProperties BLOOM_LIGHT = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties BLUE_FAIRY = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties BRANDTINI = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
-
+    public static final FoodProperties COBALT_VELVET = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties CREVICE_SPIKE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties FLAMING_MOAI = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties FLUFFY_DREAM = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties FRINGE_WEAVER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties FROTHY_WATER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties GRIZZLY_TEMPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties GET_PUNCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties MARSBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties MERCURYBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties MOONBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties PIANO_MAN = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties PIANO_WOMAN = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties PILE_DRIVER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties SPARKLE_STAR = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties SUGAR_RUSH = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat().build();
-
+    public static final FoodProperties SUNSHINE_CLOUD = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties SUPLEX = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties ZEN_STAR = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
 
     public static final FoodProperties RUM = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat()
