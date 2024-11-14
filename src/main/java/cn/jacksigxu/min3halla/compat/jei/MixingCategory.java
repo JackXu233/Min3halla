@@ -179,10 +179,7 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
                 });
 
         ItemStack result = recipe.getResultItem(null);
-        if (recipe.kar > 0) {
-            result.getOrCreateTag().putInt("Alcohol", recipe.kar);
-        }
-        if (recipe.big) {
+        if (recipe.big || recipe.ade + recipe.bex + recipe.pwd + recipe.fla + recipe.kar < 10) {
             result.getOrCreateTag().putBoolean("Big", true);
         }
 
