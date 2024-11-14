@@ -1,7 +1,9 @@
 package cn.jacksigxu.min3halla.item;
 
 import cn.jacksigxu.min3halla.init.MHItems;
+import cn.jacksigxu.min3halla.init.MHTags;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -81,15 +83,61 @@ public class DrinkItem extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des." + pStack.getDescriptionId().split("item.")[1])
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        if (pStack.getTag() != null) {
-            if (pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
-                pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.WHITE));
-            }
-            if (pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
-                pTooltipComponents.add(Component.literal(""));
-                pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
-            }
+
+        if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
+            pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.WHITE));
         }
+
+        makeTagTooltip(pStack, pTooltipComponents);
+
+        if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
+            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+        }
+    }
+
+    private void makeTagTooltip(ItemStack stack, List<Component> tooltips) {
+        if (!Screen.hasShiftDown()) {
+            return;
+        }
+
+        // Flavor
+        var component = Component.literal("");
+
+        boolean hasFlavor = false;
+        if (stack.is(MHTags.Items.FLAVOR_SWEET)) {
+            component.append(Component.translatable("des.min3halla.flavor.sweet"));
+            hasFlavor = true;
+        } else if (stack.is(MHTags.Items.FLAVOR_SPICY)) {
+            component.append(Component.translatable("des.min3halla.flavor.spicy"));
+            hasFlavor = true;
+        } else if (stack.is(MHTags.Items.FLAVOR_SOUR)) {
+            component.append(Component.translatable("des.min3halla.flavor.sour"));
+            hasFlavor = true;
+        } else if (stack.is(MHTags.Items.FLAVOR_BITTER)) {
+            component.append(Component.translatable("des.min3halla.flavor.bitter"));
+            hasFlavor = true;
+        } else if (stack.is(MHTags.Items.FLAVOR_BUBBLY)) {
+            component.append(Component.translatable("des.min3halla.flavor.bubbly"));
+            hasFlavor = true;
+        }
+
+        if (hasFlavor) {
+            component.append(Component.literal(", "));
+        }
+
+        if (stack.is(MHTags.Items.TYPE_CLASSIC)) {
+            component.append(Component.translatable("des.min3halla.type.classic"));
+        } else if (stack.is(MHTags.Items.TYPE_CLASSY)) {
+            component.append(Component.translatable("des.min3halla.type.classy"));
+        } else if (stack.is(MHTags.Items.TYPE_GIRLY)) {
+            component.append(Component.translatable("des.min3halla.type.girly"));
+        } else if (stack.is(MHTags.Items.TYPE_MANLY)) {
+            component.append(Component.translatable("des.min3halla.type.manly"));
+        } else if (stack.is(MHTags.Items.TYPE_PROMO)) {
+            component.append(Component.translatable("des.min3halla.type.promo"));
+        }
+
+        tooltips.add(component.withStyle(ChatFormatting.YELLOW));
     }
 
     @Override
