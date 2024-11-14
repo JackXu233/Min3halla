@@ -177,6 +177,7 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
             itemstack.removeTagKey("Finished");
             itemstack.removeTagKey("Blend");
             itemstack.removeTagKey("Alcohol");
+            itemstack.removeTagKey("Big");
         }
     }
 

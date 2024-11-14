@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 4,
+  "pwd": 2,
+  "kar": -1,
+  "output": {
+    "item": "min3halla:sugar_rush"
+  },
+  "big": true
+}

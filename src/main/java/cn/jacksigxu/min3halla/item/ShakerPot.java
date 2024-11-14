@@ -44,6 +44,9 @@ public class ShakerPot extends Item {
                 if (alcohol > 0) {
                     resStack.getOrCreateTag().putInt("Alcohol", stack.getOrCreateTag().getInt("Alcohol"));
                 }
+                if (stack.getOrCreateTag().getBoolean("Big")) {
+                    resStack.getOrCreateTag().putBoolean("Big", true);
+                }
 
                 if (!pPlayer.addItem(resStack)) {
                     pPlayer.drop(resStack, false);
@@ -53,6 +56,7 @@ public class ShakerPot extends Item {
                 stack.removeTagKey("Finished");
                 stack.removeTagKey("Blend");
                 stack.removeTagKey("Alcohol");
+                stack.removeTagKey("Big");
                 return InteractionResultHolder.success(stack);
             }
 

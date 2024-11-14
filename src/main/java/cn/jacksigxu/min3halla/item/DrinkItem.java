@@ -59,7 +59,7 @@ public class DrinkItem extends Item {
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         if (pStack.getTag() != null) {
             if (pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
-                pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.GRAY));
+                pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.WHITE));
             }
             if (pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
                 pTooltipComponents.add(Component.literal(""));
