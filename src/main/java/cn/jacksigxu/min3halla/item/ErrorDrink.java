@@ -13,7 +13,7 @@ import java.util.List;
 public class ErrorDrink extends DrinkItem {
 
     public ErrorDrink() {
-        super(MHFoodProperties.ERROR_DRINK);
+        super(MHFoodProperties.ERROR_DRINK, 20);
     }
 
     @Override

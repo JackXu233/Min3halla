@@ -17,6 +17,11 @@ public class BigDrinkItem extends DrinkItem {
         super(foodProperties);
     }
 
+    public BigDrinkItem(FoodProperties foodProperties, int alcohol) {
+        super(foodProperties);
+        this.alcohol = alcohol;
+    }
+
     @Override
     public int getUseDuration(ItemStack pStack) {
         return 64;
@@ -36,8 +41,12 @@ public class BigDrinkItem extends DrinkItem {
 
         makeTagTooltip(pStack, pTooltipComponents);
 
-        if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+        if (this.alcohol > 0) {
+            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", this.alcohol).withStyle(ChatFormatting.AQUA));
+        } else if (this.alcohol == -1) {
+            if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
+                pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+            }
         }
     }
 

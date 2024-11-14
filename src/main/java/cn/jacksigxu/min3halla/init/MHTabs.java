@@ -29,31 +29,31 @@ public class MHTabs {
                 pOutput.accept(MHItems.BTC_CAN.get());
 
                 // Drinks
-                pOutput.accept(makeWineStack(MHItems.BAD_TOUCH.get(), 4));
-                pOutput.accept(makeWineStack(MHItems.BEER.get(), 4));
-                pOutput.accept(makeWineStack(MHItems.BLEEDING_JANE.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.BLOOM_LIGHT.get(), 3));
-                pOutput.accept(makeWineStack(MHItems.BLUE_FAIRY.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.BRANDTINI.get(), 1));
-                pOutput.accept(makeWineStack(MHItems.COBALT_VELVET.get(), 5));
-                pOutput.accept(makeWineStack(MHItems.CREVICE_SPIKE.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.FLAMING_MOAI.get(), 5));
-                pOutput.accept(makeWineStack(MHItems.FLUFFY_DREAM.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.FRINGE_WEAVER.get(), 9));
-                pOutput.accept(makeWineStack(MHItems.FROTHY_WATER.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.GRIZZLY_TEMPLE.get(), 1));
-                pOutput.accept(makeWineStack(MHItems.GUT_PUNCH.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.MARSBLAST.get(), 2));
-                pOutput.accept(makeWineStack(MHItems.MERCURYBLAST.get(), 2));
-                pOutput.accept(makeWineStack(MHItems.MOONBLAST.get(), 2));
-                pOutput.accept(makeWineStack(MHItems.PIANO_MAN.get(), 3));
-                pOutput.accept(makeWineStack(MHItems.PIANO_WOMAN.get(), 3));
-                pOutput.accept(makeWineStack(MHItems.PILE_DRIVER.get(), 4));
-                pOutput.accept(makeWineStack(MHItems.SPARKLE_STAR.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.SUGAR_RUSH.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.SUNSHINE_CLOUD.get(), 0));
-                pOutput.accept(makeWineStack(MHItems.SUPLEX.get(), 3));
-                pOutput.accept(makeWineStack(MHItems.ZEN_STAR.get(), 4));
+                pOutput.accept(MHItems.BAD_TOUCH.get());
+                pOutput.accept(MHItems.BEER.get());
+                pOutput.accept(MHItems.BLEEDING_JANE.get());
+                pOutput.accept(MHItems.BLOOM_LIGHT.get());
+                pOutput.accept(MHItems.BLUE_FAIRY.get());
+                pOutput.accept(MHItems.BRANDTINI.get());
+                pOutput.accept(MHItems.COBALT_VELVET.get());
+                pOutput.accept(MHItems.CREVICE_SPIKE.get());
+                pOutput.accept(MHItems.FLAMING_MOAI.get());
+                pOutput.accept(MHItems.FLUFFY_DREAM.get());
+                pOutput.accept(MHItems.FRINGE_WEAVER.get());
+                pOutput.accept(MHItems.FROTHY_WATER.get());
+                pOutput.accept(MHItems.GRIZZLY_TEMPLE.get());
+                pOutput.accept(MHItems.GUT_PUNCH.get());
+                pOutput.accept(MHItems.MARSBLAST.get());
+                pOutput.accept(MHItems.MERCURYBLAST.get());
+                pOutput.accept(MHItems.MOONBLAST.get());
+                pOutput.accept(MHItems.PIANO_MAN.get());
+                pOutput.accept(MHItems.PIANO_WOMAN.get());
+                pOutput.accept(MHItems.PILE_DRIVER.get());
+                pOutput.accept(MHItems.SPARKLE_STAR.get());
+                pOutput.accept(MHItems.SUGAR_RUSH.get());
+                pOutput.accept(MHItems.SUNSHINE_CLOUD.get());
+                pOutput.accept(MHItems.SUPLEX.get());
+                pOutput.accept(MHItems.ZEN_STAR.get());
 
                 // Bottle Drinks
                 pOutput.accept(MHItems.RUM.get());

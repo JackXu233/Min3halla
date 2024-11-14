@@ -367,7 +367,9 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         } else if (canShakerPotInsertItem()) {
             stack.getOrCreateTag().put("Result", result.serializeNBT());
             stack.getOrCreateTag().putBoolean("Blend", recipe.blend);
-            stack.getOrCreateTag().putInt("Alcohol", this.karCount);
+            if (recipe.kar == -1) {
+                stack.getOrCreateTag().putInt("Alcohol", this.karCount);
+            }
             if (recipe.ade + recipe.bex + recipe.pwd + recipe.fla + recipe.kar <= 10 || recipe.big) {
                 stack.getOrCreateTag().putBoolean("Big", recipe.big);
             }
@@ -443,7 +445,6 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
         ItemStack result = new ItemStack(MHItems.ERROR_DRINK.get());
         stack.getOrCreateTag().put("Result", result.serializeNBT());
         stack.getOrCreateTag().putBoolean("Blend", false);
-        stack.getOrCreateTag().putInt("Alcohol", 20);
     }
 
     private void resetData() {

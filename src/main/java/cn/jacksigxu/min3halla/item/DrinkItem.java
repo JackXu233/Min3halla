@@ -25,14 +25,22 @@ import java.util.List;
 
 public class DrinkItem extends Item {
 
+    // 默认为0，设置为-1表示这是任意酒精度的饮品
+    protected int alcohol = 0;
     private boolean hasRemainingItem = false;
 
     public DrinkItem(FoodProperties foodProperties) {
         super(new Properties().food(foodProperties).stacksTo(16));
     }
 
-    public DrinkItem(FoodProperties foodProperties, boolean hasRemainingItem) {
+    public DrinkItem(FoodProperties foodProperties, int alcohol) {
         super(new Properties().food(foodProperties).stacksTo(16));
+        this.alcohol = alcohol;
+    }
+
+    public DrinkItem(FoodProperties foodProperties, int alcohol, boolean hasRemainingItem) {
+        super(new Properties().food(foodProperties).stacksTo(16));
+        this.alcohol = alcohol;
         this.hasRemainingItem = hasRemainingItem;
     }
 
@@ -63,8 +71,7 @@ public class DrinkItem extends Item {
             var food = super.getFoodProperties(stack, entity);
             var properties = new FoodProperties.Builder();
             if (food != null) {
-                properties.nutrition(food.getNutrition() * 2)
-                        .saturationMod(food.getSaturationModifier());
+                properties.nutrition(food.getNutrition() * 2).saturationMod(food.getSaturationModifier());
                 if (food.canAlwaysEat()) {
                     properties.alwaysEat();
                 }
@@ -92,8 +99,12 @@ public class DrinkItem extends Item {
 
         makeTagTooltip(pStack, pTooltipComponents);
 
-        if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+        if (this.alcohol > 0) {
+            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", this.alcohol).withStyle(ChatFormatting.AQUA));
+        } else if (this.alcohol == -1) {
+            if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
+                pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+            }
         }
     }
 
@@ -169,7 +180,11 @@ public class DrinkItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        int alcohol = pStack.getOrCreateTag().getInt("Alcohol");
+        int alcohol = Math.max(this.alcohol, 0);
+        if (this.alcohol == -1) {
+            alcohol = pStack.getOrCreateTag().getInt("Alcohol");
+        }
+
         if (alcohol > 5) {
             if (pLevel.random.nextDouble() < (alcohol - 5) * 0.06) {
                 pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, alcohol * 20, 0));

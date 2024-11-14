@@ -42,7 +42,7 @@ public class ShakerPot extends Item {
                 ItemStack resStack = ItemStack.of(result);
                 int alcohol = stack.getOrCreateTag().getInt("Alcohol");
                 if (alcohol > 0) {
-                    resStack.getOrCreateTag().putInt("Alcohol", stack.getOrCreateTag().getInt("Alcohol"));
+                    resStack.getOrCreateTag().putInt("Alcohol", alcohol);
                 }
                 if (stack.getOrCreateTag().getBoolean("Big")) {
                     resStack.getOrCreateTag().putBoolean("Big", true);
