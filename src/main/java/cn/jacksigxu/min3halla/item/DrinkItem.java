@@ -45,12 +45,26 @@ public class DrinkItem extends Item {
     }
 
     @Override
+    public int getUseDuration(ItemStack pStack) {
+        if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
+            return super.getUseDuration(pStack) * 2;
+        } else {
+            return super.getUseDuration(pStack);
+        }
+    }
+
+    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des." + pStack.getDescriptionId().split("item.")[1])
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
-            pTooltipComponents.add(Component.literal(""));
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+        if (pStack.getTag() != null) {
+            if (pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
+                pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.GRAY));
+            }
+            if (pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
+                pTooltipComponents.add(Component.literal(""));
+                pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
+            }
         }
     }
 

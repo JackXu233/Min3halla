@@ -169,7 +169,23 @@ public class MixingCategory implements IRecipeCategory<MixingRecipe> {
             builder.addSlot(RecipeIngredientRole.INPUT, 161, 81).addIngredients(recipe.extra);
         }
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 82, 79).addItemStack(new ItemStack(MHItems.SHAKER_POT.get()));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 82, 53).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.INPUT, 82, 79).addItemStack(new ItemStack(MHItems.SHAKER_POT.get()))
+                .addTooltipCallback((tooltipContext, tooltip) -> {
+                    if (recipe.blend) {
+                        tooltip.add(Component.translatable("des.min3halla.shaker_pot.blend").append(" (10s+)").withStyle(ChatFormatting.GOLD));
+                    } else {
+                        tooltip.add(Component.translatable("des.min3halla.shaker_pot.mix").append(" (5 ~ 10s)").withStyle(ChatFormatting.YELLOW));
+                    }
+                });
+
+        ItemStack result = recipe.getResultItem(null);
+        if (recipe.kar > 0) {
+            result.getOrCreateTag().putInt("Alcohol", recipe.kar);
+        }
+        if (recipe.big) {
+            result.getOrCreateTag().putBoolean("Big", true);
+        }
+
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 82, 53).addItemStack(result);
     }
 }

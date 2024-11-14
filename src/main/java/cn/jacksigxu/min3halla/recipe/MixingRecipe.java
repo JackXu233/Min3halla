@@ -29,9 +29,10 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
     public final Ingredient extra;
     public final boolean blend;
     private final ItemStack output;
+    public final boolean big;
     private final ResourceLocation id;
 
-    public MixingRecipe(int ade, int bex, int pwd, int fla, int kar, boolean ice, boolean age, Ingredient dye, Ingredient extra, boolean blend, ItemStack output, ResourceLocation id) {
+    public MixingRecipe(int ade, int bex, int pwd, int fla, int kar, boolean ice, boolean age, Ingredient dye, Ingredient extra, boolean blend, ItemStack output, boolean big, ResourceLocation id) {
         this.ade = ade;
         this.bex = bex;
         this.pwd = pwd;
@@ -43,6 +44,7 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
         this.extra = extra;
         this.blend = blend;
         this.output = output;
+        this.big = big;
         this.id = id;
     }
 
@@ -149,9 +151,10 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
             var extraObject = GsonHelper.getAsJsonObject(pSerializedRecipe, "extra", null);
             Ingredient extra = extraObject == null ? Ingredient.EMPTY : Ingredient.fromJson(extraObject);
             boolean blend = GsonHelper.getAsBoolean(pSerializedRecipe, "blend", false);
+            boolean big = GsonHelper.getAsBoolean(pSerializedRecipe, "big", false);
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
-            return new MixingRecipe(ade, bex, pwd, fla, kar, ice, age, dye, extra, blend, output, pRecipeId);
+            return new MixingRecipe(ade, bex, pwd, fla, kar, ice, age, dye, extra, blend, output, big, pRecipeId);
         }
 
         @Override
@@ -166,12 +169,13 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
             Ingredient dye = Ingredient.fromNetwork(pBuffer);
             Ingredient extra = Ingredient.fromNetwork(pBuffer);
             boolean blend = pBuffer.readBoolean();
+            boolean big = pBuffer.readBoolean();
             ItemStack output = pBuffer.readItem();
             if (output.isEmpty()) {
                 return null;
             }
 
-            return new MixingRecipe(ade, bex, pwd, fla, kar, ice, age, dye, extra, blend, output, pRecipeId);
+            return new MixingRecipe(ade, bex, pwd, fla, kar, ice, age, dye, extra, blend, output, big, pRecipeId);
         }
 
         @Override
@@ -186,6 +190,7 @@ public class MixingRecipe implements Recipe<SimpleContainer> {
             pRecipe.dye.toNetwork(pBuffer);
             pRecipe.extra.toNetwork(pBuffer);
             pBuffer.writeBoolean(pRecipe.blend);
+            pBuffer.writeBoolean(pRecipe.big);
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
         }
     }

@@ -114,7 +114,7 @@ public class ShakerPot extends Item {
                 }
             }
 
-            return Optional.of(new ImageTooltip(20, 20, res, tooltips));
+            return Optional.of(new ImageTooltip(80, 20, res, tooltips));
         }
 
         return Optional.empty();
