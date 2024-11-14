@@ -1,1 +1,9 @@
-// 1.20.1	2024-11-12T18:13:44.8180815	Tags for minecraft:item mod id min3halla
+// 1.20.1	2024-11-14T23:20:10.2204416	Tags for minecraft:item mod id min3halla
+be8a163554c45a325ad350cd1231adf71ae86084 data/min3halla/tags/items/flavor/bubbly.json
+6279b6d17b36053a0870a00cc87d4acd6123963e data/min3halla/tags/items/flavor/sour.json
+37f810f7b2013be14d791112d37a797a7ebeb3b6 data/min3halla/tags/items/flavor/spicy.json
+6adc15277f4965a9a1e963f6a16d5a12f198963a data/min3halla/tags/items/flavor/sweet.json
+8b0bf21e79c0a42c8ca5443296cadf775196f718 data/min3halla/tags/items/type/classic.json
+d5d85a0efa86ac193c196d2f800d9553554cd805 data/min3halla/tags/items/type/classy.json
+6adc15277f4965a9a1e963f6a16d5a12f198963a data/min3halla/tags/items/type/girly.json
+b31a73728b61a574a1fd449ea3d47fddf6d1229c data/min3halla/tags/items/type/promo.json
