@@ -21,11 +21,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(MHTags.Items.FLAVOR_SWEET).add(MHItems.BLUE_FAIRY.get(), MHItems.SUGAR_RUSH.get());
-        this.tag(MHTags.Items.FLAVOR_SPICY).add(MHItems.BLEEDING_JANE.get(), MHItems.BLOOM_LIGHT.get());
-        this.tag(MHTags.Items.FLAVOR_SOUR).add(MHItems.BAD_TOUCH.get(), MHItems.ZEN_STAR.get());
-//        this.tag(MHTags.Items.FLAVOR_BITTER).add();
-        this.tag(MHTags.Items.FLAVOR_BUBBLY).add(MHItems.BEER.get());
+        this.tag(MHTags.Items.FLAVOR_SWEET).add(MHItems.BLUE_FAIRY.get(), MHItems.BRANDTINI.get(), MHItems.MOONBLAST.get(),
+                MHItems.PIANO_WOMAN.get(), MHItems.SPARKLE_STAR.get(), MHItems.SUGAR_RUSH.get());
+        this.tag(MHTags.Items.FLAVOR_SPICY).add(MHItems.BLEEDING_JANE.get(), MHItems.BLOOM_LIGHT.get(), MHItems.MARSBLAST.get());
+        this.tag(MHTags.Items.FLAVOR_SOUR).add(MHItems.BAD_TOUCH.get(), MHItems.CREVICE_SPIKE.get(), MHItems.FLAMING_MOAI.get(),
+                MHItems.FLUFFY_DREAM.get(), MHItems.MERCURYBLAST.get(), MHItems.PIANO_MAN.get(), MHItems.ZEN_STAR.get());
+        this.tag(MHTags.Items.FLAVOR_BITTER).add(MHItems.GRIZZLY_TEMPLE.get(), MHItems.GUT_PUNCH.get(), MHItems.PILE_DRIVER.get(),
+                MHItems.SUNSHINE_CLOUD.get(), MHItems.SUPLEX.get());
+        this.tag(MHTags.Items.FLAVOR_BUBBLY).add(MHItems.BEER.get(), MHItems.COBALT_VELVET.get(), MHItems.FRINGE_WEAVER.get(),
+                MHItems.FROTHY_WATER.get());
 
         this.tag(MHTags.Items.TYPE_CLASSIC).add(MHItems.BEER.get(), MHItems.BLEEDING_JANE.get());
         this.tag(MHTags.Items.TYPE_CLASSY).add(MHItems.BAD_TOUCH.get(), MHItems.BRANDTINI.get());

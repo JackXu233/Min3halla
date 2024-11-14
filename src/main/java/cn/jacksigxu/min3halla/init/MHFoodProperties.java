@@ -19,7 +19,7 @@ public class MHFoodProperties {
     public static final FoodProperties FRINGE_WEAVER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties FROTHY_WATER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties GRIZZLY_TEMPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
-    public static final FoodProperties GET_PUNCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties GUT_PUNCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties MARSBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties MERCURYBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties MOONBLAST = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();

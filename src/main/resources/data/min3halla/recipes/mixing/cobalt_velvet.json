@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 2,
+  "fla": 3,
+  "kar": 5,
+  "ice": true,
+  "output": {
+    "item": "min3halla:cobalt_velvet"
+  }
+}

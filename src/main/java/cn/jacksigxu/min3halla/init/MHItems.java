@@ -45,7 +45,7 @@ public class MHItems {
     public static final RegistryObject<Item> FRINGE_WEAVER = ITEMS.register("fringe_weaver", () -> new DrinkItem(MHFoodProperties.FRINGE_WEAVER));
     public static final RegistryObject<Item> FROTHY_WATER = ITEMS.register("frothy_water", () -> new DrinkItem(MHFoodProperties.FROTHY_WATER));
     public static final RegistryObject<Item> GRIZZLY_TEMPLE = ITEMS.register("grizzly_temple", () -> new DrinkItem(MHFoodProperties.GRIZZLY_TEMPLE));
-    public static final RegistryObject<Item> GET_PUNCH = ITEMS.register("get_punch", () -> new DrinkItem(MHFoodProperties.GET_PUNCH));
+    public static final RegistryObject<Item> GUT_PUNCH = ITEMS.register("gut_punch", () -> new DrinkItem(MHFoodProperties.GUT_PUNCH));
     public static final RegistryObject<Item> MARSBLAST = ITEMS.register("marsblast", () -> new DrinkItem(MHFoodProperties.MARSBLAST));
     public static final RegistryObject<Item> MERCURYBLAST = ITEMS.register("mercuryblast", () -> new DrinkItem(MHFoodProperties.MERCURYBLAST));
     public static final RegistryObject<Item> MOONBLAST = ITEMS.register("moonblast", () -> new DrinkItem(MHFoodProperties.MOONBLAST));

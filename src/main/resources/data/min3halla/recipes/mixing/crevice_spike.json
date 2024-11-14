@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "pwd": 2,
+  "fla": 4,
+  "kar": -1,
+  "blend": true,
+  "output": {
+    "item": "min3halla:crevice_spike"
+  }
+}

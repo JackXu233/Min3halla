@@ -42,7 +42,7 @@ public class MHTabs {
                 pOutput.accept(makeWineStack(MHItems.FRINGE_WEAVER.get(), 9));
                 pOutput.accept(makeWineStack(MHItems.FROTHY_WATER.get(), 0));
                 pOutput.accept(makeWineStack(MHItems.GRIZZLY_TEMPLE.get(), 1));
-                pOutput.accept(makeWineStack(MHItems.GET_PUNCH.get(), 0));
+                pOutput.accept(makeWineStack(MHItems.GUT_PUNCH.get(), 0));
                 pOutput.accept(makeWineStack(MHItems.MARSBLAST.get(), 2));
                 pOutput.accept(makeWineStack(MHItems.MERCURYBLAST.get(), 2));
                 pOutput.accept(makeWineStack(MHItems.MOONBLAST.get(), 2));

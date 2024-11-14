@@ -1,8 +1,9 @@
-// 1.20.1	2024-11-14T23:54:03.4618179	Tags for minecraft:item mod id min3halla
-be8a163554c45a325ad350cd1231adf71ae86084 data/min3halla/tags/items/flavor/bubbly.json
-6279b6d17b36053a0870a00cc87d4acd6123963e data/min3halla/tags/items/flavor/sour.json
-37f810f7b2013be14d791112d37a797a7ebeb3b6 data/min3halla/tags/items/flavor/spicy.json
-6adc15277f4965a9a1e963f6a16d5a12f198963a data/min3halla/tags/items/flavor/sweet.json
+// 1.20.1	2024-11-15T01:25:45.3016203	Tags for minecraft:item mod id min3halla
+594ede34900a136eb7fff902795a5b38332ef702 data/min3halla/tags/items/flavor/bitter.json
+33e16277e767da4a7814bd476add6d31c79ae0fb data/min3halla/tags/items/flavor/bubbly.json
+89c8a8366322eaacbbd480dd96f7a03bab00721e data/min3halla/tags/items/flavor/sour.json
+1193fb2aaacaeeb5f80871bd3b3561eb44ebf9b3 data/min3halla/tags/items/flavor/spicy.json
+ddd4d2039d32f791ae7ab21cfc1ca9e04e731db9 data/min3halla/tags/items/flavor/sweet.json
 b31a73728b61a574a1fd449ea3d47fddf6d1229c data/min3halla/tags/items/secondary/bland.json
 91bd8b3a1990456942e909480f0165d5ffb16bca data/min3halla/tags/items/secondary/happy.json
 873e367d3d49aac4e5f0e7961cfc21413e6d6904 data/min3halla/tags/items/secondary/sobering.json
