@@ -211,6 +211,7 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
     public void setIngredientSelected(int index) {
         if (index < 4 || index > 8) return;
         if (this.containerData.get(9) == 0) return;
+        if (this.container.getItem(index + 1).isEmpty()) return;
         this.containerData.set(index, this.containerData.get(index) == 0 ? 1 : 0);
     }
 
