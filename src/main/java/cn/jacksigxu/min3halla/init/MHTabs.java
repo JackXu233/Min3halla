@@ -60,7 +60,7 @@ public class MHTabs {
 
                 pOutput.accept(makeWineStack(MHItems.ERROR_DRINK.get(), 20));
 
-                // Big Drinks
+                // Non-Natural Big Drinks
                 pOutput.accept(makeWineStack(MHItems.SUGAR_RUSH.get(), 0, true));
             })
             .build();

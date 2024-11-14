@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.mixin;
 
+import cn.jacksigxu.min3halla.item.BigDrinkItem;
 import cn.jacksigxu.min3halla.item.DrinkItem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.ItemInHandRenderer;
@@ -28,17 +29,17 @@ public class ItemInHandRendererMixin {
             at = @At(value = "HEAD"), cancellable = true)
     private void renderArmWithItemHead(LivingEntity pEntity, ItemStack pItemStack, ItemDisplayContext pDisplayContext, boolean pLeftHand, PoseStack pPoseStack, MultiBufferSource pBuffer, int pSeed, CallbackInfo ci) {
         if (!(pItemStack.getItem() instanceof DrinkItem)) return;
-        if (pItemStack.getTag() == null || !pItemStack.getTag().contains("Big") || !pItemStack.getTag().getBoolean("Big"))
-            return;
+        if (pItemStack.getItem() instanceof BigDrinkItem ||
+                (pItemStack.getTag() != null && pItemStack.getTag().contains("Big") && pItemStack.getTag().getBoolean("Big"))) {
+            ci.cancel();
 
-        ci.cancel();
-
-        pPoseStack.pushPose();
-        pPoseStack.scale(1.5f, 1.5f, 1.5f);
-        if (!pItemStack.isEmpty()) {
-            this.itemRenderer.renderStatic(pEntity, pItemStack, pDisplayContext, pLeftHand, pPoseStack, pBuffer, pEntity.level(), pSeed, OverlayTexture.NO_OVERLAY, pEntity.getId() + pDisplayContext.ordinal());
+            pPoseStack.pushPose();
+            pPoseStack.scale(1.5f, 1.5f, 1.5f);
+            if (!pItemStack.isEmpty()) {
+                this.itemRenderer.renderStatic(pEntity, pItemStack, pDisplayContext, pLeftHand, pPoseStack, pBuffer, pEntity.level(), pSeed, OverlayTexture.NO_OVERLAY, pEntity.getId() + pDisplayContext.ordinal());
+            }
+            pPoseStack.popPose();
         }
-        pPoseStack.popPose();
     }
 
 }

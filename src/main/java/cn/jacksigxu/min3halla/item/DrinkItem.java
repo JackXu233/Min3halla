@@ -51,9 +51,9 @@ public class DrinkItem extends Item {
     @Override
     public int getUseDuration(ItemStack pStack) {
         if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
-            return super.getUseDuration(pStack) * 2;
+            return 64;
         } else {
-            return super.getUseDuration(pStack);
+            return 32;
         }
     }
 
@@ -97,7 +97,7 @@ public class DrinkItem extends Item {
         }
     }
 
-    private void makeTagTooltip(ItemStack stack, List<Component> tooltips) {
+    protected void makeTagTooltip(ItemStack stack, List<Component> tooltips) {
         if (!Screen.hasShiftDown()) {
             return;
         }
