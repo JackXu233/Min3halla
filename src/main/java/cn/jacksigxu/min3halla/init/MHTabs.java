@@ -28,6 +28,7 @@ public class MHTabs {
                 pOutput.accept(MHItems.KARMOTRINE.get());
                 pOutput.accept(MHItems.BTC_CAN.get());
 
+                // Drinks
                 pOutput.accept(makeWineStack(MHItems.BAD_TOUCH.get(), 4));
                 pOutput.accept(makeWineStack(MHItems.BEER.get(), 4));
                 pOutput.accept(makeWineStack(MHItems.BLEEDING_JANE.get(), 0));
@@ -38,16 +39,27 @@ public class MHTabs {
                 pOutput.accept(makeWineStack(MHItems.SUGAR_RUSH.get(), 0));
                 pOutput.accept(makeWineStack(MHItems.ZEN_STAR.get(), 4));
 
+                // Bottle Drinks
                 pOutput.accept(MHItems.RUM.get());
 
                 pOutput.accept(makeWineStack(MHItems.ERROR_DRINK.get(), 20));
+
+                // Big Drinks
+                pOutput.accept(makeWineStack(MHItems.SUGAR_RUSH.get(), 0, true));
             })
             .build();
 
     private static ItemStack makeWineStack(ItemLike itemLike, int alcohol) {
+        return makeWineStack(itemLike, alcohol, false);
+    }
+
+    private static ItemStack makeWineStack(ItemLike itemLike, int alcohol, boolean big) {
         ItemStack stack = new ItemStack(itemLike);
         if (alcohol > 0) {
             stack.getOrCreateTag().putInt("Alcohol", alcohol);
+        }
+        if (big) {
+            stack.getOrCreateTag().putBoolean("Big", true);
         }
         return stack;
     }

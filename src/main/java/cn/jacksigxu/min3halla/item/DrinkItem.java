@@ -54,6 +54,30 @@ public class DrinkItem extends Item {
     }
 
     @Override
+    public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+        if (stack.getTag() != null && stack.getTag().contains("Big") && stack.getTag().getBoolean("Big")) {
+            var food = super.getFoodProperties(stack, entity);
+            var properties = new FoodProperties.Builder();
+            if (food != null) {
+                properties.nutrition(food.getNutrition() * 2)
+                        .saturationMod(food.getSaturationModifier());
+                if (food.canAlwaysEat()) {
+                    properties.alwaysEat();
+                }
+                if (food.isMeat()) {
+                    properties.meat();
+                }
+                for (var effect : food.getEffects()) {
+                    properties.effect(effect::getFirst, effect.getSecond());
+                }
+                return properties.build();
+            }
+        }
+
+        return super.getFoodProperties(stack, entity);
+    }
+
+    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des." + pStack.getDescriptionId().split("item.")[1])
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
