@@ -32,9 +32,12 @@ public class MHFoodProperties {
     public static final FoodProperties SUPLEX = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties ZEN_STAR = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
 
+    public static final FoodProperties MULAN_TEA = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties A_FEDORA = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties RUM = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 100, 0), 0.3F)
             .build();
+    public static final FoodProperties ABSINTHE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
 
     public static final FoodProperties ERROR_DRINK = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).alwaysEat().build();
 

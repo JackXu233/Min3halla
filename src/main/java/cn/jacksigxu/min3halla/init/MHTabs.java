@@ -55,7 +55,10 @@ public class MHTabs {
                 pOutput.accept(MHItems.ZEN_STAR.get());
 
                 // Bottle Drinks
+                pOutput.accept(MHItems.MULAN_TEA.get());
+                pOutput.accept(MHItems.A_FEDORA.get());
                 pOutput.accept(MHItems.RUM.get());
+                pOutput.accept(MHItems.ABSINTHE.get());
 
                 pOutput.accept(makeWineStack(MHItems.ERROR_DRINK.get(), 20));
 

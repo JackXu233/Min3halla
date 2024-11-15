@@ -56,7 +56,10 @@ public class MHItems {
     public static final RegistryObject<Item> SUPLEX = ITEMS.register("suplex", () -> new DrinkItem(MHFoodProperties.SUPLEX, 3));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new BigDrinkItem(MHFoodProperties.ZEN_STAR, 4));
 
+    public static final RegistryObject<Item> MULAN_TEA = ITEMS.register("mulan_tea", () -> new BottleDrinkItem(MHFoodProperties.MULAN_TEA, 0));
+    public static final RegistryObject<Item> A_FEDORA = ITEMS.register("a_fedora", () -> new BottleDrinkItem(MHFoodProperties.A_FEDORA, 0));
     public static final RegistryObject<Item> RUM = ITEMS.register("rum", () -> new BottleDrinkItem(MHFoodProperties.RUM, 0));
+    public static final RegistryObject<Item> ABSINTHE = ITEMS.register("absinthe", () -> new BottleDrinkItem(MHFoodProperties.ABSINTHE, 0));
 
     public static final RegistryObject<Item> ERROR_DRINK = ITEMS.register("error_drink", ErrorDrink::new);
 
