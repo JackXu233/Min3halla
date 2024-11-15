@@ -16,7 +16,9 @@ public class MHFoodProperties {
     public static final FoodProperties CREVICE_SPIKE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties FLAMING_MOAI = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties FLUFFY_DREAM = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
-    public static final FoodProperties FRINGE_WEAVER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
+    public static final FoodProperties FRINGE_WEAVER = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0), 1.0F)
+            .build();
     public static final FoodProperties FROTHY_WATER = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties GRIZZLY_TEMPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
     public static final FoodProperties GUT_PUNCH = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();

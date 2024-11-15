@@ -50,10 +50,6 @@ public class BottleDrinkItem extends DrinkItem {
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         makeTagTooltip(pStack, pTooltipComponents);
-
-        if (this.alcohol > 0) {
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", this.alcohol).withStyle(ChatFormatting.AQUA));
-        }
     }
 
 }

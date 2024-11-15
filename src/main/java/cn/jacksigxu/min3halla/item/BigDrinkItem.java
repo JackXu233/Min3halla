@@ -41,9 +41,7 @@ public class BigDrinkItem extends DrinkItem {
 
         makeTagTooltip(pStack, pTooltipComponents);
 
-        if (this.alcohol > 0) {
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", this.alcohol).withStyle(ChatFormatting.AQUA));
-        } else if (this.alcohol == -1) {
+        if (this.alcohol == -1) {
             if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
                 pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
             }

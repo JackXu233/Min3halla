@@ -60,7 +60,7 @@ public class DrinkItem extends Item {
                     properties.meat();
                 }
                 for (var effect : food.getEffects()) {
-                    properties.effect(effect::getFirst, effect.getSecond());
+                    properties.effect(effect::getFirst, Math.min(1, effect.getSecond() * 2));
                 }
                 return properties.build();
             }
@@ -80,14 +80,7 @@ public class DrinkItem extends Item {
 
         makeTagTooltip(pStack, pTooltipComponents);
 
-        if (this.alcohol > 0) {
-            int alcohol = this.alcohol;
-            if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
-                alcohol *= 2;
-            }
-
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", alcohol).withStyle(ChatFormatting.AQUA));
-        } else if (this.alcohol == -1) {
+        if (this.alcohol == -1) {
             if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
                 pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
             }
@@ -166,29 +159,25 @@ public class DrinkItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        int alcohol = Math.max(this.alcohol, 0);
+        // 酒精含量不固定的饮品，才根据加入的酒精量进行效果的处理，固定饮品则在FoodProperties中进行处理
         if (this.alcohol == -1) {
-            alcohol = pStack.getOrCreateTag().getInt("Alcohol");
-        } else {
-            if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
-                alcohol *= 2;
-            }
-        }
+            int alcohol = pStack.getOrCreateTag().getInt("Alcohol");
 
-        if (!pLevel.isClientSide) {
-            if (alcohol > 5) {
-                if (pLevel.random.nextDouble() < (alcohol - 5) * 0.06) {
-                    pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, alcohol * 20, 0));
+            if (!pLevel.isClientSide) {
+                if (alcohol > 5) {
+                    if (pLevel.random.nextDouble() < (alcohol - 5) * 0.06) {
+                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, alcohol * 20, 0));
+                    }
                 }
-            }
-            if (alcohol > 10) {
-                if (pLevel.random.nextDouble() < (alcohol - 10) * 0.075) {
-                    pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, alcohol * 20, 0));
+                if (alcohol > 10) {
+                    if (pLevel.random.nextDouble() < (alcohol - 10) * 0.075) {
+                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, alcohol * 20, 0));
+                    }
                 }
-            }
-            if (alcohol > 15) {
-                if (pLevel.random.nextDouble() < (alcohol - 15) * 0.2) {
-                    pLivingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, alcohol * 20, 0));
+                if (alcohol > 15) {
+                    if (pLevel.random.nextDouble() < (alcohol - 15) * 0.2) {
+                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, alcohol * 20, 0));
+                    }
                 }
             }
         }
