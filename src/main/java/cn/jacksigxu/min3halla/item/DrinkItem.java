@@ -81,7 +81,12 @@ public class DrinkItem extends Item {
         makeTagTooltip(pStack, pTooltipComponents);
 
         if (this.alcohol > 0) {
-            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", this.alcohol).withStyle(ChatFormatting.AQUA));
+            int alcohol = this.alcohol;
+            if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
+                alcohol *= 2;
+            }
+
+            pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", alcohol).withStyle(ChatFormatting.AQUA));
         } else if (this.alcohol == -1) {
             if (pStack.getTag() != null && pStack.getTag().contains("Alcohol") && pStack.getTag().getInt("Alcohol") > 0) {
                 pTooltipComponents.add(Component.translatable("des.min3halla.alcohol", pStack.getTag().getInt("Alcohol")).withStyle(ChatFormatting.AQUA));
@@ -164,6 +169,10 @@ public class DrinkItem extends Item {
         int alcohol = Math.max(this.alcohol, 0);
         if (this.alcohol == -1) {
             alcohol = pStack.getOrCreateTag().getInt("Alcohol");
+        } else {
+            if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
+                alcohol *= 2;
+            }
         }
 
         if (alcohol > 5) {
