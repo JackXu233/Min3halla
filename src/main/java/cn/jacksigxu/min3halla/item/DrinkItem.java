@@ -27,7 +27,6 @@ public class DrinkItem extends Item {
 
     // 默认为0，设置为-1表示这是任意酒精度的饮品
     protected int alcohol = 0;
-    private boolean hasRemainingItem = false;
 
     public DrinkItem(FoodProperties foodProperties) {
         super(new Properties().food(foodProperties).stacksTo(16));
@@ -36,24 +35,6 @@ public class DrinkItem extends Item {
     public DrinkItem(FoodProperties foodProperties, int alcohol) {
         super(new Properties().food(foodProperties).stacksTo(16));
         this.alcohol = alcohol;
-    }
-
-    public DrinkItem(FoodProperties foodProperties, int alcohol, boolean hasRemainingItem) {
-        super(new Properties().food(foodProperties).stacksTo(16));
-        this.alcohol = alcohol;
-        this.hasRemainingItem = hasRemainingItem;
-    }
-
-    @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        ItemStack res = itemStack.copy();
-        res.setCount(1);
-        return hasRemainingItem ? res : super.getCraftingRemainingItem(itemStack);
-    }
-
-    @Override
-    public boolean hasCraftingRemainingItem(ItemStack stack) {
-        return this.hasRemainingItem;
     }
 
     @Override

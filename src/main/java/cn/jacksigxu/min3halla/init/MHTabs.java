@@ -37,7 +37,6 @@ public class MHTabs {
                 pOutput.accept(MHItems.BRANDTINI.get());
                 pOutput.accept(MHItems.COBALT_VELVET.get());
                 pOutput.accept(MHItems.CREVICE_SPIKE.get());
-                pOutput.accept(MHItems.FLAMING_MOAI.get());
                 pOutput.accept(MHItems.FLUFFY_DREAM.get());
                 pOutput.accept(MHItems.FRINGE_WEAVER.get());
                 pOutput.accept(MHItems.FROTHY_WATER.get());

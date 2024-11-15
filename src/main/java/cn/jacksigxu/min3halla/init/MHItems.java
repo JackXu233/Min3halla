@@ -1,10 +1,7 @@
 package cn.jacksigxu.min3halla.init;
 
 import cn.jacksigxu.min3halla.MHMod;
-import cn.jacksigxu.min3halla.item.BigDrinkItem;
-import cn.jacksigxu.min3halla.item.DrinkItem;
-import cn.jacksigxu.min3halla.item.ErrorDrink;
-import cn.jacksigxu.min3halla.item.ShakerPot;
+import cn.jacksigxu.min3halla.item.*;
 import cn.jacksigxu.min3halla.item.ingredient.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -59,7 +56,7 @@ public class MHItems {
     public static final RegistryObject<Item> SUPLEX = ITEMS.register("suplex", () -> new DrinkItem(MHFoodProperties.SUPLEX, 3));
     public static final RegistryObject<Item> ZEN_STAR = ITEMS.register("zen_star", () -> new BigDrinkItem(MHFoodProperties.ZEN_STAR, 4));
 
-    public static final RegistryObject<Item> RUM = ITEMS.register("rum", () -> new DrinkItem(MHFoodProperties.RUM, 0, true));
+    public static final RegistryObject<Item> RUM = ITEMS.register("rum", () -> new BottleDrinkItem(MHFoodProperties.RUM, 0));
 
     public static final RegistryObject<Item> ERROR_DRINK = ITEMS.register("error_drink", ErrorDrink::new);
 
