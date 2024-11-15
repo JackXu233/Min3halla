@@ -29,7 +29,7 @@ public class BigDrinkItem extends DrinkItem {
 
     @Override
     public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
-        return stack.getFoodProperties(entity);
+        return super.getFoodProperties(stack, entity);
     }
 
     @Override
