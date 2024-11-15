@@ -43,6 +43,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(MHItems.SUGAR_RUSH);
         simpleItem(MHItems.ZEN_STAR);
+
+        simpleItem(MHItems.ERROR_DRINK);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
