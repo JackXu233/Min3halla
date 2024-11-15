@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 2,
+  "bex": 2,
+  "pwd": 6,
+  "fla": 6,
+  "kar": 4,
+  "ice": true,
+  "blend": true,
+  "output": {
+    "item": "min3halla:mercuryblast"
+  },
+  "big": true
+}

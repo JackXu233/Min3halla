@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 6,
+  "pwd": 1,
+  "fla": 1,
+  "kar": 2,
+  "ice": true,
+  "blend": true,
+  "output": {
+    "item": "min3halla:moonblast"
+  }
+}
