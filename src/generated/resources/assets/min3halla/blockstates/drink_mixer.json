@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "min3halla:block/drink_mixer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "min3halla:block/drink_mixer"
+    },
+    "facing=south": {
+      "model": "min3halla:block/drink_mixer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "min3halla:block/drink_mixer",
+      "y": 270
+    }
+  }
+}

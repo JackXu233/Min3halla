@@ -69,5 +69,6 @@
   "item.min3halla.error_drink": "3rr0r",
   "des.min3halla.error_drink": "Warning: Error Drink",
   "block.min3halla.ferment_barrel": "发酵桶",
-  "menu.min3halla.ferment_barrel": "发酵桶"
+  "menu.min3halla.ferment_barrel": "发酵桶",
+  "stat.min3halla.interact_with_drink_mixer": "与调饮台交互次数"
 }

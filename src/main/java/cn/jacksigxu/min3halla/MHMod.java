@@ -26,6 +26,7 @@ public class MHMod {
         MHBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
         MHMenuTypes.MENU_TYPES.register(modEventBus);
         MHRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+        MHStats.STATS.register(modEventBus);
         MHNetwork.init();
 
         MinecraftForge.EVENT_BUS.register(this);

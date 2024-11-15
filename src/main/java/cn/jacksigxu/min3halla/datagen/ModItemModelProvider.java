@@ -1,6 +1,7 @@
 package cn.jacksigxu.min3halla.datagen;
 
 import cn.jacksigxu.min3halla.MHMod;
+import cn.jacksigxu.min3halla.init.MHBlocks;
 import cn.jacksigxu.min3halla.init.MHItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        evenSimplerBlockItem(MHBlocks.DRINK_MIXER);
+
         simpleItem(MHItems.ADELHYDE);
         simpleItem(MHItems.BRONSON_EXTRACT);
         simpleItem(MHItems.POWDERED_DELTA);
