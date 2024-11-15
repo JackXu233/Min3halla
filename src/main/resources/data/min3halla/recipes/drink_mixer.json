@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "#S#",
-    "BMB",
-    "#C#"
+    "BCB",
+    "#M#"
   ],
   "key": {
     "#": {
       "item": "minecraft:black_concrete"
     },
     "S": {
-      "item": "minecraft:sculk_sensor"
+      "item": "minecraft:redstone_lamp"
     },
     "B": {
       "item": "minecraft:brewing_stand"
@@ -19,7 +19,7 @@
       "item": "minecraft:barrel"
     },
     "C": {
-      "item": "minecraft:sculk_catalyst"
+      "item": "minecraft:observer"
     }
   },
   "result": {

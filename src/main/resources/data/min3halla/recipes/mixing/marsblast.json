@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 6,
+  "pwd": 1,
+  "fla": 4,
+  "kar": 2,
+  "blend": true,
+  "output": {
+    "item": "min3halla:marsblast"
+  }
+}
