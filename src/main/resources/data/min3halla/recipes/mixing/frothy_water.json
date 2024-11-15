@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 1,
+  "bex": 1,
+  "pwd": 1,
+  "fla": 1,
+  "age": true,
+  "output": {
+    "item": "min3halla:frothy_water"
+  }
+}

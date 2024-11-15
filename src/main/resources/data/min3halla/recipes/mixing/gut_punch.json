@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 5,
+  "fla": 1,
+  "kar": -1,
+  "age": true,
+  "output": {
+    "item": "min3halla:gut_punch"
+  }
+}

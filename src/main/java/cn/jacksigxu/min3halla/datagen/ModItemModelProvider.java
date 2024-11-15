@@ -40,6 +40,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.BRANDTINI);
 //        simpleItem(MHItems.COBALT_VELVET);
         simpleItem(MHItems.CREVICE_SPIKE);
+//        simpleItem(MHItems.FLAMING_MOAI);
+//        simpleItem(MHItems.FLUFFY_DREAM);
+//        simpleItem(MHItems.FRINGE_WEAVER);
+//        simpleItem(MHItems.FROTHY_WATER);
+        simpleItem(MHItems.GRIZZLY_TEMPLE);
 
         simpleItem(MHItems.SUGAR_RUSH);
         simpleItem(MHItems.ZEN_STAR);

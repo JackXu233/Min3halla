@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 1,
+  "bex": 1,
+  "pwd": 2,
+  "fla": 3,
+  "kar": 5,
+  "output": {
+    "item": "min3halla:flaming_moai"
+  }
+}

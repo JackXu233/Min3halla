@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 3,
+  "pwd": 3,
+  "kar": -1,
+  "age": true,
+  "output": {
+    "item": "min3halla:fluffy_dream"
+  }
+}
