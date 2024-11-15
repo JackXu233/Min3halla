@@ -38,6 +38,8 @@ public class MHTags {
         public static final TagKey<Item> SECONDARY_STRONG = tag("secondary/strong");
         public static final TagKey<Item> SECONDARY_VINTAGE = tag("secondary/vintage");
 
+        public static final TagKey<Item> BOTTLED = tag("bottled");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(MHMod.loc(name));
         }

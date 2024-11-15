@@ -39,6 +39,11 @@ public class MHFoodProperties {
             .build();
     public static final FoodProperties ABSINTHE = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).alwaysEat().build();
 
-    public static final FoodProperties ERROR_DRINK = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).alwaysEat().build();
+    public static final FoodProperties ERROR_DRINK = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 200, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.POISON, 200, 0), 1.0F)
+            .build();
 
 }

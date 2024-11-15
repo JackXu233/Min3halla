@@ -52,5 +52,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.SECONDARY_STRONG).add(MHItems.FRINGE_WEAVER.get(), MHItems.GUT_PUNCH.get(), MHItems.MARSBLAST.get(),
                 MHItems.PIANO_MAN.get());
         this.tag(MHTags.Items.SECONDARY_VINTAGE).add(MHItems.BAD_TOUCH.get(), MHItems.BEER.get());
+
+        this.tag(MHTags.Items.BOTTLED).add(MHItems.MULAN_TEA.get(), MHItems.A_FEDORA.get(), MHItems.RUM.get(), MHItems.ABSINTHE.get());
     }
 }
