@@ -44,6 +44,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.SUGAR_RUSH);
         simpleItem(MHItems.ZEN_STAR);
 
+        simpleItem(MHItems.MULAN_TEA);
+        simpleItem(MHItems.A_FEDORA);
+        simpleItem(MHItems.RUM);
+        simpleItem(MHItems.ABSINTHE);
+
         simpleItem(MHItems.ERROR_DRINK);
     }
 
