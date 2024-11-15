@@ -368,7 +368,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
             stack.getOrCreateTag().put("Result", result.serializeNBT());
             stack.getOrCreateTag().putBoolean("Blend", recipe.blend);
             if (recipe.kar == -1) {
-                stack.getOrCreateTag().putInt("Alcohol", this.karCount);
+                stack.getOrCreateTag().putInt("Alcohol", recipe.big ? this.karCount * 2 : this.karCount);
             }
             if (recipe.big) {
                 stack.getOrCreateTag().putBoolean("Big", true);
