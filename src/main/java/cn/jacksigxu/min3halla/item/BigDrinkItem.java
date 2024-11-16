@@ -37,7 +37,7 @@ public class BigDrinkItem extends DrinkItem {
         pTooltipComponents.add(Component.translatable("des." + pStack.getDescriptionId().split("item.")[1])
                 .withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
-        pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.WHITE));
+//        pTooltipComponents.add(Component.translatable("des.min3halla.big").withStyle(ChatFormatting.WHITE));
 
         makeTagTooltip(pStack, pTooltipComponents);
 

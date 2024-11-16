@@ -37,7 +37,7 @@ public class MHJeiPlugin implements IModPlugin {
 
         // 调饮台
         List<MixingRecipe> mixingRecipes = recipeManager.getAllRecipesFor(MixingRecipe.Type.INSTANCE);
-        registration.addRecipes(MixingCategory.TYPE, mixingRecipes);
+        registration.addRecipes(MixingCategory.TYPE, mixingRecipes.stream().filter(recipe -> !recipe.big).toList());
     }
 
     @Override
