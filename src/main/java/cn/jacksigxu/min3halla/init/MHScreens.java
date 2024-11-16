@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.init;
 
+import cn.jacksigxu.min3halla.gui.screen.BTCFillingMachineScreen;
 import cn.jacksigxu.min3halla.gui.screen.DrinkMixerScreen;
 import cn.jacksigxu.min3halla.gui.screen.FermentBarrelScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -16,6 +17,7 @@ public class MHScreens {
         event.enqueueWork(() -> {
             MenuScreens.register(MHMenuTypes.DRINK_MIXER_MENU.get(), DrinkMixerScreen::new);
             MenuScreens.register(MHMenuTypes.FERMENT_BARREL_MENU.get(), FermentBarrelScreen::new);
+            MenuScreens.register(MHMenuTypes.BTC_FILLING_MACHINE_MENU.get(), BTCFillingMachineScreen::new);
         });
     }
 }

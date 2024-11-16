@@ -14,7 +14,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class BTCFillinfMachineMenu extends AbstractContainerMenu {
+public class BTCFillingMachineMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData containerData;
     protected final Level level;
@@ -22,11 +22,11 @@ public class BTCFillinfMachineMenu extends AbstractContainerMenu {
     public static final int X_OFFSET = 0;
     public static final int Y_OFFSET = 0;
 
-    public BTCFillinfMachineMenu(int id, Inventory inventory) {
+    public BTCFillingMachineMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(4), new SimpleContainerData(BTCFillingMachineBlockEntity.MAX_DATA_COUNT));
     }
 
-    public BTCFillinfMachineMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
+    public BTCFillingMachineMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
         super(MHMenuTypes.BTC_FILLING_MACHINE_MENU.get(), id);
 
         checkContainerSize(container, 4);
@@ -36,10 +36,10 @@ public class BTCFillinfMachineMenu extends AbstractContainerMenu {
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new BTCFillinfMachineMenu.InputSlot(container, 0, 60, 55));
-        this.addSlot(new BTCFillinfMachineMenu.InputSlot(container, 1, 140, 55));
-        this.addSlot(new BTCFillinfMachineMenu.CanSlot(container, 2, 220, 55));
-        this.addSlot(new BTCFillinfMachineMenu.ResultSlot(container, 3, 300, 55));
+        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 0, 60, 55));
+        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 1, 140, 55));
+        this.addSlot(new BTCFillingMachineMenu.CanSlot(container, 2, 220, 55));
+        this.addSlot(new BTCFillingMachineMenu.ResultSlot(container, 3, 300, 55));
 
         this.addDataSlots(containerData);
 

@@ -1,6 +1,6 @@
 package cn.jacksigxu.min3halla.block.entity;
 
-import cn.jacksigxu.min3halla.gui.menu.BTCFillinfMachineMenu;
+import cn.jacksigxu.min3halla.gui.menu.BTCFillingMachineMenu;
 import cn.jacksigxu.min3halla.init.MHBlockEntityTypes;
 import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.recipe.FillingRecipe;
@@ -218,7 +218,7 @@ public class BTCFillingMachineBlockEntity extends BlockEntity implements Worldly
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new BTCFillinfMachineMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+        return new BTCFillingMachineMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override
