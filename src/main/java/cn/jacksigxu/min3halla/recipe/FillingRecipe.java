@@ -11,7 +11,11 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.util.RecipeMatcher;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FillingRecipe implements Recipe<SimpleContainer> {
 
@@ -28,7 +32,19 @@ public class FillingRecipe implements Recipe<SimpleContainer> {
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
         if (pLevel.isClientSide()) return false;
-        return inputs.get(0).test(pContainer.getItem(0)) && inputs.get(1).test(pContainer.getItem(1));
+
+        List<ItemStack> inputs = new ArrayList<>();
+        int i = 0;
+
+        for (int j = 0; j < pContainer.getContainerSize(); ++j) {
+            ItemStack itemstack = pContainer.getItem(j);
+            if (!itemstack.isEmpty()) {
+                ++i;
+                inputs.add(itemstack);
+            }
+        }
+
+        return i == this.inputs.size() && RecipeMatcher.findMatches(inputs, this.inputs) != null;
     }
 
     @Override
