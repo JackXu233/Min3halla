@@ -7,6 +7,7 @@ import cn.jacksigxu.min3halla.recipe.FillingRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
@@ -70,7 +71,21 @@ public class BTCFillingMachineBlockEntity extends BlockEntity implements Worldly
         } else {
             blockEntity.resetProgress();
         }
+    }
 
+    @Override
+    public void load(CompoundTag pTag) {
+        super.load(pTag);
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(pTag, this.items);
+        this.progress = pTag.getInt("Progress");
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag) {
+        super.saveAdditional(pTag);
+        ContainerHelper.saveAllItems(pTag, this.items);
+        pTag.putInt("Progress", this.progress);
     }
 
     @Override

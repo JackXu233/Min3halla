@@ -44,7 +44,8 @@ public class DrinkMixerBlock extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.min3halla.drink_mixer").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltip.add(Component.translatable("des.min3halla.drink_mixer_1").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.min3halla.drink_mixer_2").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
