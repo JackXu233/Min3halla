@@ -45,7 +45,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.FRINGE_WEAVER);
 //        simpleItem(MHItems.FROTHY_WATER);
         simpleItem(MHItems.GRIZZLY_TEMPLE);
-//        simpleItem(MHItems.GUT_PUNCH);
+        simpleItem(MHItems.GUT_PUNCH);
         simpleItem(MHItems.MARSBLAST);
         simpleItem(MHItems.MERCURYBLAST);
         simpleItem(MHItems.MOONBLAST);

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "min3halla:drink_mixer"
+    },
+    "title": {
+      "translate": "advancement.min3halla.drink_mixer"
+    },
+    "description": {
+      "translate": "advancement.min3halla.drink_mixer.des"
+    },
+    "background": "min3halla:textures/block/advancement_bg.png"
+  },
+  "criteria": {
+    "drink_mixer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "min3halla:drink_mixer"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

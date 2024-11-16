@@ -1,7 +1,6 @@
 {
   "itemGroup.min3halla_tab": "MIN-3 Hall-A",
   "block.min3halla.drink_mixer": "QT-SIS调饮台",
-  "des.min3halla.drink_mixer": "“调制饮料，改变人生”",
   "des.min3halla.drink_mixer_1": "一台经过非法改装后的B.T.C.调饮台",
   "des.min3halla.drink_mixer_2": "虽然失去了自动出品的功能，但可以增加一些摇一摇的仪式感",
   "menu.min3halla.drink_mixer": "QT-SIS调饮台",
@@ -105,5 +104,7 @@
   "menu.min3halla.ferment_barrel": "发酵桶",
   "stat.min3halla.interact_with_drink_mixer": "与调饮台交互次数",
   "block.min3halla.btc_filling_machine": "BTC标准提取灌装机",
-  "menu.min3halla.btc_filling_machine": "BTC标准提取灌装机"
+  "menu.min3halla.btc_filling_machine": "BTC标准提取灌装机",
+  "advancement.min3halla.drink_mixer": "MIN-3 Hall-A",
+  "advancement.min3halla.drink_mixer.des": "“调制饮料，改变人生”"
 }
