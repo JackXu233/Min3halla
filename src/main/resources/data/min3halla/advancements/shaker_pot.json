@@ -13,7 +13,7 @@
   },
   "parent": "min3halla:drink_mixer",
   "criteria": {
-    "requirement": {
+    "shaker_pot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

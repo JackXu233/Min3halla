@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "min3halla:error_drink"
+    },
+    "title": {
+      "translate": "advancement.min3halla.error_drink"
+    },
+    "description": {
+      "translate": "advancement.min3halla.error_drink.des"
+    }
+  },
+  "parent": "min3halla:shaker_pot",
+  "criteria": {
+    "error_drink": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "min3halla:error_drink"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
