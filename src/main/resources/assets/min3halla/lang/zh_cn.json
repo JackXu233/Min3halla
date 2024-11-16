@@ -106,5 +106,7 @@
   "block.min3halla.btc_filling_machine": "BTC标准提取灌装机",
   "menu.min3halla.btc_filling_machine": "BTC标准提取灌装机",
   "advancement.min3halla.drink_mixer": "MIN-3 Hall-A",
-  "advancement.min3halla.drink_mixer.des": "“调制饮料，改变人生”"
+  "advancement.min3halla.drink_mixer.des": "“调制饮料，改变人生”",
+  "advancement.min3halla.shaker_pot": "“调制人生，改变饮料……？”",
+  "advancement.min3halla.shaker_pot.des": "用雪克壶制作出一杯饮品"
 }

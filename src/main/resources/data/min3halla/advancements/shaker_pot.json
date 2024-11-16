@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "min3halla:shaker_pot",
+      "nbt": "{Result:{}}"
+    },
+    "title": {
+      "translate": "advancement.min3halla.shaker_pot"
+    },
+    "description": {
+      "translate": "advancement.min3halla.shaker_pot.des"
+    }
+  },
+  "parent": "min3halla:drink_mixer",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "min3halla:shaker_pot"
+            ],
+            "nbt": "{Finished:true}"
+          }
+        ]
+      }
+    }
+  }
+}
