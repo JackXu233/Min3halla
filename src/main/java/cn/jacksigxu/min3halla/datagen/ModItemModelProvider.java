@@ -42,7 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.CREVICE_SPIKE);
 //        simpleItem(MHItems.FLAMING_MOAI);
         simpleItem(MHItems.FLUFFY_DREAM);
-//        simpleItem(MHItems.FRINGE_WEAVER);
+        simpleItem(MHItems.FRINGE_WEAVER);
 //        simpleItem(MHItems.FROTHY_WATER);
         simpleItem(MHItems.GRIZZLY_TEMPLE);
 //        simpleItem(MHItems.GUT_PUNCH);
@@ -55,7 +55,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.SPARKLE_STAR);
         simpleItem(MHItems.SUGAR_RUSH);
         simpleItem(MHItems.SUNSHINE_CLOUD);
-//        simpleItem(MHItems.SUPLEX);
+        simpleItem(MHItems.SUPLEX);
         simpleItem(MHItems.ZEN_STAR);
 
         simpleItem(MHItems.MULAN_TEA);

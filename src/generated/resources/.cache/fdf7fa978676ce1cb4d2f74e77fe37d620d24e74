@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-17T00:08:48.979332	Item Models: min3halla
+// 1.20.1	2024-11-17T00:25:52.6306786	Item Models: min3halla
 66adbc23838dd22ad1cf005223f451b01281e516 assets/min3halla/models/item/absinthe.json
 78916cb2e64d067507c96fa7583f3a098a7bb82d assets/min3halla/models/item/adelhyde.json
 b2b0f8be50848dd025293f967981b8b7a4b26d70 assets/min3halla/models/item/a_fedora.json
@@ -14,6 +14,7 @@ e283472d7c5ae569df0145ea26e946bcd3609c16 assets/min3halla/models/item/bronson_ex
 5570f674d4f1649ebb9d7d2c082bf5ded134535e assets/min3halla/models/item/error_drink.json
 333b59de36f09536e5077a2457962d15511f5760 assets/min3halla/models/item/flanergide.json
 56c3f9f866d7a150f7f03e55872f43262c398224 assets/min3halla/models/item/fluffy_dream.json
+b4ef2ae382a5e0e0be9938506056c146d43b71d9 assets/min3halla/models/item/fringe_weaver.json
 51680cda6c84b1829b3c6a16cc142ac4f8463a26 assets/min3halla/models/item/grizzly_temple.json
 4221235dfac02e7660e5a1b78b6f461e02a0911b assets/min3halla/models/item/karmotrine.json
 4de8b26966282ef33256f79ff2c47c36ecd2c9a9 assets/min3halla/models/item/marsblast.json
@@ -26,5 +27,6 @@ e736c6f0a08a8a4732da2cef6ac68ea586a330b1 assets/min3halla/models/item/mulan_tea.
 58a965848e2bb591b7ee41643baec5634f3690f7 assets/min3halla/models/item/sparkle_star.json
 3baed4fdddd18ed94a4a17135c3633eb5f9e3a2c assets/min3halla/models/item/sugar_rush.json
 0cb68763f8b61a3c77ab0bc76fdf855ea52441d4 assets/min3halla/models/item/sunshine_cloud.json
+1882526aa1db16ab6d7803e7980bfa936e08a3df assets/min3halla/models/item/suplex.json
 280e415268fb7848113b43c8ae2abb012742fad8 assets/min3halla/models/item/wine_glass.json
 6b1dd7e0c13e43e3d58efccd7e120bc7d31cb238 assets/min3halla/models/item/zen_star.json
