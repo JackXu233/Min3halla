@@ -1,0 +1,9 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 3,
+  "fla": 3,
+  "kar": 4,
+  "output": {
+    "item": "min3halla:pile_driver"
+  }
+}

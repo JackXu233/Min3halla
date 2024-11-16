@@ -71,9 +71,18 @@ public class MHTabs {
                 pOutput.accept(makeBigWineStack(MHItems.BRANDTINI.get()));
                 pOutput.accept(makeBigWineStack(MHItems.COBALT_VELVET.get()));
                 pOutput.accept(makeBigWineStack(MHItems.CREVICE_SPIKE.get()));
-
-                pOutput.accept(makeBigWineStack(MHItems.SUGAR_RUSH.get(), 0));
-                pOutput.accept(makeBigWineStack(MHItems.SUNSHINE_CLOUD.get(), 0));
+                pOutput.accept(makeBigWineStack(MHItems.FLUFFY_DREAM.get()));
+                pOutput.accept(makeBigWineStack(MHItems.FRINGE_WEAVER.get()));
+                pOutput.accept(makeBigWineStack(MHItems.FROTHY_WATER.get()));
+                pOutput.accept(makeBigWineStack(MHItems.GRIZZLY_TEMPLE.get()));
+                pOutput.accept(makeBigWineStack(MHItems.GUT_PUNCH.get()));
+                pOutput.accept(makeBigWineStack(MHItems.MERCURYBLAST.get()));
+                pOutput.accept(makeBigWineStack(MHItems.MOONBLAST.get()));
+                pOutput.accept(makeBigWineStack(MHItems.PILE_DRIVER.get()));
+                pOutput.accept(makeBigWineStack(MHItems.SPARKLE_STAR.get()));
+                pOutput.accept(makeBigWineStack(MHItems.SUGAR_RUSH.get()));
+                pOutput.accept(makeBigWineStack(MHItems.SUNSHINE_CLOUD.get()));
+                pOutput.accept(makeBigWineStack(MHItems.SUPLEX.get()));
             })
             .build();
 

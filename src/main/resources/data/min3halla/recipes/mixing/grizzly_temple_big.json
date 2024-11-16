@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 6,
+  "bex": 6,
+  "pwd": 6,
+  "kar": 2,
+  "blend": true,
+  "output": {
+    "item": "min3halla:grizzly_temple"
+  },
+  "big": true
+}

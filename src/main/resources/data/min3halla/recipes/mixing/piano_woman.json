@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 5,
+  "bex": 5,
+  "pwd": 2,
+  "fla": 3,
+  "kar": 3,
+  "age": true,
+  "output": {
+    "item": "min3halla:piano_woman"
+  }
+}

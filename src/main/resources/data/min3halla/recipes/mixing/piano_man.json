@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 2,
+  "bex": 3,
+  "pwd": 5,
+  "fla": 5,
+  "kar": 3,
+  "ice": true,
+  "output": {
+    "item": "min3halla:piano_man"
+  }
+}

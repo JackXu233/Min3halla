@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 2,
+  "kar": 18,
+  "age": true,
+  "output": {
+    "item": "min3halla:fringe_weaver"
+  },
+  "big": true
+}

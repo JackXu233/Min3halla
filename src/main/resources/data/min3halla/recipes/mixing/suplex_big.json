@@ -1,0 +1,11 @@
+{
+  "type": "min3halla:mixing",
+  "bex": 8,
+  "fla": 6,
+  "kar": 6,
+  "ice": true,
+  "output": {
+    "item": "min3halla:suplex"
+  },
+  "big": true
+}
