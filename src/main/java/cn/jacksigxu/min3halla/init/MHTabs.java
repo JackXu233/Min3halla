@@ -73,6 +73,7 @@ public class MHTabs {
                 pOutput.accept(makeBigWineStack(MHItems.CREVICE_SPIKE.get()));
 
                 pOutput.accept(makeBigWineStack(MHItems.SUGAR_RUSH.get(), 0));
+                pOutput.accept(makeBigWineStack(MHItems.SUNSHINE_CLOUD.get(), 0));
             })
             .build();
 

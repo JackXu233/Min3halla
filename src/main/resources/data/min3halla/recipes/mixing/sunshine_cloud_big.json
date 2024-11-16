@@ -1,0 +1,12 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 4,
+  "bex": 4,
+  "kar": -1,
+  "ice": true,
+  "blend": true,
+  "output": {
+    "item": "min3halla:sunshine_cloud"
+  },
+  "big": true
+}
