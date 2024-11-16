@@ -1,5 +1,6 @@
 package cn.jacksigxu.min3halla.block.entity;
 
+import cn.jacksigxu.min3halla.gui.menu.BTCFillinfMachineMenu;
 import cn.jacksigxu.min3halla.init.MHBlockEntityTypes;
 import cn.jacksigxu.min3halla.init.MHItems;
 import cn.jacksigxu.min3halla.recipe.FillingRecipe;
@@ -17,6 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
@@ -215,6 +218,32 @@ public class BTCFillingMachineBlockEntity extends BlockEntity implements Worldly
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new BTCFillinfMachineMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if (!this.remove && side != null && cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == Direction.UP) {
+                return itemHandlers[0].cast();
+            } else if (side == Direction.DOWN) {
+                return itemHandlers[1].cast();
+            } else {
+                return itemHandlers[2].cast();
+            }
+        }
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        for (LazyOptional<?> itemHandler : itemHandlers) itemHandler.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        this.itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
     }
 }
