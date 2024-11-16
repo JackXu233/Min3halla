@@ -42,7 +42,7 @@ public class MHJeiPlugin implements IModPlugin {
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(DrinkMixerScreen.class, 217, 81, 16, 16, MixingCategory.TYPE);
+        registration.addRecipeClickArea(DrinkMixerScreen.class, 98, 88, 46, 13, MixingCategory.TYPE);
     }
 
     @Override
