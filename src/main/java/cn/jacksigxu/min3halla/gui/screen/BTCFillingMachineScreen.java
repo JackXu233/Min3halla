@@ -17,6 +17,7 @@ public class BTCFillingMachineScreen extends AbstractContainerScreen<BTCFillingM
         imageWidth = 176;
         imageHeight = 177;
     }
+
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         int i = (this.width - this.imageWidth) / 2;

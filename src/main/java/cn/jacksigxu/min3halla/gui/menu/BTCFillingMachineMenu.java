@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class BTCFillingMachineMenu extends AbstractContainerMenu {
+
     private final Container container;
     private final ContainerData containerData;
     protected final Level level;
@@ -72,7 +73,11 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
                     return ItemStack.EMPTY;
                 }
             } else {
-                if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
+                if (itemstack1.is(MHItems.BTC_CAN.get())) {
+                    if (!this.moveItemStackTo(itemstack1, 2, 3, true)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
                     return ItemStack.EMPTY;
                 } else if (pIndex < 31) {
                     if (!this.moveItemStackTo(itemstack1, 31, 40, false)) {
@@ -105,17 +110,19 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
     }
 
     static class InputSlot extends Slot {
+
         public InputSlot(Container pContainer, int pSlot, int pX, int pY) {
             super(pContainer, pSlot, pX, pY);
         }
 
         @Override
         public boolean mayPlace(ItemStack pStack) {
-            return true;
+            return super.mayPlace(pStack);
         }
     }
 
     static class CanSlot extends Slot {
+
         public CanSlot(Container pContainer, int pSlot, int pX, int pY) {
             super(pContainer, pSlot, pX, pY);
         }
@@ -127,6 +134,7 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
     }
 
     static class ResultSlot extends Slot {
+
         public ResultSlot(Container pContainer, int pSlot, int pX, int pY) {
             super(pContainer, pSlot, pX, pY);
         }
