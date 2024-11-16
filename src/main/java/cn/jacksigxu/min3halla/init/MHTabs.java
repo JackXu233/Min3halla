@@ -18,6 +18,7 @@ public class MHTabs {
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(MHItems.DRINK_MIXER.get());
                 pOutput.accept(MHItems.FERMENT_BARREL.get());
+                pOutput.accept(MHItems.BTC_FILLING_MACHINE.get());
 
                 pOutput.accept(MHItems.SHAKER_POT.get());
                 pOutput.accept(MHItems.WINE_GLASS.get());
