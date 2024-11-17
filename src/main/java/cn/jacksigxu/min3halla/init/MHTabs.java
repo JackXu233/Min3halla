@@ -86,6 +86,9 @@ public class MHTabs {
 //                pOutput.accept(makeBigWineStack(MHItems.SUGAR_RUSH.get()));
 //                pOutput.accept(makeBigWineStack(MHItems.SUNSHINE_CLOUD.get()));
 //                pOutput.accept(makeBigWineStack(MHItems.SUPLEX.get()));
+
+                // Original Drinks
+                pOutput.accept(MHItems.SUPERB_BASKETBALL.get());
             })
             .build();
 

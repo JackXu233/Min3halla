@@ -3,6 +3,7 @@ package cn.jacksigxu.min3halla.item;
 import cn.jacksigxu.min3halla.client.tooltip.ImageTooltip;
 import cn.jacksigxu.min3halla.init.MHItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -14,6 +15,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -98,6 +101,7 @@ public class ShakerPot extends Item {
         return UseAnim.BRUSH;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
         if (pStack.getTag() != null && pStack.getTag().contains("Result")) {
@@ -117,8 +121,9 @@ public class ShakerPot extends Item {
                     }
                 }
             }
+            int width = Minecraft.getInstance().font.width(res.getHoverName());
 
-            return Optional.of(new ImageTooltip(80, 20, res, tooltips));
+            return Optional.of(new ImageTooltip(32 + width, 20, res, tooltips));
         }
 
         return Optional.empty();
