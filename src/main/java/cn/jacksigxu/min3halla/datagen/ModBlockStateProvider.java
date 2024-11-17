@@ -16,5 +16,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         horizontalBlock(MHBlocks.DRINK_MIXER.get(), new ModelFile.UncheckedModelFile(modLoc("block/drink_mixer")));
+        simpleBlockWithItem(MHBlocks.FERMENT_BARREL.get(), models().cubeBottomTop("ferment_barrel", MHMod.loc("block/ferment_barrel_side"),
+                MHMod.loc("block/ferment_barrel_bottom"), MHMod.loc("block/ferment_barrel_top")));
     }
 }

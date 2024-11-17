@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "min3halla:block/ferment_barrel_bottom",
+    "side": "min3halla:block/ferment_barrel_side",
+    "top": "min3halla:block/ferment_barrel_top"
+  }
+}
