@@ -164,20 +164,8 @@ public class DrinkItem extends Item {
             int alcohol = pStack.getOrCreateTag().getInt("Alcohol");
 
             if (!pLevel.isClientSide) {
-                if (alcohol > 5) {
-                    if (pLevel.random.nextDouble() < (alcohol - 5) * 0.06) {
-                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, alcohol * 20, 0));
-                    }
-                }
-                if (alcohol > 10) {
-                    if (pLevel.random.nextDouble() < (alcohol - 10) * 0.075) {
-                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, alcohol * 20, 0));
-                    }
-                }
-                if (alcohol > 15) {
-                    if (pLevel.random.nextDouble() < (alcohol - 15) * 0.2) {
-                        pLivingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, alcohol * 20, 0));
-                    }
+                if (pLevel.random.nextDouble() < alcohol * 0.1) {
+                    pLivingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0));
                 }
             }
         }
