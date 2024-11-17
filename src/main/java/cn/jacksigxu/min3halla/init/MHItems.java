@@ -30,6 +30,8 @@ public class MHItems {
     public static final RegistryObject<Item> FLANERGIDE = ITEMS.register("flanergide", Flanergide::new);
     public static final RegistryObject<Item> KARMOTRINE = ITEMS.register("karmotrine", Karmotrine::new);
     public static final RegistryObject<Item> BTC_CAN = ITEMS.register("btc_can", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HYPER_ACID_X = ITEMS.register("hyper_acid_x", () -> new Item(new Item.Properties().food(MHFoodProperties.HYPER_ACID_X)));
+    public static final RegistryObject<Item> GLITCH_LIQUID = ITEMS.register("glitch_liquid", () -> new Item(new Item.Properties().food(MHFoodProperties.GLITCH_LIQUID)));
 
     // Drinks
     public static final RegistryObject<Item> BAD_TOUCH = ITEMS.register("bad_touch", () -> new DrinkItem(MHFoodProperties.BAD_TOUCH, 4));

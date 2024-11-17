@@ -28,6 +28,8 @@ public class MHTabs {
                 pOutput.accept(MHItems.FLANERGIDE.get());
                 pOutput.accept(MHItems.KARMOTRINE.get());
                 pOutput.accept(MHItems.BTC_CAN.get());
+                pOutput.accept(MHItems.HYPER_ACID_X.get());
+                pOutput.accept(MHItems.GLITCH_LIQUID.get());
 
                 // Drinks
                 pOutput.accept(MHItems.BAD_TOUCH.get());
