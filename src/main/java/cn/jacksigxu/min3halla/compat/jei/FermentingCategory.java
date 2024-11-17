@@ -6,6 +6,7 @@ import cn.jacksigxu.min3halla.recipe.FermentingRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
@@ -28,6 +29,7 @@ public class FermentingCategory implements IRecipeCategory<FermentingRecipe> {
 
     private final IDrawable background;
     private final IDrawable icon;
+    private final IDrawableAnimated arrow;
 
     public FermentingCategory(IGuiHelper helper) {
         this.background = helper.drawableBuilder(TEXTURE, 30, 22, 116, 38)
@@ -35,12 +37,16 @@ public class FermentingCategory implements IRecipeCategory<FermentingRecipe> {
                 .build();
 
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(MHItems.FERMENT_BARREL.get()));
+
+        this.arrow = helper.drawableBuilder(TEXTURE, 177, 0, 22, 16)
+                .setTextureSize(256, 256)
+                .buildAnimated(100, IDrawableAnimated.StartDirection.LEFT, false);
     }
 
     @Override
     @ParametersAreNonnullByDefault
     public void draw(FermentingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-
+        this.arrow.draw(guiGraphics, 43, 11);
     }
 
     @Override
