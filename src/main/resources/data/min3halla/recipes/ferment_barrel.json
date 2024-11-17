@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "iIi",
+    "#I#",
     "iBi",
-    "iIi"
+    "#I#"
   ],
   "key": {
     "i": {
@@ -14,6 +14,9 @@
     },
     "B": {
       "item": "minecraft:barrel"
+    },
+    "#": {
+      "item": "minecraft:black_concrete"
     }
   },
   "result": {
