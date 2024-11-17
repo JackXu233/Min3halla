@@ -191,7 +191,7 @@ public class BTCFillingMachineBlockEntity extends BlockEntity implements Worldly
             return Optional.empty();
         }
         SimpleContainer inventory = new SimpleContainer(this.items.size());
-        for (int i = 0; i < this.items.size(); i++) {
+        for (int i = 0; i < 2; i++) {
             inventory.setItem(i, this.items.get(i));
         }
         return this.level.getRecipeManager().getRecipeFor(FillingRecipe.Type.INSTANCE, inventory, level);
