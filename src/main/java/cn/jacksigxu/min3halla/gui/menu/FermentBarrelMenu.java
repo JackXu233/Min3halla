@@ -20,7 +20,7 @@ public class FermentBarrelMenu extends AbstractContainerMenu {
     protected final Level level;
 
     public static final int X_OFFSET = 0;
-    public static final int Y_OFFSET = 0;
+    public static final int Y_OFFSET = -1;
 
     public FermentBarrelMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(2), new SimpleContainerData(FermentBarrelBlockEntity.MAX_DATA_COUNT));
@@ -36,8 +36,8 @@ public class FermentBarrelMenu extends AbstractContainerMenu {
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new FermentBarrelMenu.InputSlot(container, 0, 60, 55));
-        this.addSlot(new FermentBarrelMenu.ResultSlot(container, 1, 140, 55));
+        this.addSlot(new FermentBarrelMenu.InputSlot(container, 0, 40, 33));
+        this.addSlot(new FermentBarrelMenu.ResultSlot(container, 1, 116, 33));
 
         this.addDataSlots(containerData);
 
@@ -95,6 +95,10 @@ public class FermentBarrelMenu extends AbstractContainerMenu {
         return itemstack;
     }
 
+    public int getProgress() {
+        return this.containerData.get(0);
+    }
+
     @Override
     public boolean stillValid(Player pPlayer) {
         return this.container.stillValid(pPlayer);
@@ -107,7 +111,7 @@ public class FermentBarrelMenu extends AbstractContainerMenu {
 
         @Override
         public boolean mayPlace(ItemStack pStack) {
-            return true;
+            return super.mayPlace(pStack);
         }
     }
 
