@@ -1,0 +1,10 @@
+{
+  "type": "min3halla:fermenting",
+  "input": {
+    "tag": "forge:fruits"
+  },
+  "output": {
+    "item": "min3halla:glitch_liquid",
+    "count": 2
+  }
+}

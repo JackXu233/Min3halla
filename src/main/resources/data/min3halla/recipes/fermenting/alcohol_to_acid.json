@@ -1,0 +1,9 @@
+{
+  "type": "min3halla:fermenting",
+  "input": {
+    "tag": "forge:alcohol"
+  },
+  "output": {
+    "item": "min3halla:hyper_acid_x"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "min3halla:fermenting",
+  "input": {
+    "item": "minecraft:sugar"
+  },
+  "output": {
+    "item": "min3halla:glitch_liquid"
+  }
+}
