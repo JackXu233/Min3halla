@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:filling",
+  "inputs": [
+    {
+      "tag": "forge:vinegar"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "output": {
+    "item": "min3halla:powdered_delta"
+  }
+}

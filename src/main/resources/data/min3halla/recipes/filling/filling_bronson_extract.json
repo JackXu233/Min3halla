@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:filling",
+  "inputs": [
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "item": "minecraft:warped_fungus"
+    }
+  ],
+  "output": {
+    "item": "min3halla:bronson_extract"
+  }
+}

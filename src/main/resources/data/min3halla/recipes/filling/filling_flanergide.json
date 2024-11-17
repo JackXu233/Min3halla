@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:filling",
+  "inputs": [
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:crimson_fungus"
+    }
+  ],
+  "output": {
+    "item": "min3halla:flanergide"
+  }
+}

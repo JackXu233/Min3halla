@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:filling",
+  "inputs": [
+    {
+      "tag": "forge:alcohol"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "output": {
+    "item": "min3halla:karmotrine"
+  }
+}

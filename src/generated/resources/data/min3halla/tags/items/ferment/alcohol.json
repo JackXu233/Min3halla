@@ -5,6 +5,7 @@
     "minecraft:chorus_fruit",
     "minecraft:melon_slice",
     "minecraft:beetroot",
+    "minecraft:apple",
     {
       "id": "#forge:fruits",
       "required": false

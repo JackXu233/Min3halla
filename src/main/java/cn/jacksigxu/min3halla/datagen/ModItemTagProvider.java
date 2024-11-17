@@ -61,7 +61,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         this.tag(MHTags.Items.BOTTLED).add(MHItems.MULAN_TEA.get(), MHItems.A_FEDORA.get(), MHItems.RUM.get(), MHItems.ABSINTHE.get());
 
-        this.tag(MHTags.Items.FERMENT_ALCOHOL).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES, Items.CHORUS_FRUIT, Items.MELON_SLICE, Items.BEETROOT)
+        this.tag(MHTags.Items.FERMENT_ALCOHOL).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES, Items.CHORUS_FRUIT, Items.MELON_SLICE,
+                        Items.BEETROOT, Items.APPLE)
                 .addOptionalTag(new ResourceLocation("forge", "fruits"));
 
         this.tag(forgeTag("vinegar")).add(MHItems.HYPER_ACID_X.get());
