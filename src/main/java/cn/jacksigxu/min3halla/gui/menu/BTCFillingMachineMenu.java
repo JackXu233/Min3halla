@@ -21,7 +21,7 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
     protected final Level level;
 
     public static final int X_OFFSET = 0;
-    public static final int Y_OFFSET = 0;
+    public static final int Y_OFFSET = -1;
 
     public BTCFillingMachineMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(4), new SimpleContainerData(BTCFillingMachineBlockEntity.MAX_DATA_COUNT));
@@ -37,10 +37,10 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 0, 60, 55));
-        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 1, 140, 55));
-        this.addSlot(new BTCFillingMachineMenu.CanSlot(container, 2, 220, 55));
-        this.addSlot(new BTCFillingMachineMenu.ResultSlot(container, 3, 300, 55));
+        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 0, 28, 30));
+        this.addSlot(new BTCFillingMachineMenu.InputSlot(container, 1, 56, 30));
+        this.addSlot(new BTCFillingMachineMenu.CanSlot(container, 2, 124, 12));
+        this.addSlot(new BTCFillingMachineMenu.ResultSlot(container, 3, 124, 51));
 
         this.addDataSlots(containerData);
 
@@ -102,6 +102,10 @@ public class BTCFillingMachineMenu extends AbstractContainerMenu {
         }
 
         return itemStack;
+    }
+
+    public int getProgress() {
+        return this.containerData.get(0);
     }
 
     @Override
