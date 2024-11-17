@@ -1,0 +1,17 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 4,
+  "pwd": 2,
+  "fla": 1,
+  "kar": 3,
+  "ice": true,
+  "dye": {
+    "item": "minecraft:blue_dye"
+  },
+  "extra": {
+    "item": "minecraft:lead"
+  },
+  "output": {
+    "item": "min3halla:seven_wolves"
+  }
+}

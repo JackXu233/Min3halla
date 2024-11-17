@@ -173,4 +173,10 @@ public class MHFoodProperties {
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
             .build();
 
+    public static final FoodProperties SEVEN_WOLVES = new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, DEFAULT_BENEFICIAL_TICK, 3), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, DEFAULT_BENEFICIAL_TICK, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.2F)
+            .build();
+
 }

@@ -68,6 +68,7 @@ public class MHItems {
 
     // Original Drinks
     public static final RegistryObject<Item> SUPERB_BASKETBALL = ITEMS.register("superb_basketball", () -> new BigDrinkItem(MHFoodProperties.SUPERB_BASKETBALL));
+    public static final RegistryObject<Item> SEVEN_WOLVES = ITEMS.register("seven_wolves", () -> new BigDrinkItem(MHFoodProperties.SEVEN_WOLVES));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
