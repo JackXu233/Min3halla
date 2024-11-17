@@ -23,6 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         evenSimplerBlockItem(MHBlocks.DRINK_MIXER);
+        evenSimplerBlockItem(MHBlocks.BTC_FILLING_MACHINE);
 
         simpleItem(MHItems.ADELHYDE);
         simpleItem(MHItems.BRONSON_EXTRACT);

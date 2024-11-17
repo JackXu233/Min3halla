@@ -1,8 +1,6 @@
-// 1.20.1	2024-11-18T02:49:27.7214421	Block States: min3halla
-b878649c31f12f0a22b7abc121652f89ad6d9d9a assets/min3halla/blockstates/btc_filling_machine.json
+// 1.20.1	2024-11-18T03:00:03.839051	Block States: min3halla
+c60cb047edfdf6a17a110e4ff0a7c6660a38ea04 assets/min3halla/blockstates/btc_filling_machine.json
 8a5687a4ebbd3164d4e615a52d7b07ce74b0d3d6 assets/min3halla/blockstates/drink_mixer.json
 0779580f6e53530a9be145010c10234359309c75 assets/min3halla/blockstates/ferment_barrel.json
-728a5c015b131d6e48c4fa827bdf4a8204b8881d assets/min3halla/models/block/btc_filling_machine.json
 cfae69bb9eed1603d464b8379419e3e011499543 assets/min3halla/models/block/ferment_barrel.json
-166ea5a09f1c6a449f8141576358a6ecfbd49684 assets/min3halla/models/item/btc_filling_machine.json
 c3b5e7a13bb8b4c26b8e327fd22f7593ef9e9258 assets/min3halla/models/item/ferment_barrel.json

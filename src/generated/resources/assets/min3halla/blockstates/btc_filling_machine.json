@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "min3halla:block/btc_filling_machine",
+      "y": 90
+    },
+    "facing=north": {
       "model": "min3halla:block/btc_filling_machine"
+    },
+    "facing=south": {
+      "model": "min3halla:block/btc_filling_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "min3halla:block/btc_filling_machine",
+      "y": 270
     }
   }
 }

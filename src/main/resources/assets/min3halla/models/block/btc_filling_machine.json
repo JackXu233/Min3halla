@@ -6,6 +6,7 @@
     "north": "min3halla:block/btc_filling_machine_north",
     "south": "min3halla:block/btc_filling_machine_side",
     "up": "min3halla:block/btc_filling_machine_top",
-    "west": "min3halla:block/btc_filling_machine_side"
+    "west": "min3halla:block/btc_filling_machine_side",
+    "particle": "minecraft:block/purple_concrete"
   }
 }

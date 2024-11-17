@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "min3halla:block/drink_mixer",
-		"particle": "minecraft:block/black_concrete"
+		"particle": "minecraft:block/purple_concrete"
 	},
 	"elements": [
 		{
