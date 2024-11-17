@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:filling",
+  "inputs": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "output": {
+    "item": "min3halla:adelhyde"
+  }
+}

@@ -94,7 +94,7 @@ public class FillingRecipe implements Recipe<SimpleContainer> {
         @Override
         public FillingRecipe fromJson(ResourceLocation recipeLoc, JsonObject recipeJson) {
             NonNullList<Ingredient> inputs = NonNullList.create();
-            var ingredients = GsonHelper.getAsJsonArray(recipeJson, "ingredients");
+            var ingredients = GsonHelper.getAsJsonArray(recipeJson, "inputs");
             for (int i = 0; i < ingredients.size(); i++) {
                 inputs.add(Ingredient.fromJson(ingredients.get(i).getAsJsonObject()));
             }
