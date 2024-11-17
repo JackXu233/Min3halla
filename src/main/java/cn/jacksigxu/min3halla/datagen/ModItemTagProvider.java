@@ -6,6 +6,10 @@ import cn.jacksigxu.min3halla.init.MHTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -54,5 +58,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.SECONDARY_VINTAGE).add(MHItems.BAD_TOUCH.get(), MHItems.BEER.get());
 
         this.tag(MHTags.Items.BOTTLED).add(MHItems.MULAN_TEA.get(), MHItems.A_FEDORA.get(), MHItems.RUM.get(), MHItems.ABSINTHE.get());
+
+        this.tag(forgeTag("vinegar")).add(MHItems.HYPER_ACID_X.get());
+        this.tag(forgeTag("alcohol")).add(MHItems.GLITCH_LIQUID.get());
+    }
+
+    private static TagKey<Item> forgeTag(String name) {
+        return ItemTags.create(new ResourceLocation("forge", name));
     }
 }
