@@ -66,6 +66,9 @@ public class MHItems {
 
     public static final RegistryObject<Item> ERROR_DRINK = ITEMS.register("error_drink", ErrorDrink::new);
 
+    // Original Drinks
+    public static final RegistryObject<Item> SUPERB_BASKETBALL = ITEMS.register("superb_basketball", () -> new BigDrinkItem(MHFoodProperties.SUPERB_BASKETBALL));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }

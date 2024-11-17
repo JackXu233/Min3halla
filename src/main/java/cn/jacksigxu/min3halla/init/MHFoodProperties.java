@@ -156,14 +156,21 @@ public class MHFoodProperties {
 
     public static final FoodProperties HYPER_ACID_X = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, DEFAULT_BENEFICIAL_TICK * 2, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, DEFAULT_HARMFUL_TICK * 2, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK * 2, 0), 1.0F)
             .build();
 
     public static final FoodProperties GLITCH_LIQUID = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, DEFAULT_BENEFICIAL_TICK * 2, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, DEFAULT_HARMFUL_TICK * 2, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, DEFAULT_HARMFUL_TICK * 2, 0), 1.0F)
+            .build();
+
+    public static final FoodProperties SUPERB_BASKETBALL = new FoodProperties.Builder().nutrition(13).saturationMod(0.4F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, DEFAULT_BENEFICIAL_TICK * 2, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.JUMP, DEFAULT_BENEFICIAL_TICK * 2, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK * 2, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, DEFAULT_HARMFUL_TICK * 2, 1), 1.0F)
             .build();
 
 }

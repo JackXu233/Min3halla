@@ -107,6 +107,9 @@
   "stat.min3halla.interact_with_drink_mixer": "与调饮台交互次数",
   "block.min3halla.btc_filling_machine": "BTC标准提取灌装机",
   "menu.min3halla.btc_filling_machine": "BTC标准提取灌装机",
+  "item.min3halla.superb_basketball": "卓越篮球",
+  "des.min3halla.superb_basketball": "“它本应该叫‘超级篮球’，不知为何变成了卓越。”",
+
   "advancement.min3halla.drink_mixer": "MIN-3 Hall-A",
   "advancement.min3halla.drink_mixer.des": "“调制饮料，改变人生”",
   "advancement.min3halla.shaker_pot": "“调制人生，改变饮料……？”",
