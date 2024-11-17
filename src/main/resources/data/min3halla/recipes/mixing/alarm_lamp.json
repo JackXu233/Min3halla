@@ -1,0 +1,18 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 3,
+  "bex": 1,
+  "pwd": 3,
+  "fla": 2,
+  "kar": 6,
+  "ice": true,
+  "dye": {
+    "item": "minecraft:blue_dye"
+  },
+  "extra": {
+    "item": "minecraft:red_dye"
+  },
+  "output": {
+    "item": "min3halla:alarm_lamp"
+  }
+}

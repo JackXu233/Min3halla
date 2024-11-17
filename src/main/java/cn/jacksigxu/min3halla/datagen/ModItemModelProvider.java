@@ -68,6 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(MHItems.SUPERB_BASKETBALL);
         simpleItem(MHItems.SEVEN_WOLVES);
+        simpleItem(MHItems.ALARM_LAMP);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

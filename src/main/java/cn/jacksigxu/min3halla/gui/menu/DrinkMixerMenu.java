@@ -117,6 +117,9 @@ public class DrinkMixerMenu extends AbstractContainerMenu {
                     }
                 } else if (itemstack1.is(Tags.Items.DYES)) {
                     if (!this.moveItemStackTo(itemstack1, 8, 9, true)) {
+                        if (!this.moveItemStackTo(itemstack1, 9, 10, true)) {
+                            return ItemStack.EMPTY;
+                        }
                         return ItemStack.EMPTY;
                     }
                 } else if (!this.moveItemStackTo(itemstack1, 9, 10, true)) {

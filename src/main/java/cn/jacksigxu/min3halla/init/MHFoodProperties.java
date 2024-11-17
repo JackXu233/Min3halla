@@ -179,4 +179,10 @@ public class MHFoodProperties {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.2F)
             .build();
 
+    public static final FoodProperties ALARM_LAMP = new FoodProperties.Builder().nutrition(12).saturationMod(0.25F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, DEFAULT_BENEFICIAL_TICK, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, DEFAULT_BENEFICIAL_TICK, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.4F)
+            .build();
+
 }

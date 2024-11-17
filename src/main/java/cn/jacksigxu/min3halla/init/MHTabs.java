@@ -90,6 +90,7 @@ public class MHTabs {
                 // Original Drinks
                 pOutput.accept(MHItems.SUPERB_BASKETBALL.get());
                 pOutput.accept(MHItems.SEVEN_WOLVES.get());
+                pOutput.accept(MHItems.ALARM_LAMP.get());
             })
             .build();
 
