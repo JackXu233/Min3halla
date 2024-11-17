@@ -31,6 +31,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.KARMOTRINE);
         simpleItem(MHItems.BTC_CAN);
         simpleItem(MHItems.WINE_GLASS);
+        simpleItem(MHItems.HYPER_ACID_X);
+        simpleItem(MHItems.GLITCH_LIQUID);
 
         simpleItem(MHItems.BAD_TOUCH);
         simpleItem(MHItems.BEER);

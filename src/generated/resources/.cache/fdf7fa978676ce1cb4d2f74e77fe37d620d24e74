@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-17T21:59:39.0740482	Item Models: min3halla
+// 1.20.1	2024-11-17T22:23:23.5062515	Item Models: min3halla
 66adbc23838dd22ad1cf005223f451b01281e516 assets/min3halla/models/item/absinthe.json
 78916cb2e64d067507c96fa7583f3a098a7bb82d assets/min3halla/models/item/adelhyde.json
 b2b0f8be50848dd025293f967981b8b7a4b26d70 assets/min3halla/models/item/a_fedora.json
@@ -19,8 +19,10 @@ de7e464d178ef629daa22491823cfcd8d301a199 assets/min3halla/models/item/flaming_mo
 56c3f9f866d7a150f7f03e55872f43262c398224 assets/min3halla/models/item/fluffy_dream.json
 b4ef2ae382a5e0e0be9938506056c146d43b71d9 assets/min3halla/models/item/fringe_weaver.json
 1d7d57a625c0599139bff9b3f582c5d26bede69a assets/min3halla/models/item/frothy_water.json
+1e12b89975eac68e92f51e85d06f42b1d84f6cf3 assets/min3halla/models/item/glitch_liquid.json
 51680cda6c84b1829b3c6a16cc142ac4f8463a26 assets/min3halla/models/item/grizzly_temple.json
 b2075d2cbfef9d2853dff6839874bf81568b2a4f assets/min3halla/models/item/gut_punch.json
+d36beb26eba5a2c5b66879afe873f53fbf033f18 assets/min3halla/models/item/hyper_acid_x.json
 4221235dfac02e7660e5a1b78b6f461e02a0911b assets/min3halla/models/item/karmotrine.json
 4de8b26966282ef33256f79ff2c47c36ecd2c9a9 assets/min3halla/models/item/marsblast.json
 058f571b1738e7050b017c626db5e69ae9af3e3d assets/min3halla/models/item/mercuryblast.json
