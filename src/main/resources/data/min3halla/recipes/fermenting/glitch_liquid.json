@@ -1,7 +1,7 @@
 {
   "type": "min3halla:fermenting",
   "input": {
-    "tag": "forge:fruits"
+    "tag": "min3halla:ferment/alcohol"
   },
   "output": {
     "item": "min3halla:glitch_liquid",

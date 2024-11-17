@@ -1,7 +1,8 @@
-// 1.20.1	2024-11-17T21:59:39.0708206	Tags for minecraft:item mod id min3halla
+// 1.20.1	2024-11-17T23:15:58.4080108	Tags for minecraft:item mod id min3halla
 f4b2bd6c07cede94a7a2b6860a53a2e832149696 data/forge/tags/items/alcohol.json
 1c6d704d59fd2ff09c1b8cc43eb7d9acf4394700 data/forge/tags/items/vinegar.json
 638d4c7c5d914ad3ee16033233c5dccaeaaf2ee6 data/min3halla/tags/items/bottled.json
+3af1712b0f986ae257fe5522e80e0c557cd786b0 data/min3halla/tags/items/ferment/alcohol.json
 594ede34900a136eb7fff902795a5b38332ef702 data/min3halla/tags/items/flavor/bitter.json
 33e16277e767da4a7814bd476add6d31c79ae0fb data/min3halla/tags/items/flavor/bubbly.json
 89c8a8366322eaacbbd480dd96f7a03bab00721e data/min3halla/tags/items/flavor/sour.json

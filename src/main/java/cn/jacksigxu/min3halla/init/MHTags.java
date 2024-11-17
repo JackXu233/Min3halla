@@ -40,6 +40,8 @@ public class MHTags {
 
         public static final TagKey<Item> BOTTLED = tag("bottled");
 
+        public static final TagKey<Item> FERMENT_ALCOHOL = tag("ferment/alcohol");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(MHMod.loc(name));
         }
