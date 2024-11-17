@@ -45,7 +45,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.TYPE_MANLY).add(MHItems.GUT_PUNCH.get(), MHItems.PILE_DRIVER.get(), MHItems.SUPLEX.get(),
                 MHItems.CREVICE_SPIKE.get(), MHItems.MARSBLAST.get());
         this.tag(MHTags.Items.TYPE_PROMO).add(MHItems.GRIZZLY_TEMPLE.get(), MHItems.PIANO_MAN.get(), MHItems.ZEN_STAR.get(),
-                MHItems.BLOOM_LIGHT.get(), MHItems.PIANO_WOMAN.get(), MHItems.SUPERB_BASKETBALL.get());
+                MHItems.BLOOM_LIGHT.get(), MHItems.PIANO_WOMAN.get(), MHItems.SUPERB_BASKETBALL.get(), MHItems.SEVEN_WOLVES.get(),
+                MHItems.ALARM_LAMP.get(), MHItems.AFTERGLOW.get());
 
         this.tag(MHTags.Items.SECONDARY_BLAND).add(MHItems.FROTHY_WATER.get(), MHItems.GRIZZLY_TEMPLE.get(), MHItems.ZEN_STAR.get(),
                 MHItems.BLOOM_LIGHT.get());

@@ -185,4 +185,10 @@ public class MHFoodProperties {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.4F)
             .build();
 
+    public static final FoodProperties AFTERGLOW = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, DEFAULT_BENEFICIAL_TICK, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.JUMP, DEFAULT_BENEFICIAL_TICK, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.25F)
+            .build();
+
 }

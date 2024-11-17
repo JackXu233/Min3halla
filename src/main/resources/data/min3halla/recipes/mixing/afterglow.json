@@ -1,0 +1,18 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 1,
+  "bex": 3,
+  "pwd": 4,
+  "fla": 4,
+  "kar": 4,
+  "ice": true,
+  "dye": {
+    "item": "minecraft:magenta_dye"
+  },
+  "extra": {
+    "item": "minecraft:glow_berries"
+  },
+  "output": {
+    "item": "min3halla:afterglow"
+  }
+}
