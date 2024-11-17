@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-17T04:18:20.8997388	Item Models: min3halla
+// 1.20.1	2024-11-17T20:11:05.1428053	Item Models: min3halla
 66adbc23838dd22ad1cf005223f451b01281e516 assets/min3halla/models/item/absinthe.json
 78916cb2e64d067507c96fa7583f3a098a7bb82d assets/min3halla/models/item/adelhyde.json
 b2b0f8be50848dd025293f967981b8b7a4b26d70 assets/min3halla/models/item/a_fedora.json
@@ -14,6 +14,7 @@ e283472d7c5ae569df0145ea26e946bcd3609c16 assets/min3halla/models/item/bronson_ex
 7909c040bdff2a50c8e120476860c7acad4225e8 assets/min3halla/models/item/crevice_spike.json
 022245bf57016b509d1e719373083401fe962157 assets/min3halla/models/item/drink_mixer.json
 5570f674d4f1649ebb9d7d2c082bf5ded134535e assets/min3halla/models/item/error_drink.json
+de7e464d178ef629daa22491823cfcd8d301a199 assets/min3halla/models/item/flaming_moai.json
 333b59de36f09536e5077a2457962d15511f5760 assets/min3halla/models/item/flanergide.json
 56c3f9f866d7a150f7f03e55872f43262c398224 assets/min3halla/models/item/fluffy_dream.json
 b4ef2ae382a5e0e0be9938506056c146d43b71d9 assets/min3halla/models/item/fringe_weaver.json
@@ -25,6 +26,8 @@ b2075d2cbfef9d2853dff6839874bf81568b2a4f assets/min3halla/models/item/gut_punch.
 058f571b1738e7050b017c626db5e69ae9af3e3d assets/min3halla/models/item/mercuryblast.json
 20c2139b1211299b4e7bb897dedc9473a46b7fc8 assets/min3halla/models/item/moonblast.json
 e736c6f0a08a8a4732da2cef6ac68ea586a330b1 assets/min3halla/models/item/mulan_tea.json
+bf13abc424c92ad1b823b1caf4182d17502fdc13 assets/min3halla/models/item/piano_man.json
+bd8aa0810ff2a27c0f0ef54679da1e89454cf2d5 assets/min3halla/models/item/piano_woman.json
 089147a83de54687929befce6a2648f7770a76af assets/min3halla/models/item/pile_driver.json
 941528342a5ed414d25f42a3386a219cb85e0d44 assets/min3halla/models/item/powdered_delta.json
 215cf1b53d5addaaefed698ebcde6cfc905e91ce assets/min3halla/models/item/rum.json
