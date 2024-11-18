@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:mixing",
+  "fla": 20,
+  "blend": true,
+  "dye": {
+    "item": "minecraft:black_dye"
+  },
+  "extra": {
+    "item": "min3halla:error_drink"
+  },
+  "output": {
+    "item": "min3halla:fried_rice"
+  }
+}

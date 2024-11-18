@@ -31,7 +31,7 @@ public class BottleDrinkItem extends DrinkItem {
 
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
-        return true;
+        return super.hasCraftingRemainingItem(stack);
     }
 
     @Override

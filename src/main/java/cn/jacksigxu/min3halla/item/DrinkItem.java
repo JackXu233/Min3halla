@@ -38,6 +38,16 @@ public class DrinkItem extends Item {
     }
 
     @Override
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        return new ItemStack(MHItems.WINE_GLASS.get());
+    }
+
+    @Override
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public int getUseDuration(ItemStack pStack) {
         if (pStack.getTag() != null && pStack.getTag().contains("Big") && pStack.getTag().getBoolean("Big")) {
             return 64;

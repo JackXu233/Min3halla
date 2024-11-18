@@ -93,6 +93,8 @@ public class MHTabs {
                 pOutput.accept(MHItems.SEVEN_WOLVES.get());
                 pOutput.accept(MHItems.ALARM_LAMP.get());
                 pOutput.accept(MHItems.AFTERGLOW.get());
+
+                pOutput.accept(MHItems.FRIED_RICE.get());
             })
             .build();
 

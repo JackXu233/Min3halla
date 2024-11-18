@@ -73,6 +73,8 @@ public class MHItems {
     public static final RegistryObject<Item> ALARM_LAMP = ITEMS.register("alarm_lamp", () -> new BigDrinkItem(MHFoodProperties.ALARM_LAMP, 6));
     public static final RegistryObject<Item> AFTERGLOW = ITEMS.register("afterglow", () -> new BigDrinkItem(MHFoodProperties.AFTERGLOW, 4));
 
+    public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", FriedRice::new);
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }

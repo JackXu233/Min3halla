@@ -196,4 +196,9 @@ public class MHFoodProperties {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, DEFAULT_HARMFUL_TICK, 0), 0.25F)
             .build();
 
+    public static final FoodProperties FRIED_RICE = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, DEFAULT_BENEFICIAL_TICK, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, DEFAULT_HARMFUL_TICK, 1), 1.0F)
+            .build();
+
 }
