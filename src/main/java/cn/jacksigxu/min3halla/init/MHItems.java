@@ -68,6 +68,7 @@ public class MHItems {
 
     // Original Drinks
     public static final RegistryObject<Item> SUPERB_BASKETBALL = ITEMS.register("superb_basketball", () -> new BigDrinkItem(MHFoodProperties.SUPERB_BASKETBALL));
+    public static final RegistryObject<Item> ICED_TEA = ITEMS.register("iced_tea", () -> new BigDrinkItem(MHFoodProperties.ICED_TEA, 10));
     public static final RegistryObject<Item> SEVEN_WOLVES = ITEMS.register("seven_wolves", () -> new DrinkItem(MHFoodProperties.SEVEN_WOLVES, 3));
     public static final RegistryObject<Item> ALARM_LAMP = ITEMS.register("alarm_lamp", () -> new BigDrinkItem(MHFoodProperties.ALARM_LAMP, 6));
     public static final RegistryObject<Item> AFTERGLOW = ITEMS.register("afterglow", () -> new BigDrinkItem(MHFoodProperties.AFTERGLOW, 4));

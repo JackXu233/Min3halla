@@ -27,7 +27,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(MHTags.Items.FLAVOR_SWEET).add(MHItems.BLUE_FAIRY.get(), MHItems.BRANDTINI.get(), MHItems.MOONBLAST.get(),
-                MHItems.PIANO_WOMAN.get(), MHItems.SPARKLE_STAR.get(), MHItems.SUGAR_RUSH.get());
+                MHItems.PIANO_WOMAN.get(), MHItems.SPARKLE_STAR.get(), MHItems.SUGAR_RUSH.get(), MHItems.ICED_TEA.get());
         this.tag(MHTags.Items.FLAVOR_SPICY).add(MHItems.BLEEDING_JANE.get(), MHItems.BLOOM_LIGHT.get(), MHItems.MARSBLAST.get(),
                 MHItems.SUPERB_BASKETBALL.get());
         this.tag(MHTags.Items.FLAVOR_SOUR).add(MHItems.BAD_TOUCH.get(), MHItems.CREVICE_SPIKE.get(), MHItems.FLAMING_MOAI.get(),
@@ -37,7 +37,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.FLAVOR_BUBBLY).add(MHItems.BEER.get(), MHItems.COBALT_VELVET.get(), MHItems.FRINGE_WEAVER.get(),
                 MHItems.FROTHY_WATER.get());
 
-        this.tag(MHTags.Items.TYPE_CLASSIC).add(MHItems.BEER.get(), MHItems.FROTHY_WATER.get(), MHItems.BLEEDING_JANE.get());
+        this.tag(MHTags.Items.TYPE_CLASSIC).add(MHItems.BEER.get(), MHItems.FROTHY_WATER.get(), MHItems.BLEEDING_JANE.get(),
+                MHItems.ICED_TEA.get());
         this.tag(MHTags.Items.TYPE_CLASSY).add(MHItems.COBALT_VELVET.get(), MHItems.FRINGE_WEAVER.get(), MHItems.BAD_TOUCH.get(),
                 MHItems.FLAMING_MOAI.get(), MHItems.MERCURYBLAST.get(), MHItems.BRANDTINI.get());
         this.tag(MHTags.Items.TYPE_GIRLY).add(MHItems.SUNSHINE_CLOUD.get(), MHItems.FLUFFY_DREAM.get(), MHItems.BLUE_FAIRY.get(),
@@ -57,7 +58,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(MHTags.Items.SECONDARY_SOBERING).add(MHItems.BLEEDING_JANE.get(), MHItems.CREVICE_SPIKE.get());
         this.tag(MHTags.Items.SECONDARY_SOFT).add(MHItems.SUNSHINE_CLOUD.get(), MHItems.FLUFFY_DREAM.get(), MHItems.BLUE_FAIRY.get());
         this.tag(MHTags.Items.SECONDARY_STRONG).add(MHItems.FRINGE_WEAVER.get(), MHItems.GUT_PUNCH.get(), MHItems.MARSBLAST.get(),
-                MHItems.PIANO_MAN.get(), MHItems.SUPERB_BASKETBALL.get());
+                MHItems.PIANO_MAN.get(), MHItems.SUPERB_BASKETBALL.get(), MHItems.ICED_TEA.get());
         this.tag(MHTags.Items.SECONDARY_VINTAGE).add(MHItems.BAD_TOUCH.get(), MHItems.BEER.get());
 
         this.tag(MHTags.Items.BOTTLED).add(MHItems.MULAN_TEA.get(), MHItems.A_FEDORA.get(), MHItems.RUM.get(), MHItems.ABSINTHE.get());

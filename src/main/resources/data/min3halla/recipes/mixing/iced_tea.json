@@ -1,0 +1,14 @@
+{
+  "type": "min3halla:mixing",
+  "ade": 5,
+  "bex": 3,
+  "fla": 2,
+  "kar": 10,
+  "ice": true,
+  "dye": {
+    "item": "minecraft:brown_dye"
+  },
+  "output": {
+    "item": "min3halla:iced_tea"
+  }
+}

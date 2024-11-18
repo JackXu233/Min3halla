@@ -68,6 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(MHItems.ERROR_DRINK);
 
         simpleItem(MHItems.SUPERB_BASKETBALL);
+        simpleItem(MHItems.ICED_TEA);
         simpleItem(MHItems.SEVEN_WOLVES);
         simpleItem(MHItems.ALARM_LAMP);
         simpleItem(MHItems.AFTERGLOW);
