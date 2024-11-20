@@ -62,7 +62,7 @@ public class BTCFillingMachineBlockEntity extends BlockEntity implements Worldly
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, BTCFillingMachineBlockEntity blockEntity) {
-        if (blockEntity.hasRecipe()) {
+        if (blockEntity.hasRecipe() && !blockEntity.items.get(SLOT_CAN).isEmpty()) {
             blockEntity.progress++;
             if (blockEntity.progress >= MAX_PROGRESS) {
                 blockEntity.resetProgress();
