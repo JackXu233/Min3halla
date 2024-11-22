@@ -267,8 +267,6 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
     public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
         if (pDirection == Direction.UP) {
             return pIndex == SLOT_SHAKER_POT && pItemStack.is(MHItems.SHAKER_POT.get());
-        } else if (pDirection == Direction.DOWN) {
-            return false;
         } else {
             return switch (pIndex) {
                 case SLOT_ADELHYDE -> pItemStack.is(MHItems.ADELHYDE.get());
