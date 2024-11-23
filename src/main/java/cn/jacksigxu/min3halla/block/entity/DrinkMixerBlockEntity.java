@@ -45,7 +45,7 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
     private static final int[] SLOTS_FOR_UP = new int[]{0};
     private static final int[] SLOTS_FOR_SIDES = new int[]{1, 2, 3, 4, 5, 6, 7};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{0};
+    private static final int[] SLOTS_FOR_DOWN = new int[]{0, 1, 2, 3, 4, 5, 6, 7};
 
     public static final int MAX_DATA_COUNT = 10;
 
@@ -283,8 +283,11 @@ public class DrinkMixerBlockEntity extends BlockEntity implements WorldlyContain
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return pDirection == Direction.DOWN && pIndex == SLOT_SHAKER_POT && pStack.is(MHItems.SHAKER_POT.get())
-                && pStack.getTag() != null && pStack.getTag().contains("Result");
+        if (pDirection == Direction.DOWN) {
+            return pIndex == SLOT_SHAKER_POT && pStack.is(MHItems.SHAKER_POT.get()) && pStack.getTag() != null && pStack.getTag().contains("Result");
+        } else {
+            return true;
+        }
     }
 
     @Override
