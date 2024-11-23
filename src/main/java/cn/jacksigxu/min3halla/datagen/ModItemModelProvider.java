@@ -69,7 +69,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(MHItems.SUPERB_BASKETBALL);
         simpleItem(MHItems.ICED_TEA);
-        simpleItem(MHItems.SEVEN_WOLVES);
+        simpleItem(MHItems.SEPTWOLVES);
         simpleItem(MHItems.ALARM_LAMP);
         simpleItem(MHItems.AFTERGLOW);
 

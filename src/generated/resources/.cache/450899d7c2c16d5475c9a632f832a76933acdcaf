@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-20T12:29:22.2255055	Tags for minecraft:item mod id min3halla
+// 1.20.1	2024-11-24T01:11:34.5070024	Tags for minecraft:item mod id min3halla
 f4b2bd6c07cede94a7a2b6860a53a2e832149696 data/forge/tags/items/alcohol.json
 1c6d704d59fd2ff09c1b8cc43eb7d9acf4394700 data/forge/tags/items/vinegar.json
 638d4c7c5d914ad3ee16033233c5dccaeaaf2ee6 data/min3halla/tags/items/bottled.json
@@ -7,16 +7,16 @@ f4b2bd6c07cede94a7a2b6860a53a2e832149696 data/forge/tags/items/alcohol.json
 33e16277e767da4a7814bd476add6d31c79ae0fb data/min3halla/tags/items/flavor/bubbly.json
 89c8a8366322eaacbbd480dd96f7a03bab00721e data/min3halla/tags/items/flavor/sour.json
 ea4472ea49c52a3f42dc2a10a0be2e2b5d50e32f data/min3halla/tags/items/flavor/spicy.json
-178c75b598053574d5fa489e2a3a6520ff60cae4 data/min3halla/tags/items/flavor/sweet.json
+749345c79122cfcfc242cec9f515515aa204aab9 data/min3halla/tags/items/flavor/sweet.json
 2567cf16deb3c3dcef78a22a634215f67bb387fb data/min3halla/tags/items/secondary/bland.json
 824bd84bc53be92f0043faaf2f40a44ef0e6cd24 data/min3halla/tags/items/secondary/burning.json
 7075d320965190d6a9a837b0bcc3f28432e55260 data/min3halla/tags/items/secondary/happy.json
 b86a243b963799e193d6c6e61804f41e43ab927e data/min3halla/tags/items/secondary/sobering.json
-0b725a30a6e28712d97c2f1fd0eaf0a9bee57a11 data/min3halla/tags/items/secondary/soft.json
+59c075ca247b435148518f37001c1460fee9d42a data/min3halla/tags/items/secondary/soft.json
 bffc29fa24b4d2fdf946f5a72176bbefd984cb56 data/min3halla/tags/items/secondary/strong.json
 90346cb3c3a8d32a0316d7faf53eb632de7b952d data/min3halla/tags/items/secondary/vintage.json
 8cc2ba4929b37555c71b7ed5ee5b554e3608fd6e data/min3halla/tags/items/type/classic.json
 aeab2fe2496a20369d57cde3dcc30db32d833edb data/min3halla/tags/items/type/classy.json
 4471b9e8fea3ef978157e209c49ae98da11f732e data/min3halla/tags/items/type/girly.json
 9c091d00a21c5b6ec1a46bad10c7a1ce9cb75f69 data/min3halla/tags/items/type/manly.json
-914a68571ded96354fd02259dfb517606382903c data/min3halla/tags/items/type/promo.json
+4c5aaa37432a2c66270fba47b9e03a8fd7fd524d data/min3halla/tags/items/type/promo.json

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "min3halla:item/seven_wolves"
+    "layer0": "min3halla:item/septwolves"
   }
 }
