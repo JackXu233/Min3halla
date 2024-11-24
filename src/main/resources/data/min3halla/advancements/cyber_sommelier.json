@@ -8,7 +8,8 @@
     },
     "description": {
       "translate": "advancement.min3halla.cyber_sommelier.des"
-    }
+    },
+    "frame": "challenge"
   },
   "parent": "min3halla:shaker_pot",
   "criteria": {
