@@ -19,10 +19,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(MHBlocks.DRINK_MIXER.get());
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(MHBlocks.FERMENT_BARREL.get());
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(MHBlocks.BTC_FILLING_MACHINE.get());
-
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(MHBlocks.DRINK_MIXER.get(), MHBlocks.FERMENT_BARREL.get(), MHBlocks.BTC_FILLING_MACHINE.get());
     }
 
 }
