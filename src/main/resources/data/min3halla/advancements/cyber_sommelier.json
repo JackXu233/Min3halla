@@ -1,0 +1,256 @@
+{
+  "display": {
+    "icon": {
+      "item": "min3halla:sugar_rush"
+    },
+    "title": {
+      "translate": "advancement.min3halla.cyber_sommelier"
+    },
+    "description": {
+      "translate": "advancement.min3halla.cyber_sommelier.des"
+    }
+  },
+  "parent": "min3halla:shaker_pot",
+  "criteria": {
+    "all_bad_touch": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:bad_touch"
+          ]
+        }
+      }
+    },
+    "all_beer": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:beer"
+          ]
+        }
+      }
+    },
+    "all_bleeding_jane": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:bleeding_jane"
+          ]
+        }
+      }
+    },
+    "all_bloom_light": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:bloom_light"
+          ]
+        }
+      }
+    },
+    "all_blue_fairy": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:blue_fairy"
+          ]
+        }
+      }
+    },
+    "all_brandtini": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:brandtini"
+          ]
+        }
+      }
+    },
+    "all_cobalt_velvet": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:cobalt_velvet"
+          ]
+        }
+      }
+    },
+    "all_crevice_spike": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:crevice_spike"
+          ]
+        }
+      }
+    },
+    "all_fluffy_dream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:fluffy_dream"
+          ]
+        }
+      }
+    },
+    "all_fringe_weaver": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:fringe_weaver"
+          ]
+        }
+      }
+    },
+    "all_frothy_water": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:frothy_water"
+          ]
+        }
+      }
+    },
+    "all_grizzly_temple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:grizzly_temple"
+          ]
+        }
+      }
+    },
+    "all_gut_punch": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:gut_punch"
+          ]
+        }
+      }
+    },
+    "all_marsblast": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:marsblast"
+          ]
+        }
+      }
+    },
+    "all_mercuryblast": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:mercuryblast"
+          ]
+        }
+      }
+    },
+    "all_moonblast": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:moonblast"
+          ]
+        }
+      }
+    },
+    "all_piano_man": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:piano_man"
+          ]
+        }
+      }
+    },
+    "all_piano_woman": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:piano_woman"
+          ]
+        }
+      }
+    },
+    "all_pile_driver": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:pile_driver"
+          ]
+        }
+      }
+    },
+    "all_sparkle_star": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:sparkle_star"
+          ]
+        }
+      }
+    },
+    "all_sugar_rush": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:sugar_rush"
+          ]
+        }
+      }
+    },
+    "all_sunshine_cloud": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:sunshine_cloud"
+          ]
+        }
+      }
+    },
+    "all_suplex": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:suplex"
+          ]
+        }
+      }
+    },
+    "all_zen_star": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "min3halla:zen_star"
+          ]
+        }
+      }
+    }
+  }
+}

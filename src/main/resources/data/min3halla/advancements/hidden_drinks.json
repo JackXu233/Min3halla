@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "min3halla:flaming_moai"
+    },
+    "title": {
+      "translate": "advancement.min3halla.hidden_drinks"
+    },
+    "description": {
+      "translate": "advancement.min3halla.hidden_drinks.des"
+    },
+    "hidden": true
+  },
+  "parent": "min3halla:shaker_pot",
+  "criteria": {
+    "all_bad_touch": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "min3halla:flaming_moai"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
