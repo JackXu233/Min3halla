@@ -4,10 +4,10 @@
       "item": "min3halla:rum"
     },
     "title": {
-      "translate": "advancement.min3halla.collection"
+      "translate": "advancement.min3halla.collector"
     },
     "description": {
-      "translate": "advancement.min3halla.collection.des"
+      "translate": "advancement.min3halla.collector.des"
     }
   },
   "parent": "min3halla:drink_mixer",

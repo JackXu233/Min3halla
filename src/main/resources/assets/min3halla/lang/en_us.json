@@ -116,7 +116,7 @@
   "item.min3halla.afterglow": "You Should Be Happy To Get Off Work In This Color Of Sunset",
   "des.min3halla.afterglow": "\"There are cocktails with normal names, but you just never noticed them.\" ——@Jihe Bistro",
   "item.min3halla.iced_tea": "Long Island Iced Tea",
-  "des.min3halla.iced_tea": "\"An alcoholic beverage resembling tea\"",
+  "des.min3halla.iced_tea": "\"An alcoholic beverage resembling tea.\"",
   "item.min3halla.fried_rice": "Fried Rice",
   "des.min3halla.fried_rice": "\"A customer came to the bar and ordered a bowl of fried rice...\"",
 
@@ -126,6 +126,6 @@
   "advancement.min3halla.shaker_pot.des": "Make a drink with a shaker pot",
   "advancement.min3halla.error_drink": "It might be drinkable",
   "advancement.min3halla.error_drink.des": "Make a failed drink",
-  "advancement.min3halla.collection": "Collections",
-  "advancement.min3halla.collection.des": "Collect all four bottled drinks"
+  "advancement.min3halla.collector": "Cyber Collector",
+  "advancement.min3halla.collector.des": "Collect all four bottled drinks from VA-11 Hall-A"
 }
