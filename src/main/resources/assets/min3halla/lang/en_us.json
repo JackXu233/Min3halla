@@ -128,8 +128,8 @@
   "advancement.min3halla.error_drink.des": "Make a failed drink",
   "advancement.min3halla.collector": "Cyber Collector",
   "advancement.min3halla.collector.des": "Collect all four bottled drinks from VA-11 Hall-A",
-  "advancement.min3halla.cyber_commelier": "Cyber Commelier",
-  "advancement.min3halla.cyber_commelier.des": "品尝来自VA-11 Hall-A的在售饮品",
-  "advancement.min3halla.hidden_drinks": "Hidden Drinks",
-  "advancement.min3halla.hidden_drinks.des": "Make a Flaming Moai"
+  "advancement.min3halla.cyber_sommelier": "Cyber Sommelier",
+  "advancement.min3halla.cyber_sommelier.des": "Taste all drinks on sale from VA-11 Hall-A",
+  "advancement.min3halla.hidden_drink": "The Hidden Drink",
+  "advancement.min3halla.hidden_drink.des": "Make a Flaming Moai"
 }
